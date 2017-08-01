@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+
+    <node>
+        <host>http://192.168.0.182:6666/wd/hub</host>
+        <browser>firefox</browser>
+        <index>182f</index>
+    </node>
+    <node>
+        <host>http://192.168.0.182:7777/wd/hub</host>
+        <browser>chrome</browser>
+        <index>182c</index>
+    </node>
+    <node>
+        <host>http://192.168.0.182:6666/wd/hub</host>
+        <browser>internet explorer</browser>
+        <index>182i</index>
+    </node>
+
+</page>

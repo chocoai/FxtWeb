@@ -1,0 +1,299 @@
+#coding:utf-8
+import os
+from xml.etree import ElementTree as elementTree
+from selenium.common.exceptions import NoSuchElementException
+import logging
+import CONFIG as FIG
+from time import sleep
+fMode = {}
+Distributed=FIG.ReadConfig().getConfigValue('Distributed')
+Browser=FIG.ReadConfig().getConfigValue('Browser')
+def get_xml(path=None):
+    """
+     get element by xml
+    :return: a dict
+    """
+    if len(fMode)==0:
+        #print path,112588
+        if path==None:
+            xmlPath=os.path.join(FIG.currentpath ,'element.xml')
+        else:
+            xmlPath=os.path.join(path ,'element.xml')
+        per=elementTree.parse(xmlPath)
+        all_element=per.findall('function')
+        for firstElement in all_element:
+            funtion_name=firstElement.get("name")
+            element={}
+            for secondElement in firstElement.getchildren():
+                element_name=secondElement.get('name')
+                element_child={}
+                for thirdElement in secondElement.getchildren():
+                    element_child[thirdElement.tag]=thirdElement.text
+                element[element_name]=element_child
+            fMode[funtion_name]=element
+    return fMode
+
+def get_el_value(functioname,tarname,filepath):
+    return get_el_dict(functioname,tarname,filepath).get('value')
+
+def get_el_name(functionanme,path=None,file=None):
+    """
+    获取指模块标签名
+    :param function_name:模块名
+    :return: 列表形式返回标签名
+    """
+    nList=[]
+    if len(nList) == 0:
+        if path==None:
+            path=os.getcwd()
+        if file==None:
+            file='element.xml'
+        xmlPath = os.path.join(path, file)
+        #print xmlPath
+        per = elementTree.parse(xmlPath)
+        all_element = per.findall('function')
+
+        for firstElement in all_element:
+            funtion_name = firstElement.get("name")
+            if funtion_name == functionanme:
+                nList.append(funtion_name)
+                for secondElement in firstElement.getchildren():
+                    element_name = secondElement.get('name')
+                    nList.append(element_name)
+    return nList
+
+def get_el_list(function_name,path=None):
+    """
+    get tar name
+    :param function_name:
+    :return: list of tarnames(Sequence of irregular)
+    """
+    fc=get_xml(path)[function_name]
+    elList=[function_name,]
+    for i in fc.keys():
+        elList.append(i)
+    return elList
+
+def get_el_dict(function_name,element_name,path=None):
+    """
+    According to function name and element name  get dict of element
+    :param function_name:
+    :param element_name:
+    :return: a dict of element
+    """
+    get_xml(path)
+    element_dict=fMode.get(function_name).get(element_name)
+    return element_dict
+
+class Element(object):
+    def __init__(self,driver,url,path=None):
+        global Driver,Url
+        Driver=driver
+        if 'http' in url:
+            Url=url
+        else:
+            Url='http://'+url
+        self.getUrl()
+        self.xmldir=path
+        #logging.info(path)
+
+
+    def getUrl(self):
+        Driver.get(Url)
+        if FIG.Cookies!=None and Distributed!='ON'and Browser!='IE':
+            Driver.delete_all_cookies()
+            Driver.add_cookie(FIG.Cookies[0])
+            Driver.refresh()
+            sleep(1)
+
+    @staticmethod
+    def getdriver():
+        return Driver
+
+    def getDriver(self):
+        return Driver
+
+    def getFunctionName(self,functionName):
+        self.functionName=functionName
+
+    def get_element(self,elemenName):
+        """
+        获取元素的子标签的值
+        :param elemenName:
+        :return:
+        """
+        self.elementName=elemenName
+        self.elementDict=get_el_dict(self.functionName,self.elementName,self.xmldir)
+        self.type=self.elementDict.get('type')
+        self.path=self.elementDict.get('path')
+        #print self.type,self.path
+
+    def get_elementframe(self,elementName):
+        self.elementName=elementName
+        self.elementDict=get_el_dict(self.functionName,self.elementName)
+        elpath=self.elementDict.get('path')
+        return elpath
+
+    def is_exist(self):
+        """
+        To determine whether an element is exist
+        :return: bool (Treue od False)
+        """
+        try:
+            if self.type=='ID' or self.type=='id':
+                Driver.find_element_by_id(self.path)
+                return True
+            if self.type=='NAME'or self.type=='name':
+                Driver.find_element_by_name(self.path)
+                return True
+            if self.type=='xpath'or self.type=='XPATH':
+                Driver.find_element_by_xpath(self.path)
+                return True
+            if self.type=='CSS'or self.type=='CSS':
+                Driver.find_element_by_css_selector(self.path)
+                return True
+            if self.type=='link' or self.type=='LINK':
+                Driver.find_element_by_partial_link_text(self.path)
+                return True
+            if self.type=='CLASS'or self.type=='class':
+                Driver.find_element_by_class_name(self.path)
+                return True
+
+            return False
+
+        except NoSuchElementException:
+            return False
+
+    def check_exist(self,sTime=0.5):
+        """
+        To determine whether an element is exist  by 10 times
+        :param sTime: sleep time
+        :return: bool(True or False)
+        """
+        i=1
+        while not self.is_exist():
+            #sleep(sTime)
+            i+=1
+            if i>=1:
+                return False
+        else:
+            return True
+
+    def get(self):
+        """
+        get selenium element
+        :return: selenium element or None
+        """
+
+        if self.check_exist():
+            if self.type == 'ID' or self.type == 'id':
+                #print self.path
+                element=Driver.find_element_by_id(self.path)
+                #print element
+                return element
+            if self.type == 'NAME' or self.type == 'name':
+                element=Driver.find_element_by_name(self.path)
+                return element
+            if self.type == 'xpath' or self.type == 'XPATH':
+                element=Driver.find_element_by_xpath(self.path)
+                return element
+            if self.type == 'CSS' or self.type == 'CSS':
+                element=Driver.find_element_by_css_selector(self.path)
+                return element
+            if self.type == 'link' or self.type == 'LINK':
+                element=Driver.find_element_by_partial_link_text(self.path)
+                return element
+            if self.type == 'CLASS' or self.type == 'class':
+                element=Driver.find_element_by_class_name(self.path)
+                return element
+            return None
+        else:
+            return None
+
+    def gets(self):
+        """
+        get a element in elementList
+        :param index: selenium element's index
+        :return: elements[index]
+        """
+        if self.check_exist():
+            if self.type == 'ID' or self.type == 'id':
+                elements = Driver.find_elements_by_id(self.path)
+                return elements
+            if self.type == 'NAME' or self.type == 'name':
+                elements = Driver.find_elements_by_name(self.path)
+                return elements
+            if self.type == 'xpath' or self.type == 'XPATH':
+                elements = Driver.find_elements_by_xpath(self.path)
+                return elements
+            if self.type == 'CSS' or self.type == 'CSS':
+                elements = Driver.find_elements_by_css_selector(self.path)
+                return elements
+            if self.type == 'link' or self.type == 'LINK':
+                elements = Driver.find_elements_by_partial_link_text(self.path)
+                return elements
+            if self.type == 'CLASS' or self.type == 'class':
+                elements = Driver.find_elements_by_class_name(self.path)
+                return elements
+            return None
+        else:
+            return None
+
+    def getsIndex(self, index):
+        """
+        get a element in elementList
+        :param index: selenium element's index
+        :return: elements[index]
+        """
+        if self.check_exist():
+            if self.type == 'ID' or self.type == 'id':
+                elements = Driver.find_elements_by_id(self.path)
+                return elements[index]
+            if self.type == 'NAME' or self.type == 'name':
+                elements = Driver.find_elements_by_name(self.path)
+                return elements[index]
+            if self.type == 'xpath' or self.type == 'XPATH':
+                elements = Driver.find_elements_by_xpath(self.path)
+                return elements[index]
+            if self.type == 'CSS' or self.type == 'CSS':
+                elements = Driver.find_elements_by_css_selector(self.path)
+                return elements[index]
+            if self.type == 'link' or self.type == 'LINK':
+                elements = Driver.find_elements_by_partial_link_text(self.path)
+                return elements[index]
+            if self.type == 'CLASS' or self.type == 'class':
+                elements = Driver.find_elements_by_class_name(self.path)
+                return elements[index]
+            return None
+        else:
+            return None
+
+    def get_elementList(self):
+        """
+        get selenium elementList
+        :return: Object of elements
+        """
+        if self.check_exist():
+            if self.type == 'ID' or self.type == 'id':
+                elementList = Driver.find_elements_by_id(self.path)
+                return elementList
+            if self.type == 'NAME' or self.type == 'name':
+                elementList = Driver.find_elements_by_name(self.path)
+                return elementList
+            if self.type == 'xpath' or self.type == 'XPATH':
+                elementList = Driver.find_elements_by_xpath(self.path)
+                return elementList
+            if self.type == 'CSS' or self.type == 'CSS':
+                elementList = Driver.find_elements_by_css_selector(self.path)
+                return elementList
+            if self.type == 'link' or self.type == 'LINK':
+                elementList= Driver.find_elements_by_partial_link_text(self.path)
+                return elementList
+            if self.type == 'CLASS' or self.type == 'class':
+                elementList = Driver.find_elements_by_class_name(self.path)
+                return elementList
+            return None
+        else:
+            return None
+
+

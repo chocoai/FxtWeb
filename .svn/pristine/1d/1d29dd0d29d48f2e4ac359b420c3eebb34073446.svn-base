@@ -1,0 +1,201 @@
+# -*- coding: utf-8 -*-
+import os
+import unittest
+import COMMON.LOG as LG
+from BaseCase.GJB import query as QY
+from BaseCase.GJB import unittestBase
+class SealQuery(unittestBase.unittestBase):
+    """单套询价-盖章-查询"""
+
+    @LG.caseLog(u'XJ_GZ_001_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_001(self):
+        result = QY.Query(self, self.el, u'询价单类型', u'询价单类型', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_002_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_002(self):
+        result = QY.Query(self, self.el, u'询价单类型', u'人工询价', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_003_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_003(self):
+        result = QY.Query(self, self.el, u'询价单类型', u'自动询价价', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_004_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_004(self):
+        result = QY.Query(self, self.el, u'物业类型', u'默认', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_005_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_005(self):
+        result = QY.Query(self, self.el, u'物业类型', u'住宅', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_006_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_006(self):
+        result = QY.Query(self, self.el, u'物业类型', u'商业', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_007_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_007(self):
+        result = QY.Query(self, self.el, u'物业类型', u'办公', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_008_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_008(self):
+        result = QY.Query(self, self.el, u'物业类型', u'工业', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_009_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_009(self):
+        result = QY.Query(self, self.el, u'物业类型', u'土地', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_010_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_010(self):
+        result = QY.Query(self, self.el, u'物业类型', u'资产', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_011_盖章_已盖章_查询询价单类型')
+    def testXJ_GZ_011(self):
+        result = QY.Query(self, self.el, u'物业类型', u'其他', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_012_盖章_已盖章_查询申请时间_不填写时间')
+    def testXJ_GZ_012(self):
+        result = QY.Query(self, self.el, u'申请时间', u'', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_013_盖章_已盖章_查询申请时间_结束时间不为空')
+    def testXJ_GZ_013(self):
+        result = QY.Query(self, self.el, u'申请时间', u':2016-01-01', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_014_盖章_已盖章_查询申请时间_开始时间不为空')
+    def testXJ_GZ_014(self):
+        result = QY.Query(self, self.el, u'申请时间', u'2016-01-01', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_014_盖章_已盖章_查询申请时间_开始与结束时间不为空')
+    def testXJ_GZ_014(self):
+        result = QY.Query(self, self.el, u'申请时间', u'2016-01-01', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_015_盖章_已盖章_条件查询_未输入条件')
+    def testXJ_GZ_015(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_016_盖章_已盖章_条件查询_物业名称')
+    def testXJ_GZ_016(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'苹果园狮子座6层6E', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_017_盖章_已盖章_条件查询_物业名称中字符')
+    def testXJ_GZ_017(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'苹果园', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_018_盖章_已盖章_条件查询_输入某个字符')
+    def testXJ_GZ_018(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'水', Inquiry='Gaizhang', substate='yigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_019_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_019(self):
+        result = QY.Query(self, self.el, u'询价单类型', u'询价单类型', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_020_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_020(self):
+        result = QY.Query(self, self.el, u'询价单类型', u'人工询价', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_021_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_021(self):
+        result = QY.Query(self, self.el, u'询价单类型', u'自动询价价', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_022_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_022(self):
+        result = QY.Query(self, self.el, u'物业类型', u'默认', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_023_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_023(self):
+        result = QY.Query(self, self.el, u'物业类型', u'住宅', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_024_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_024(self):
+        result = QY.Query(self, self.el, u'物业类型', u'商业', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_025_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_025(self):
+        result = QY.Query(self, self.el, u'物业类型', u'办公', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_026_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_026(self):
+        result = QY.Query(self, self.el, u'物业类型', u'工业', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_027_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_027(self):
+        result = QY.Query(self, self.el, u'物业类型', u'土地', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_028_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_028(self):
+        result = QY.Query(self, self.el, u'物业类型', u'资产', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_029_盖章_待盖章_查询询价单类型')
+    def testXJ_GZ_029(self):
+        result = QY.Query(self, self.el, u'物业类型', u'其他', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_030_盖章_待盖章__查询申请时间_不填写时间')
+    def testXJ_GZ_030(self):
+        result = QY.Query(self, self.el, u'申请时间', u'', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_031_盖章_待盖章__查询申请时间_结束时间不为空')
+    def testXJ_GZ_031(self):
+        result = QY.Query(self, self.el, u'申请时间', u':2016-01-01', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_032_盖章_待盖章__查询申请时间_开始时间不为空')
+    def testXJ_GZ_032(self):
+        result = QY.Query(self, self.el, u'申请时间', u'2016-01-01', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_033_盖章_待盖章__查询申请时间_开始与结束时间不为空')
+    def testXJ_GZ_033(self):
+        result = QY.Query(self, self.el, u'申请时间', u'2016-01-01', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_034_盖章_待盖章__条件查询_未输入条件')
+    def testXJ_GZ_034(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_035_盖章_待盖章__条件查询_物业名称')
+    def testXJ_GZ_035(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'苹果园狮子座6层6E', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_036_盖章_待盖章__条件查询_物业名称中字符')
+    def testXJ_GZ_036(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'苹果园', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_GZ_037_盖章_待盖章__条件查询_输入某个字符')
+    def testXJ_GZ_037(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'水', Inquiry='Gaizhang', substate='daigaizheng')
+        self.assertTrue(result)
+
+if __name__=='__main__':
+    unittest.main()

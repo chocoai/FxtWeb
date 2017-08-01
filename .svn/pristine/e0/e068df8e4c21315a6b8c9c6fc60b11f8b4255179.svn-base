@@ -1,0 +1,451 @@
+#-*- coding:utf-8 -*-
+import os
+from COMMON import COMMON as CN
+import commond as cn
+import config as cg
+import COMMON.ELEMNET as EL
+import logging
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+import random
+from time import sleep
+import time
+from reportbase import reportBase
+import reportadd as ra
+import reportQuery as rq
+import COMMON.CONFIG as CFG
+dataDetail=cg.reportDataDetail
+key=None
+tabledate=cg.tableData
+examineModif=cg.ExamineModif
+User=cg.reportUser
+reportFrame=cg.reportFrame
+Usertxt=cg.reportUserText
+EjsonData=cg.EjsonData
+
+class Modification(reportBase):
+
+    def updateGeneral(self, func, el, sub, *args):
+        self.reportTab(func,el,sub)
+        dataId=self.chose_data(el,sub=sub)
+        cn.switchToDetailUI(func,el)
+        self.chkTab(el)
+
+        a = EL.get_el_list('RPdataDetail', cg.path)
+        idatatype=args[0]
+        currenttxtList = []
+        if idatatype.strip() == u'评估方法':
+            print 111
+            if type(idatatype) == list:
+                pass
+            else:
+                print 333
+                if args[1] == u'比较法':
+                    print 222
+                    func.driver.find_element_by_xpath('//*[@id="field_valuationmethods"]/input[1]').click()
+                    sleep(5)
+                    currenttxtList.append(u'比较法')
+                elif args[1] == u'收益法':
+                    func.driver.find_element_by_xpath('//*[@id="field_valuationmethods"]/input[2]').click()
+                elif args[1] == u'成本法':
+                    func.driver.find_element_by_xpath('//*[@id="field_valuationmethods"]/input[3]').click()
+                elif args[1] == u'假设开发法':
+                    func.driver.find_element_by_xpath('//*[@id="field_valuationmethods"]/input[4]').click()
+                elif args[1] == u'基准地价修正法':
+                    func.driver.find_element_by_xpath('//*[@id="field_valuationmethods"]/input[5]').click()
+                elif args[1] == u'路线价法':
+                    func.driver.find_element_by_xpath('//*[@id="field_valuationmethods"]/input[6]').click()
+                elif args[1] == u'长期趋势法':
+                    func.driver.find_element_by_xpath('//*[@id="field_valuationmethods"]/input[7]').click()
+        else:
+            for j in range(1, len(a)):
+                b = EL.get_el_dict(a[0], a[j], cg.path)
+                if b.get('name').strip() == idatatype.strip():
+                    el.getFunctionName(a[0])
+                    el.get_element(a[j])
+                    if b.get('elementType') == 'select':
+
+                        currentscttext = Select(el.get()).all_selected_options[0].text
+                        if args[1] == None:
+                            if u'请选择' in currentscttext:
+                                rdmod = random.randint(2, len(Select(el.get()).options) - 1)
+                                Select(el.get()).select_by_index(rdmod)
+                                logging.info(Select(el.get()).all_selected_options[0].text)
+                            else:
+                                selOption = Select(el.get()).all_selected_options
+                                allOptions = Select(el.get()).options
+                                stime=time.time()
+                                if selOption[0] in allOptions:
+                                    index = allOptions.index(selOption[0])
+                                    while True:
+                                        rd = random.randint(1, len(allOptions) - 1)
+                                        #print index,rd
+                                        if index != rd:
+                                            Select(el.get()).select_by_index(rd)
+                                            break
+                                        if time.time()-stime>10:
+                                            logging.error(str(len(allOptions))+',not other data')
+                                            break
+                        elif args[1] in currentscttext and u'请选择' not in currentscttext:
+                            pass
+                        else:
+                            allOptions = Select(el.get()).options
+                            for selem in allOptions:
+                                if args[1].strip() == selem.text.strip():
+                                    index = allOptions.index(selem)
+                                    Select(el.get()).select_by_index(index)
+                                    break
+                            else:
+                                logging.error(u'未找到此选项：' + args[1])
+        
+                        currenttxtList.append(args[1])
+        
+        
+                        # currenttxtList.append(Select(el.get()).all_selected_options[0].text)
+                    elif b.get('elementType') == 'input' or b.get('elementType') == 'textarea':
+                        el.get().clear()
+                        el.get().send_keys(args[1])
+                        currenttxtList.append(args[1])
+        
+                        # currenttxtList.append(el.get().get_attribute('value'))
+                    elif b.get('elementType') == 'button':
+                        el.get().click()
+                        """
+                        if idatatype == u'查勘员':
+                            ra.reportAdd().choices_Auser(func, el, 'Ctan1')
+                            # self.bSwithcfrname(el, key)
+                            try:
+                                xf = func.driver.find_element_by_xpath(
+                                    '/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe')
+                            except:
+                                xf = func.driver.find_element_by_xpath(
+                                    '/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe')
+                            func.driver.switch_to.frame(xf)
+                            # print func.driver.current_url
+                        else:
+
+                            if idatatype == u'报告撰写辅助人':
+                                ra.reportAdd().choices_Auser(func, el, 'Mtan1')
+                            elif idatatype == u'归档资料负责人':
+                                ra.reportAdd().choices_Auser(func, el, 'Gtan1')
+                            else:
+                                ra.reportAdd().choices_Auser(func, el, 'Atan1')
+
+                            #if args[1]!=None:
+                                #self.choices_Quser(func,el,args[1])
+                            """
+                        self.choices_Muser(func,el,args[1])
+                        self.bSwithcfrname(el, key)
+                        #print func.driver.current_url
+                        el.getFunctionName(a[0])
+                        el.get_element(a[j])
+                        currenttxtList.append(args[1])
+                    elif b.get('elementType') == 'checkbox':
+                        el.get().click()
+                        currenttxtList.append(args[1])
+                    elif b.get('elementType') == 'readonly':
+                        func.driver.execute_script(
+                            "var setDate=function $(id){ return document.getElementById(id); };setDate(\"" + b.get(
+                                'path') + "\").removeAttribute('readonly');")
+                        el.get().clear()
+                        el.get().send_keys(args[1])
+                        currenttxtList.append(el.get().text)
+                    else:
+                        el.get().clear()
+                        el.get().send_keys(args[1])
+                        currenttxtList.append(el.get().text)
+                    #logging.info(args[0] +u':' + args[1])
+                    break
+        if idatatype==u'分支机构' or idatatype==u'委托类型':
+            el.get_element(u'technicalteam')
+            try:
+                currentscttext = Select(el.get()).all_selected_options[0].text
+            except Exception as e:
+                logging.info(e)
+            if u'请选择' in currentscttext:
+                rdmod = random.randint(2, len(Select(el.get()).options) - 1)
+                Select(el.get()).select_by_index(rdmod)
+                logging.info(Select(el.get()).all_selected_options[0].text)
+
+        el.getFunctionName(dataDetail[0])
+        if sub==u'正式报告':
+            #完成时间
+            el.get_element('completedate')
+            if el.get().get_attribute('value')=='':
+                func.driver.execute_script(
+                    "var setDate=function $(id){ return document.getElementById(id); };setDate('field_completedate').removeAttribute('readonly');")
+                el.get().clear()
+                nowtime=time.strftime('%Y-%m-%d', time.localtime())
+                el.get().send_keys(nowtime)
+
+            #报告完成编号
+            el.get_element('reportno')
+            if el.get().get_attribute('value')=='':
+                el.get_element('getNumber')
+                el.get().click()
+
+            el.get_element('technicalteam')
+            if Select(el.get()).all_selected_options[0].text.strip()==u'请选择':
+                rd=random.randint(1,len(Select(el.get()).options)-1)
+                Select(el.get()).select_by_index(rd)
+
+        func.driver.find_element_by_id('btnSave').click()
+        if sub==u'业务登记':
+            func.driver.switch_to.default_content()
+            func.driver.find_element_by_xpath(u'//*[@value="确定"]').click()
+        return dataId
+    def chose_data(self, el,idNum=None,sub=None):
+        """
+        选择指定数据
+        :param el:
+        :param idNum:
+        :param sub:
+        :return:
+        """
+        dListID = []
+        el.getFunctionName(tabledate[0])
+        el.get_element(tabledate[1])
+        dlist = el.gets()
+        if idNum==None:
+            rd=random.randint(0,len(dlist)-1)
+            dID = el.gets()[rd].find_element_by_xpath('td[2]/div').text
+        else:
+            for i in range(len(el.gets())):
+                idList=el.gets()[i].find_element_by_xpath('td[2]/div').text
+                #print idList
+                if idList.strip()==idNum:
+                    rd=i
+                    dID=idNum
+                    break
+            else:
+                logging.error(u'no data')
+                exit()
+        logging.info(u'业务编号: '+str(dID))
+        sleep(3)
+        ActionChains(el.getDriver()).double_click(el.gets()[rd].find_element_by_xpath('td[2]/div')).perform()
+        return dID
+    def choices_Muser(self,func,el,user):
+        """
+        选择用户
+        :param func:
+        :param el:
+        :param user:
+        :return:
+        """
+        self.switcthToDefault(func)
+        el.getFunctionName(reportFrame[0])
+        el.get_element('AbusinessUser')
+        xf = el.get()
+        func.driver.switch_to.frame(xf)
+        sleep(3)
+        currentUrl = func.driver.current_url
+        #print currentUrl
+        logging.info(currentUrl)
+        ststart=time.time()
+        while  'Edit.aspx' in currentUrl:
+            self.switcthToDefault(func)
+            el.getFunctionName(reportFrame[0])
+            el.get_element('dDetail')
+            xf = el.get()
+            func.driver.switch_to.frame(xf)
+            currentUrl = func.driver.current_url
+            logging.info(currentUrl)
+            if time.time()-ststart>10:
+                logging.error('not element,please check!')
+                break
+
+        el.getFunctionName(User[0])
+        el.get_element('sinput')
+        el.get().send_keys(user)
+        el.get().send_keys(Keys.ENTER)
+        js = True
+        i = 1
+        utime=time.time()
+        while js:
+            try:
+                txt = func.driver.find_element_by_id('userchkTree_' + str(i) + '_span').text.split(']')[1]
+                # print txt
+                if txt == user:
+                    func.driver.find_element_by_id('userchkTree_' + str(i) + '_check').click()
+                    js = False
+            except:
+                pass
+            finally:
+                if time.time()-utime>10:
+                    logging.error(u'Not found user:'+user)
+                    break
+                i += 1
+
+        el.get_element('btnOk')
+        el.get().click()
+    def updtaObject(self,func,el,sub,**kwargs):
+        self.reportTab(func, el, sub)
+        dataId = self.chose_data(el)
+        cn.switchToDetailUI(func, el)
+        self.chkTab(el)
+        el.getFunctionName(dataDetail[0])
+        el.get_element('biztype')
+        field_areaid = Select(el.get()).all_selected_options[0].text
+        if u'请选择' in field_areaid:
+            rdX = random.randint(2, len(Select(el.get()).options) - 1)
+            Select(el.get()).select_by_index(rdX)
+            XZQtxt = Select(el.get()).all_selected_options[0].text
+            logging.info(XZQtxt)
+        else:
+            logging.info(field_areaid)
+
+        el.get_element('addObject')
+        ActionChains(el.getDriver()).move_to_element(el.get()).perform()
+        el.get_element('addObjectType')
+        el.gets()[0].click()
+        logging.info(u'进入委估对象界面')
+        sleep(3)
+        func.driver.switch_to.default_content()
+        # self.duserSwitchFrame(el)
+        xf = el.getDriver().find_element_by_xpath(
+            '/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe')
+        el.getDriver().switch_to.frame(xf)
+        txt = 'http://gjb.fxtchina.com/Reports/ReportEdit.aspx?reportid=0&callback=search&dotype=putong'
+        cuturl = func.driver.current_url
+        print cuturl
+        if cuturl == txt:
+            func.driver.switch_to.default_content()
+            xf = el.getDriver().find_element_by_xpath(
+                '/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe')
+            el.getDriver().switch_to.frame(xf)
+            newurl = func.driver.current_url
+            print newurl
+        sleep(2)
+        self.tabcheck(el)
+        a = EL.get_el_list('EntrustObject', cg.path)
+        el.getFunctionName('EntrustObject')
+
+        # 行政区
+        el.get_element('xingzhengqu')
+        field_areaid = Select(el.get()).all_selected_options[0].text
+        if u'请选择' in field_areaid:
+            rdX = random.randint(2, len(Select(el.get()).options) - 1)
+            Select(el.get()).select_by_index(rdX)
+            XZQtxt = Select(el.get()).all_selected_options[0].text
+            el.get_element('quyu')
+            if len(Select(el.get()).options) > 2:
+                rdQ = random.randint(2, len(Select(el.get()).options) - 1)
+                Select(el.get()).select_by_index(rdQ)
+                QYtxt = Select(el.get()).all_selected_options[0].text
+            else:
+                QYtxt = ''
+            logging.info(u'行政区：' + XZQtxt + QYtxt)
+            # 委估对象全称
+            el.get_element('weiguduixiangquancheng')
+            el.get().send_keys('weiguduixiangquancheng')
+            logging.info(u'委估对象名称:')
+            # 建筑面积
+            el.get_element('jianzhumianji')
+            logging.info(u'建筑面积:')
+            el.get().send_keys('100')
+
+        if kwargs == {}:
+            DataE = EjsonData
+        else:
+            DataE = kwargs
+        print DataE
+        for i in DataE.keys():
+            # print i
+            for j in range(1, len(a)):
+                b = EL.get_el_dict(a[0], a[j], cg.path)
+                if b.get('name') == i:
+                    el.getFunctionName(a[0])
+                    # el.get_element(a[j])
+                    # el.get()
+                    # break
+                    dictFunction = EL.get_el_dict(a[0], a[j], cg.path)
+                    el.get_element(a[j])
+                    if 'elementType' in dictFunction:
+                        if dictFunction['elementType'] == 'select':
+                            field_areaid = Select(el.get()).all_selected_options[0].text
+                            '''
+                            if u'请选择' in field_areaid:
+                                rdX = random.randint(2, len(Select(el.get()).options) - 1)
+                                Select(el.get()).select_by_index(rdX)
+                                XZQtxt = Select(el.get()).all_selected_options[0].text
+                            '''
+                            if field_areaid == DataE[i]:
+                                pass
+                            else:
+                                txtcontent = Select(el.get()).options
+                                for x in range(len(txtcontent)):
+                                    # print txtcontent[x].text
+                                    if txtcontent[x].text == DataE[i]:
+                                        Select(el.get()).select_by_index(x)
+                        elif dictFunction['elementType'] == 'input' or dictFunction['elementType'] == 'textarea':
+                            el.get().send_keys(DataE[i])
+                        else:
+                            pass
+        print type(kwargs)
+        el.get_element('btnSave')
+        el.get().click()
+class ModificationCheck(Modification):
+    def check_updateGeneral(self, func, el, sub, *args):
+        dataId=Modification().updateGeneral(func, el, sub, *args)
+        sleep(3)
+        self.mswitchfrname(func,el,sub)
+        self.chose_data(el,dataId)
+        if args[0] == u'评估方法':
+            delist = func.driver.find_elements_by_xpath('//*[@id="field_valuationmethods"]/input')
+            txtlist = func.driver.find_elements_by_xpath('//*[@id="field_valuationmethods"]/input')
+            for i in range(len(delist)):
+                print delist[i]
+                try:
+                    if delist[i].get_attribute('checked') == 'checked':
+                        return True
+                except:
+                    continue
+            else:
+                logging.error('not data ')
+                exit()
+
+        else:
+            elType=''
+            a= EL.get_el_list('RPdataDetail', cg.path)
+            for j in range(1, len(a)):
+                b = EL.get_el_dict(a[0], a[j], cg.path)
+
+                if b.get('name').strip() == args[0].strip():
+                    elname=a[j]
+                    elType=b.get('elementType')
+                    break
+            else:
+                logging.error('not found!')
+                exit()
+
+        cn.switchToDetailUI(func, el)
+        self.chkTab(el)
+        if elType=='button':
+            b = EL.get_el_list(Usertxt[0], cg.path)
+            for j in range(1, len(b)):
+                c = EL.get_el_dict(b[0], b[j], cg.path)
+                print c.get('name')
+                if c.get('name').strip() == args[0].strip():
+                    if sub==u'业务登记':
+                        elnametxt='txtBusinessUserName'
+                    else:
+                        elnametxt = b[j]
+                    break
+            else:
+                logging.error('not found!')
+                exit()
+            rname=cn.GetDetail(func,el,Usertxt,elnametxt)
+        else:
+            rname=cn.GetDetail(func,el,dataDetail,elname)
+        #print rname
+        if args[1]==None:
+            return True
+        else:
+            if rname.strip()==args[1].strip():
+                return True
+        return False
+
+
+
+

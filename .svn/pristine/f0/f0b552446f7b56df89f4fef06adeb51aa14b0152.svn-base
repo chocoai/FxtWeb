@@ -1,0 +1,94 @@
+#-*- coding:utf-8 -*-
+import os
+import time
+import unittest
+import COMMON.LOG as LG
+from BaseCase.GJB import commond as cm
+from BaseCase.GJB import unittestBase
+from BaseCase.GJB import reportbase as rb
+class reportBase(unittestBase.unittestBase):
+    """业务报告：功能"""
+
+    @LG.caseLog(u'GJB_YPBG_GN_001_预评报告')
+    def testGJB_YPBG_GN_001(self):
+        rt=rb.reportTest().check_reportTilte(self,self.el,u'预评报告')
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_002_Tab页【全部】')
+    def testGJB_YPBG_GN_002(self):
+        rt = rb.reportTest().check_Tab(self, self.el, u'预评报告', u'全部')
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_003_Tab页【我要撰写的】')
+    def testGJB_YPBG_GN_003(self):
+        rt = rb.reportTest().check_Tab(self, self.el, u'预评报告', u'我要撰写的')
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_004_Tab页【转交待我确认的】')
+    def testGJB_YPBG_GN_004(self):
+        rt = rb.reportTest().check_Tab(self, self.el, u'预评报告', u'已转交他人的')
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_005_Tab页【我提审的】')
+    def testGJB_YPBG_GN_005(self):
+        rt = rb.reportTest().check_Tab(self, self.el, u'预评报告', u'我提审的')
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_006_Tab页【待我审的】')
+    def testGJB_YPBG_GN_006(self):
+        rt = rb.reportTest().check_Tab(self, self.el, u'预评报告', u'待我审的')
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_007_Tab页【我已审的】')
+    def testGJB_YPBG_GN_007(self):
+        rt = rb.reportTest().check_Tab(self, self.el, u'预评报告', u'我已审的')
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_008_Tab页【我已完成的】')
+    def testGJB_YPBG_GN_008(self):
+        rt = rb.reportTest().check_Tab(self, self.el, u'预评报告', u'我已完成的')
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_009_复制新增【未选择数据】')
+    def testGJB_YPBG_GN_009(self):
+        rt = rb.reportTest().check_copyBtn(self, self.el, u'预评报告', 0)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_010_复制新增【选择多条数据】')
+    def testGJB_YPBG_GN_010(self):
+        rt = rb.reportTest().check_copyBtn(self, self.el, u'预评报告', 2)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_011_复制新增【选择一条数据】')
+    def testGJB_YPBG_GN_011(self):
+        rt = rb.reportTest().check_copyBtn(self, self.el, u'预评报告', 1)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_012_删除【未选择数据】')
+    def testGJB_YPBG_GN_012(self):
+        rt = rb.reportTest().check_deleteBtn(self, self.el, u'预评报告', 0)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_013_删除【选择一条数据】')
+    def testGJB_YPBG_GN_013(self):
+        rt = rb.reportTest().check_deleteBtn(self, self.el, u'预评报告', 1)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_014_删除【选择多条数据】')
+    def testGJB_YPBG_GN_014(self):
+        rt = rb.reportTest().check_deleteBtn(self, self.el, u'预评报告', 2)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_015_我要撰写的_转交【未选择数据】')
+    def testGJB_YPBG_GN_015(self):
+        rt = rb.reportTest().check_reassignBtn(self, self.el, u'预评报告', u'我要撰写的', 0)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_016_我要撰写的_转交【选择一条数据】')
+    def testGJB_YPBG_GN_016(self):
+        rt = rb.reportTest().check_reassignBtn(self, self.el, u'预评报告', u'我要撰写的', 1)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_017_我要撰写的_转交【选择多条数据】')
+    def testGJB_YPBG_GN_017(self):
+        rt = rb.reportTest().check_reassignBtn(self, self.el, u'预评报告', u'我要撰写的', 2)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_018_待我审的_转交【未选择条数据】')
+    def testGJB_YPBG_GN_018(self):
+        rt = rb.reportTest().check_reassignBtn(self, self.el, u'预评报告', u'待我审的', 0)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_019_待我审的_转交【选择一条数据】')
+    def testGJB_YPBG_GN_019(self):
+        rt = rb.reportTest().check_reassignBtn(self, self.el, u'预评报告', u'待我审的', 1)
+        self.assertTrue(rt)
+    @LG.caseLog(u'GJB_YPBG_GN_020_待我审的_转交【选择多条数据】')
+    def testGJB_YPBG_GN_020(self):
+        rt = rb.reportTest().check_reassignBtn(self, self.el, u'预评报告', u'待我审的', 2)
+        self.assertTrue(rt)
+
+if __name__=='__main__':
+    unittest.main()

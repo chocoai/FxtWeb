@@ -1,0 +1,15 @@
+testExamineModification
+testAddNew
+testAddNewMulti
+testCopyNew
+testQueryAll
+testQueryAutomatedValuation
+testQueryBusiness
+testQueryHouse
+testQueryIndustry
+testQueryLand
+testQueryMultInquiry
+testQueryOffice
+testQueryOther
+testQueryProperty
+testQuerySeal

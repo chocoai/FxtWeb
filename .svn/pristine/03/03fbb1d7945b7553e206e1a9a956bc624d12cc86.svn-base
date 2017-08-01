@@ -1,0 +1,469 @@
+# -*- coding: utf-8 -*-
+import os
+import unittest
+from time import sleep
+import paramunittest
+import COMMON.DRIVER as DR
+import COMMON.ELEMNET as EL
+import COMMON.LOG as LG
+import COMMON.COMMON as CN
+from BaseCase.GJB import addnew
+from BaseCase.GJB import commond
+from BaseCase.GJB import unittestBase
+from COMMON import CONFIG as CFG
+xmlpath=os.path.join(CFG.prjDir,'BaseCase\GJB')
+url=CFG.ReadConfig().getConfigValue('Url')
+logger=LG.MyLog().get_log().get_myLogger()
+AddNewDetail=EL.get_el_name('AddNewDetail',xmlpath)
+
+class AddNewMulti(unittestBase.unittestBase):
+    """多套询价-新增询价"""
+
+
+
+    @LG.caseLog(u'XJ_XZ_133_多套询价_新增询价_委估对象_土地证载用途')
+    def testXJ_XZ_133(self):
+        result = addnew.addnewData(self, self.el, 'tudizhengzaiyongtu', u'住宅', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'住宅')
+
+    @LG.caseLog(u'XJ_XZ_123_多套询价_新增询价_客户信息_看现场联系人')
+    def testXJ_XZ_123(self):
+        result = addnew.addnewData(self, self.el, 'kanxianchanglianxiren', u'看现场联系人', Inquiry='Duotao')
+        self.assertEqual(result, u'看现场联系人')
+
+
+
+    @LG.caseLog(u'XJ_XZ_143_多套询价_新增询价_委估对象_地址')
+    def testXJ_XZ_143(self):
+        result = addnew.addnewData(self, self.el, 'dizhi', u'地址', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'地址')
+
+    @LG.caseLog(u'XJ_XZ_115_多套询价_新增询价_客户信息_委托方')
+    def testXJ_XZ_115(self):
+        result = addnew.addnewData(self, self.el, 'weituofang', 'fdsfsdf', Inquiry='Duotao')
+        self.assertEqual(result, u'fdsfsdf')
+
+    @LG.caseLog(u'XJ_XZ_207_多套询价_新增询价_估价信息_价格说明')
+    def testXJ_XZ_207(self):
+        result = addnew.addnewData(self, self.el, "jiageshuoming", u'价格说明', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'价格说明')
+
+
+    @LG.caseLog(u'XJ_XZ_182_多套询价_新增询价_委估对象_建筑面积')
+    def testXJ_XZ_182(self):
+        result = addnew.addnewData(self, self.el, "jianzhumianji", u'1111', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'1,111')
+
+
+    # 不支持Chrome
+    @LG.caseLog(u'XJ_XZ_217_多套询价_新增询价_房屋附属信息_附属房屋总价')
+    def XJ_XZ_217(self):
+        result = addnew.addnewOutbuilding(self, self.el, u"fuzhufangwuzongjia", u'2000000', Inquiry='Duotao',
+                                          valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+    @LG.caseLog(u'XJ_XZ_216_多套询价_新增询价_房屋附属信息_添加房屋附属信息')
+    def XJ_XZ_216(self):
+        result = addnew.addnewOutbuilding(self, self.el, u"必填", u'车库', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'车库')
+
+
+    @LG.caseLog(u'XJ_XZ_141_多套询价_新增询价_委估对象_法定用途')
+    def testXJ_XZ_141(self):
+        result = addnew.addnewData(self, self.el, 'fadingyongtu', u'住宅', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'住宅')
+
+    @LG.caseLog(u'XJ_XZ_130_多套询价_新增询价_客户信息_分支机构')
+    def testXJ_XZ_130(self):
+        result = addnew.addnewData(self, self.el, 'fenzhijigou', u'广州分部', Inquiry='Duotao').strip()
+        #print result
+        self.assertEqual(result, u'广州分部')
+
+    @LG.caseLog(u'XJ_XZ_126_多套询价_新增询价_客户信息_联系人传真')
+    def testXJ_XZ_126(self):
+        result = addnew.addnewData(self, self.el, 'lianxirenchuanzhen', u'01234567890', Inquiry='Duotao')
+        self.assertEqual(result, u'01234567890')
+
+
+     ##需要点击已回价按钮----已解决
+    @LG.caseLog(u'XJ_XZ_195_多套询价_新增询价_估价信息_单价')
+    def testXJ_XZ_195(self):
+        result = addnew.addnewData(self, self.el, "danjia", u'20000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'20,000')
+
+    @LG.caseLog(u'XJ_XZ_156_多套询价_新增询价_委估对象_卫生间')
+    def testXJ_XZ_156(self):
+        result = addnew.addnewData(self, self.el, 'weishengjian', u'9', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'9')
+
+
+
+    @LG.caseLog(u'XJ_XZ_179_多套询价_新增询价_委估对象_买房人')
+    def testXJ_XZ_179(self):
+        result = addnew.addnewData(self, self.el, "maifangren", u'买房人', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'买房人')
+
+    @LG.caseLog(u'XJ_XZ_168_多套询价_新增询价_委估对象_土地证载地址')
+    def testXJ_XZ_168(self):
+        result = addnew.addnewData(self, self.el, "tudizhengzaidizhi", u'土地证载地址', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'土地证载地址')
+
+    @LG.caseLog(u'XJ_XZ_167_多套询价_新增询价_委估对象_土地使用权人')
+    def testXJ_XZ_167(self):
+        result = addnew.addnewData(self, self.el, "tudishiyongquanren", u'土地使用权人', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'土地使用权人')
+
+    @LG.caseLog(u'XJ_XZ_161_多套询价_新增询价_委估对象_拟贷金额')
+    def testXJ_XZ_161(self):
+        result = addnew.addnewData(self, self.el, "yidaijin'e", u'111', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'111')
+
+
+
+    @LG.caseLog(u'XJ_XZ_151_多套询价_新增询价_委估对象_房产证号')
+    def testXJ_XZ_151(self):
+        result = addnew.addnewData(self, self.el, 'fangchanzhenghao', u'a2000000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'a2000000')
+
+    @LG.caseLog(u'XJ_XZ_147_多套询价_新增询价_委估对象_是否唯一住房')
+    def testXJ_XZ_147(self):
+        result = addnew.addnewData(self, self.el, 'shifouweiyizhufang', u'是', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'是')
+
+    @LG.caseLog(u'XJ_XZ_136_多套询价_新增询价_委估对象_楼层')
+    def testXJ_XZ_136(self):
+        result = addnew.addnewData(self, self.el, 'louceng', u'99', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'99')
+
+    @LG.caseLog(u'XJ_XZ_131_多套询价_新增询价_委估对象_输入信息')
+    def testXJ_XZ_131(self):
+        result = addnew.addnewData(self, self.el, 'loupanmingcheng', u'输入信息', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'输入信息')
+
+
+
+    @LG.caseLog(u'XJ_XZ_108_多套询价_新增询价_xxxx_XXX')
+    def testXJ_XZ_114(self):
+        result = addnew.addnewData(self,self.el,'loudongmingcheng','fdsfsdf',Inquiry='Duotao',valuation=True)
+
+
+    @LG.caseLog(u'XJ_XZ_116_多套询价_新增询价_客户信息_委托方联系人')
+    def testXJ_XZ_116(self):
+        result = addnew.addnewData(self,self.el,'weituofanglianxiren',u'委托方联系人',Inquiry='Duotao')
+        self.assertEqual(result, u'委托方联系人')
+
+    @LG.caseLog(u'XJ_XZ_117_多套询价_新增询价_客户信息_委托方联系电话')
+    def testXJ_XZ_117(self):
+        result = addnew.addnewData(self,self.el,'weituofanglianxidianhua','12345678901',Inquiry='Duotao')
+        self.assertEqual(result, u'12345678901')
+
+    @LG.caseLog(u'XJ_XZ_118_多套询价_新增询价_客户信息_银行联系人')
+    def testXJ_XZ_118(self):
+        result = addnew.addnewData(self, self.el, 'yinhanglianxiren', u'银行联系人', Inquiry='Duotao')
+        self.assertEqual(result, u'银行联系人')
+
+    @LG.caseLog(u'XJ_XZ_119_多套询价_新增询价_客户信息_银行联系人电话')
+    def testXJ_XZ_119(self):
+        result = addnew.addnewData(self,self.el,'weituofanglianxidianhuadianhua',u'01234567890',Inquiry='Duotao')
+        self.assertEqual(result, u'01234567890')
+
+    @LG.caseLog(u'XJ_XZ_120_多套询价_新增询价_客户信息_客户类型')
+    def testXJ_XZ_120(self):
+        result = addnew.addnewData(self,self.el,'kehuleixing',u'中介',Inquiry='Duotao')
+        self.assertEqual(result, u'中介')
+
+    @LG.caseLog(u'XJ_XZ_121_多套询价_新增询价_客户信息_委托客户')
+    def testXJ_XZ_121(self):
+        result = addnew.addnewData(self,self.el,'weituokehu',u'B包商银行',Inquiry='Duotao')
+        self.assertEqual(result, u'B包商银行')
+
+
+
+    @LG.caseLog(u'XJ_XZ_124_多套询价_新增询价_客户信息_看现场联系人电话')
+    def testXJ_XZ_124(self):
+        result = addnew.addnewData(self,self.el,'kanxianchanglianxirendianhua',u'01234567890',Inquiry='Duotao')
+        self.assertEqual(result, u'01234567890')
+
+    @LG.caseLog(u'XJ_XZ_125_多套询价_新增询价_客户信息_业务员所属部门')
+    def testXJ_XZ_125(self):
+        result = addnew.addnewData(self,self.el,'yewuyuansuoshubumen',u'aa',Inquiry='Duotao')
+        self.assertEqual(result, u'aa')
+
+
+    @LG.caseLog(u'XJ_XZ_127_多套询价_新增询价_客户信息_业务员所属部门负责人')
+    def testXJ_XZ_127(self):
+        result = addnew.addnewData(self,self.el,'yewuyuansuoshubumenfuzheren',u'业务员所属部门负责人',Inquiry='Duotao')
+        self.assertEqual(result, u'业务员所属部门负责人')
+
+    @LG.caseLog(u'XJ_XZ_128_多套询价_新增询价_客户信息_备注信息')
+    def testXJ_XZ_128(self):
+        result = addnew.addnewData(self, self.el, 'beizhu', u'备注信息', Inquiry='Duotao')
+        self.assertEqual(result, u'备注信息')
+
+    ######  委估对象
+
+    @LG.caseLog(u'XJ_XZ_132_多套询价_新增询价_委估对象_土地实际用途')
+    def testXJ_XZ_132(self):
+        result = addnew.addnewData(self, self.el, 'tudishijiyongtu', u'住宅', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'住宅')
+
+
+
+    @LG.caseLog(u'XJ_XZ_134_多套询价_新增询价_委估对象_楼盘名称')
+    def testXJ_XZ_134(self):
+        result = addnew.addnewData(self, self.el, 'loupanmingcheng', u'楼盘名称', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'楼盘名称')
+
+    @LG.caseLog(u'XJ_XZ_135_多套询价_新增询价_委估对象_楼栋名称')
+    def testXJ_XZ_135(self):
+        result = addnew.addnewData(self,self.el,'loudongmingcheng','fdsfsdf',Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'fdsfsdf')
+
+
+
+    @LG.caseLog(u'XJ_XZ_137_多套询价_新增询价_委估对象_房号')
+    def testXJ_XZ_137(self):
+        result = addnew.addnewData(self, self.el, 'fanghao', u'房号99', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'房号99')
+
+    @LG.caseLog(u'XJ_XZ_138_多套询价_新增询价_委估对象_产权类型')
+    def testXJ_XZ_138(self):
+        result = addnew.addnewData(self, self.el, 'chanquanleixing', u'个人', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'个人')
+
+    @LG.caseLog(u'XJ_XZ_139_多套询价_新增询价_委估对象_房间')
+    def testXJ_XZ_139(self):
+        result = addnew.addnewData(self, self.el, 'fangjian', u'9', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'9')
+
+    @LG.caseLog(u'XJ_XZ_140_多套询价_新增询价_委估对象_阳台')
+    def testXJ_XZ_140(self):
+        result = addnew.addnewData(self, self.el, 'yangtai', u'9', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'9')
+
+
+    @LG.caseLog(u'XJ_XZ_142_多套询价_新增询价_委估对象_用途')
+    def testXJ_XZ_142(self):
+        result = addnew.addnewData(self, self.el, 'yongtu', u'普通住宅', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'普通住宅')
+
+
+    @LG.caseLog(u'XJ_XZ_144_多套询价_新增询价_委估对象_是否满5年')
+    def testXJ_XZ_144(self):
+        result = addnew.addnewData(self, self.el, 'shifouman5nian', u'否', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'否')
+
+    @LG.caseLog(u'XJ_XZ_145_多套询价_新增询价_委估对象_首次购房')
+    def testXJ_XZ_145(self):
+        result = addnew.addnewData(self, self.el, 'shoucigoufang', u'否', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'否')
+
+    @LG.caseLog(u'XJ_XZ_146_多套询价_新增询价_委估对象_建筑年代')
+    def testXJ_XZ_146(self):
+        result = addnew.addnewData(self, self.el, 'jianzhuniandai', u'1980', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'1980')
+
+
+
+    @LG.caseLog(u'XJ_XZ_148_多套询价_新增询价_委估对象_土地面积')
+    def testXJ_XZ_148(self):
+        result = addnew.addnewData(self, self.el, 'tudimianji', u'300', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'300')
+
+    @LG.caseLog(u'XJ_XZ_149_多套询价_新增询价_委估对象_楼面地价')
+    def testXJ_XZ_149(self):
+        result = addnew.addnewData(self, self.el, 'loumiandijia', u'20000', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'20,000')
+
+    @LG.caseLog(u'XJ_XZ_150_多套询价_新增询价_委估对象_成交价')
+    def testXJ_XZ_150(self):
+        result = addnew.addnewData(self, self.el, 'chengjiaojia', u'2000000', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+
+
+    @LG.caseLog(u'XJ_XZ_152_多套询价_新增询价_委估对象_套内面积')
+    def testXJ_XZ_152(self):
+        result = addnew.addnewData(self, self.el, 'taoneimianji', u'200', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'200')
+
+    @LG.caseLog(u'XJ_XZ_152_多套询价_新增询价_委估对象_登记价')
+    def testXJ_XZ_152(self):
+        result = addnew.addnewData(self, self.el, 'dengjijia', u'200', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'200')
+
+    @LG.caseLog(u'XJ_XZ_155_多套询价_新增询价_委估对象_房产证登记日期')
+    def testXJ_XZ_155(self):
+        result = addnew.addnewData(self, self.el, 'fangchanzhengdengjiriqi', u'2016-01-01', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'2016-01-01')
+
+
+
+    @LG.caseLog(u'XJ_XZ_157_多套询价_新增询价_委估对象_厅')
+    def testXJ_XZ_157(self):
+        result = addnew.addnewData(self, self.el, 'ting', u'9', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'9')
+
+    @LG.caseLog(u'XJ_XZ_159_多套询价_新增询价_委估对象_朝向')
+    def testXJ_XZ_159(self):
+        result = addnew.addnewData(self, self.el, "chaoxiang", u'请选择', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'请选择')
+
+    @LG.caseLog(u'XJ_XZ_158_多套询价_新增询价_委估对象_建筑结构')
+    def testXJ_XZ_158(self):
+        result = addnew.addnewData(self, self.el, 'jianzhujiegou', u'混合', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'混合')
+
+    @LG.caseLog(u'XJ_XZ_160_多套询价_新增询价_委估对象_装修价值')
+    def testXJ_XZ_160(self):
+        result = addnew.addnewData(self, self.el, 'zhuangxiujiazhi', u'1111', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'1111')
+
+    @LG.caseLog(u'XJ_XZ_162_多套询价_新增询价_委估对象_厨房')
+    def testXJ_XZ_162(self):
+        result = addnew.addnewData(self, self.el, "chufang", u'有', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'有')
+
+    @LG.caseLog(u'XJ_XZ_163_多套询价_新增询价_委估对象_厨房')
+    def testXJ_XZ_163(self):
+        result = addnew.addnewData(self, self.el, "chufang", u'有', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'有')
+
+    @LG.caseLog(u'XJ_XZ_164_多套询价_新增询价_委估对象_景观')
+    def testXJ_XZ_164(self):
+        result = addnew.addnewData(self, self.el, "jingguan", u'公园景观', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'公园景观')
+
+    @LG.caseLog(u'XJ_XZ_165_多套询价_新增询价_委估对象_土地使用权类型')
+    def testXJ_XZ_165(self):
+        result = addnew.addnewData(self, self.el, "tudishiyongquanleixing", u'出让', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'出让')
+
+    @LG.caseLog(u'XJ_XZ_166_多套询价_新增询价_委估对象_土地使用权面积')
+    def testXJ_XZ_166(self):
+        result = addnew.addnewData(self, self.el, "tudishiyongquanmianji", u'1111', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'1111')
+
+
+    @LG.caseLog(u'XJ_XZ_169_多套询价_新增询价_委估对象_土地证发证日期')
+    def testXJ_XZ_169(self):
+        result = addnew.addnewData(self, self.el, "tudizhengfazhengriqi", u'2016-01-01', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'2016-01-01')
+
+    @LG.caseLog(u'XJ_XZ_170_多套询价_新增询价_委估对象_土地证发证机关')
+    def testXJ_XZ_170(self):
+        result = addnew.addnewData(self, self.el, "tudizhengfazhengjiguan", u'土地证发证机关', Inquiry='Duotao',
+                                   valuation=True)
+        self.assertEqual(result, u'土地证发证机关')
+
+    @LG.caseLog(u'XJ_XZ_171_多套询价_新增询价_委估对象_土地使用权证')
+    def testXJ_XZ_171(self):
+        result = addnew.addnewData(self, self.el, "tudishiyongquanzheng", u'土地使用权证', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'土地使用权证')
+
+    @LG.caseLog(u'XJ_XZ_172_多套询价_新增询价_委估对象_购买日期')
+    def testXJ_XZ_172(self):
+        result = addnew.addnewData(self, self.el, "goumairiqi", u'2016-01-01', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'2016-01-01')
+
+    @LG.caseLog(u'XJ_XZ_174_多套询价_新增询价_委估对象_买房人联系电话')
+    def testXJ_XZ_174(self):
+        result = addnew.addnewData(self, self.el, "maifangrenlianxidianhua", u'01234567890', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'01234567890')
+
+
+    @LG.caseLog(u'XJ_XZ_175_多套询价_新增询价_委估对象_户型')
+    def XJ_XZ_175(self):
+        result = addnew.addnewData(self, self.el, "huxing", u'单房', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'单房')
+
+
+    @LG.caseLog(u'XJ_XZ_176_多套询价_新增询价_委估对象_产权人联系人关系')
+    def testXJ_XZ_176(self):
+        result = addnew.addnewData(self, self.el, "chanquanrenlianxirenguanxi", u'中介', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'中介')
+
+
+    @LG.caseLog(u'XJ_XZ_177_多套询价_新增询价_委估对象_买房人户籍')
+    def testXJ_XZ_177(self):
+        result = addnew.addnewData(self, self.el, "maifangrenhuji", u'本市', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'本市')
+
+    @LG.caseLog(u'XJ_XZ_178_多套询价_新增询价_委估对象_买房人身份证')
+    def testXJ_XZ_178(self):
+        result = addnew.addnewData(self, self.el, "maifangrenshenfenzheng", u'买房人身份证', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'买房人身份证')
+
+
+    @LG.caseLog(u'XJ_XZ_180_多套询价_新增询价_委估对象_首付金额')
+    def testXJ_XZ_180(self):
+        result = addnew.addnewData(self, self.el, "shoufujin'e", u'1111', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'1,111')
+
+    @LG.caseLog(u'XJ_XZ_181_多套询价_新增询价_委估对象_总楼层')
+    def testXJ_XZ_181(self):
+        result = addnew.addnewData(self, self.el, "zongloucheng", u'1111', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'1111')
+
+    @LG.caseLog(u'XJ_XZ_154_多套询价_新增询价_委估对象_装修')
+    def testXJ_XZ_154(self):
+        result = addnew.addnewData(self, self.el, "zhuangxiu", u'高档装修', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'高档装修')
+
+    @LG.caseLog(u'XJ_XZ_172_多套询价_新增询价_委估对象_不动产单元号')
+    def testXJ_XZ_172(self):
+        result = addnew.addnewData(self, self.el, "budongchandanyuanhao", u'不动产单元号', Inquiry='Duotao',valuation=True)
+        self.assertEqual(result, u'不动产单元号')
+
+    ###估价信息
+
+    @LG.caseLog(u'XJ_XZ_197_多套询价_新增询价_估价信息_正常估价单价')
+    def XJ_XZ_197(self):
+        result = addnew.addnewData(self, self.el, "zhengchanggujiadanjia", u'2000000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+    @LG.caseLog(u'XJ_XZ_198_多套询价_新增询价_估价信息_税费')
+    def testXJ_XZ_198(self):
+        result = addnew.addnewData(self, self.el, "suifei", u'2000000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+    @LG.caseLog(u'XJ_XZ_196_多套询价_新增询价_估价信息_总价')
+    def testXJ_XZ_196(self):
+        result = addnew.addnewData(self, self.el, "zongjia", u'2000000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+
+    @LG.caseLog(u'XJ_XZ_201_多套询价_新增询价_估价信息_法定优先受偿款')
+    def testXJ_XZ_201(self):
+        result = addnew.addnewData(self, self.el, "fadingyouxianshouchangkuan", u'2000000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+    @LG.caseLog(u'XJ_XZ_200_多套询价_新增询价_估价信息_净值')
+    def testXJ_XZ_200(self):
+        result = addnew.addnewData(self, self.el, "jingzhi", u'2000000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+    @LG.caseLog(u'XJ_XZ_204_多套询价_新增询价_估价信息_应补地价')
+    def testXJ_XZ_204(self):
+        result = addnew.addnewData(self, self.el, "yingbudijia", u'2000000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+    @LG.caseLog(u'XJ_XZ_206_多套询价_新增询价_估价信息_强制变现值')
+    def testXJ_XZ_206(self):
+        result = addnew.addnewData(self, self.el, "qiangzhibiaoxianzhi", u'2000000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+
+    @LG.caseLog(u'XJ_XZ_208_多套询价_新增询价_估价信息_强制变现税费额')
+    def testXJ_XZ_208(self):
+        result = addnew.addnewData(self, self.el, "qiangzhibianxianshui'e", u'2000000', Inquiry='Duotao',
+                                   valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+    @LG.caseLog(u'XJ_XZ_196_多套询价_新增询价_估价信息_总价')
+    def testXJ_XZ_196(self):
+        result = addnew.addnewData(self, self.el, "zongjia", u'2000000', Inquiry='Duotao', valuation=True)
+        self.assertEqual(result, u'2,000,000')
+
+if __name__=='__main__':
+    unittest.main()

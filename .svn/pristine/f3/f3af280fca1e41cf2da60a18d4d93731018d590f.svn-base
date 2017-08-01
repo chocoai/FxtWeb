@@ -1,0 +1,5515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+    <function name="account">
+        <element name="username">
+            <name>用户</name>
+            <type>xpath</type>
+            <path>html/body/div[2]/div[1]/p/span[1]</path>
+        </element>
+    </function>
+<!--主标题栏-->
+    <function name="Xujia">
+        <element name="xujia">
+            <name>询价</name>
+            <type>xpath</type>
+            <path>//*[@id="quicklinks"]/li</path>
+            <value></value>
+        </element>
+    </function>
+<!--列表数据选择-->
+    <function name="Checkbox">
+        <element name="checkbox">
+            <name>数据列表</name>
+            <type>xpath</type>
+            <path>//*[@id="grid"]/tbody/tr</path>
+        </element>
+        <element name="checkboxtitle">
+            <name>数据标题</name>
+            <type>xpath</type>
+            <path>html/body/div/div[2]/div/div[3]/div/table/thead/tr</path>
+        </element>
+        <element name="frame">
+            <name>框架</name>
+            <type>xpath</type>
+            <path>//*[@id="mytab"]/div/div[2]/div[3]</path>
+        </element>
+        无数据显示提示文字
+        <element name="tabNotice">
+            <name>tab</name>
+            <type>xpath</type>
+            <path>/html/body/div/div[2]/div/div[5]/table/tbody/tr/td</path>
+        </element>
+    </function>
+<!--详细信息提示框-->
+    <function name="AddNewTooltip">
+        <element name="xinzengtishikuang">
+            <name>新增不填写提示框</name>
+            <type>xpath</type>
+            <path>//div[@class='w400 mt10 red f14']</path>
+        </element>
+    </function>
+<!--新增询价-->
+    <!--单套询价-->
+    <function name="xinzengxujia">
+        <element name="dantaoxinzeng">
+            <name>单套新增</name>
+            <type>ID</type>
+            <path>addObject</path>
+        </element>
+        <element name="zhuzhai">
+            <name>住宅</name>
+            <type>xpath</type>
+            <path>//*[@id="addObject"]/ul/li[1]</path>
+        </element>
+    </function>
+<!--单套询价iframe-->
+    <function name="Dantao">
+        <element name="duantaoxj">
+            <name>单套询价</name>
+            <type>xpath</type>
+            <oldpath>tree_246_200_span</oldpath>
+            <gpath>newtree_246_200</gpath>
+            <path>//*[@id="newtree_246_200"]/a/font</path>
+        </element>
+    </function>
+<!--单套询价菜单-->
+    <!--全部-->
+    <function name="Quanbu">
+        <element name="quanBu">
+                <name>全部</name>
+                <type>ID</type>
+                <oldpath>tree_246_202_span</oldpath>
+                <path>newtree_246_202</path>
+        </element>
+        <element name="frame">
+                <name>frame</name>
+                <type>ID</type>
+                <path>mytab_202Frame</path>
+
+        </element>
+
+        <element name="verification">
+            <name>verificationr</name>
+            <type>xpath</type>
+            <path>//*[@id="row292944"]/td[3]/div</path>
+            <value>X2016060600002</value>
+        </element>
+    </function>
+    <!--住宅-->
+    <function name="Zhuzai">
+            <element name="zhuZai">
+                <name>zhuZai</name>
+                <type>ID</type>
+                <oldpath>tree_246_203_span</oldpath>
+                <path>newtree_246_203</path>
+
+        </element>
+        <element name="frame">
+                <name>frame</name>
+                <type>ID</type>
+                <path>mytab_203Frame</path>
+                <value></value>
+        </element>
+    </function>
+    <!--商业-->
+    <function name="Shangye">
+        <element name="shangye">
+            <name>shangye</name>
+            <type>ID</type>
+            <oldpath>tree_246_204_span</oldpath>
+            <path>newtree_246_204</path>
+        </element>
+        <element name="frame">
+                <name>frame</name>
+                <type>ID</type>
+                <path>mytab_204Frame</path>
+                <value></value>
+        </element>
+    </function>
+    <!--办公-->
+    <function name="Bangong">
+        <element name="bangong">
+            <name>Bangong</name>
+            <type>ID</type>
+            <oldpath>tree_246_205_span</oldpath>
+            <path>newtree_246_205</path>
+            <value></value>
+        </element>
+        <element name="frame">
+                <name>frame</name>
+                <type>ID</type>
+                <path>mytab_205Frame</path>
+                <value></value>
+        </element>
+    </function>
+    <!--工业-->
+    <function name="Gongye">
+        <element name="gongye">
+            <name>gongye</name>
+            <type>ID</type>
+            <oldpath>tree_246_206_span</oldpath>
+            <path>newtree_246_206</path>
+        </element>
+        <element name="frame">
+                <name>frame</name>
+                <type>ID</type>
+                <path>mytab_206Frame</path>
+                <value></value>
+        </element>
+    </function>
+    <!--土地-->
+    <function name="Tudi">
+        <element name="tudi">
+            <name>tudi</name>
+            <type>ID</type>
+            <oldpath>tree_246_207_span</oldpath>
+            <path>newtree_246_207</path>
+
+        </element>
+        <element name="frame">
+                <name>frame</name>
+                <type>ID</type>
+                <path>mytab_207Frame</path>
+                <value></value>
+        </element>
+    </function>
+    <!--资产-->
+    <function name="Zican">
+        <element name="zican">
+            <name>zican</name>
+            <type>ID</type>
+            <oldpath>tree_246_208_span</oldpath>
+            <path>newtree_246_208</path>
+        </element>
+        <element name="frame">
+                <name>frame</name>
+                <type>ID</type>
+                <path>mytab_208Frame</path>
+                <value></value>
+        </element>
+    </function>
+    <!--其他-->
+    <function name="Qita">
+        <element name="qita">
+            <name>qita</name>
+            <type>ID</type>
+            <oldpath>tree_246_209_span</oldpath>
+            <path>newtree_246_209</path>
+        </element>
+        <element name="frame">
+                <name>frame</name>
+                <type>ID</type>
+                <path>mytab_209Frame</path>
+                <value></value>
+        </element>
+    </function>
+  <!--多套询价-->
+    <function name="Duotao">
+        <element name="duotao">
+            <name>多套询价项</name>
+            <type>ID</type>
+            <oldpath>tree_246_247_span</oldpath>
+            <path>newtree_246_247</path>
+
+        </element>
+        <element name="frame">
+            <name>框架</name>
+            <type>ID</type>
+            <path>mytab_247Frame</path>
+        </element>
+        <element name="xinzeng">
+            <name>新增按钮</name>
+            <type>id</type>
+            <path>btnAdd</path>
+            <elementType>input</elementType>
+        </element>
+    </function>
+  <!--自动估价-->
+    <function name="Zidongxujia">
+        <element name="zidongxujia">
+            <name>zidongxujia</name>
+            <type>ID</type>
+            <oldpath>tree_246_242_span</oldpath>
+            <path>newtree_246_242</path>
+        </element>
+        <element name="frame">
+                <name>frame</name>
+                <type>ID</type>
+                <path>mytab_242Frame</path>
+                <value></value>
+        </element>
+    </function>
+  <!--盖章-->
+    <function name="Gaizhang">
+        <element name="gaizhang">
+            <name>gaizhang</name>
+            <type>ID</type>
+            <oldpath>tree_246_282_span</oldpath>
+            <path>newtree_246_282</path>
+
+        </element>
+        <element name="frame">
+            <name>frame</name>
+            <type>ID</type>
+            <path>mytab_282Frame</path>
+            <value></value>
+        </element>
+    </function>
+    <!--待盖章-->
+    <function name="Daigaizhang">
+        <element name="daigaizhang">
+            <name>daigaizhang</name>
+            <type>ID</type>
+            <path>linkTab_1</path>
+            <value></value>
+        </element>
+    </function>
+    <!--已盖章-->
+    <function name="Yigaizhang">
+        <element name="yigaizhang">
+            <name>yigaizhang</name>
+            <type>ID</type>
+            <path>linkTab_2</path>
+            <value></value>
+        </element>
+    </function>
+  <!--登陆-->
+    <function name="Login">
+        <element name="username">
+            <name>username</name>
+            <type>ID</type>
+            <path>txtusername</path>
+            <value></value>
+        </element>
+        <element name="password">
+            <name>password</name>
+            <type>ID</type>
+            <path>txtpassword</path>
+            <value></value>
+        </element>
+        <element name="login">
+            <name>login</name>
+            <type>ID</type>
+            <path>btnlogin</path>
+            <value></value>
+        </element>
+    </function>
+  <!--删除-->
+    <function name="Shanchu">
+        <element name="shanchu">
+            <name>shanchu</name>
+            <type>ID</type>
+            <path>btnDel</path>
+            <value></value>
+        </element>
+       <element name="checkbox">
+            <name>shanchu</name>
+            <type>xpath</type>
+            <path>//*[@id="grid"]/tbody/tr</path>
+            <value></value>
+        </element>
+        <element name="queding">
+            <name>queding</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input[1]</path>
+            <value></value>
+        </element>
+                <element name="quxiao">
+            <name>quxiao</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input[2]</path>
+            <value></value>
+        </element>
+    </function>
+  <!--转业务-->
+    <function name="Zhuanyewu">
+        <element name="zhuanyewu">
+            <name>zhuanyewu</name>
+            <type>ID</type>
+            <path>btnRequestEntrust</path>
+            <value></value>
+        </element>
+    </function>
+  <!--撰写预评-->
+     <function name="Zuanxieyuping">
+        <element name="Zhuxieyuping">
+            <name>Zhuxieyuping</name>
+            <type>ID</type>
+            <path>btnRequestYP</path>
+            <value></value>
+        </element>
+         <element name="queding">
+            <name>确定</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input</path>
+            <value></value>
+        </element>
+    </function>
+  <!--复制新增-->
+    <function name="Fuzhixinzeng">
+        <element name="fuzhixinzeng">
+            <name>fuzhixinzeng</name>
+            <type>ID</type>
+            <path>btnCopy</path>
+            <value></value>
+        </element>
+        <element name="mulOK">
+            <name>多条提示确定按钮</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input</path>
+        </element>
+        <element name="multext">
+            <name>多条提示框内容</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/font</path>
+        </element>
+    </function>
+  <!--导出-->
+    <function name="Daochu">
+        <element name="daochu">
+            <name>导出</name>
+            <type>ID</type>
+            <path>btnExport</path>
+        </element>
+        <element name="quedingdaochu">
+            <name>确定导出</name>
+            <type>ID</type>
+            <path>btnSave</path>
+        </element>
+        <element name="mobanxuanze">
+            <name>模板选择</name>
+            <type>ID</type>
+            <path>selTemplate</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="iframe">
+            <name>Iframe</name>
+            <type>XPATH</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+            <elementType>iframe</elementType>
+        </element>
+        <element name="tishi">
+            <name>提示</name>
+            <type>XPATH</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/font</path>
+            <elementType>verify</elementType>
+        </element>
+        <element name="shanchumoban">
+            <name>删除模板</name>
+            <type>ID</type>
+            <path>delTemplate</path>
+        </element>
+        <element name="querenshanchu">
+            <name>确认删除</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input[1]</path>
+        </element>
+        <element name="quxiaoshanchu">
+            <name>取消删除</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input[2]</path>
+        </element>
+        <element name="kexuanyewu">
+            <name>可选业务信息字段</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab2_0"]/a</path>
+        </element>
+        <element name="kexuanyewuliebiao">
+            <name>可选业务信息字段列表</name>
+            <type>xpath</type>
+            <path>//*[@id="selection"]/li</path>
+        </element>
+        <element name="kexuanweiguduixiang">
+            <name>可选委估对象字段</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab2_2018002"]/a</path>
+        </element>
+        <element name="kexuanweiguduixiangliebiao">
+            <name>可选委估对象字段列表</name>
+            <type>xpath</type>
+            <path>//*[@id="selection"]/li</path>
+        </element>
+        <element name="kanziji">
+            <name>看自己</name>
+            <type>id</type>
+            <path>ckbself</path>
+        </element>
+        <!---->
+        <element name="cunweixinmoban">
+            <name>存为新模板</name>
+            <type>ID</type>
+            <path>ckNewTemplate</path>
+        </element>
+        <element name="xinmobanshuru">
+            <name>新模板输入框</name>
+            <type>ID</type>
+            <path>templateName</path>
+            <elementType></elementType>
+        </element>
+    </function>
+<!---->
+    <function name="XinZeng">
+        <element name="xinZeng">
+            <name>xinZeng</name>
+            <type>xpath</type>
+            <path>//*[@id="addObject"]/ul/li[1]</path>
+            <value></value>
+        </element>
+        <element name="password">
+            <name>password</name>
+            <type>ID</type>
+            <path>txtpassword</path>
+            <value></value>
+        </element>
+        <element name="login">
+            <name>login</name>
+            <type>ID</type>
+            <path>btnlogin</path>
+            <value></value>
+        </element>
+    </function>
+<!--
+     <function name="QuanBu">
+        <element name="xujia">
+            <name>xujia</name>
+            <type>xpath</type>
+            <path>//*[@id="quicklinks"]/li[1]</path>
+            <value></value>
+        </element>
+        <element name="duantaoxj">
+            <name>duantaoxj</name>
+            <type>ID</type>
+            <path>tree_246_200_span</path>
+            <value></value>
+        </element>
+        <element name="quanBu">
+            <name>quanBu</name>
+            <type>ID</type>
+            <path>tree_246_202_span</path>
+            <value></value>
+        </element>
+    </function>
+
+    <function name="ZhuZai">
+        <element name="xujia">
+            <name>xujia</name>
+            <type>xpath</type>
+            <path>//*[@id="quicklinks"]/li[1]</path>
+            <value></value>
+        </element>
+        <element name="duantaoxj">
+            <name>duantaoxj</name>
+            <type>ID</type>
+            <path>tree_246_200_span</path>
+            <value></value>
+        </element>
+        <element name="zhuZai">
+            <name>zhuZai</name>
+            <type>ID</type>
+            <path>tree_246_203_span</path>
+            <value></value>
+        </element>
+    </function>
+-->
+<!--数据更改界面-->
+    <!--转业务-->
+    <function name="dZhuanyewu">
+        <element>
+        </element>
+    </function>
+    <!--撰写预评-->
+    <function name="dZuanxieyuping">
+        <element name="baogaoleixing">
+            <type>ID</type>
+            <path>field_reporttypecode</path>
+        </element>
+        <element name="save">
+            <type>ID</type>
+            <path>btnSave</path>
+        </element>
+        <element name="生成预评报告">
+            <type>ID</type>
+            <path>btnAutoReport</path>
+        </element>
+        <element name="附件生成">
+            <type>ID</type>
+            <path>btnCreateFile</path>
+        </element>
+    </function>
+
+   <!--单套新增信息界面按钮-->
+    <function name="MsgBtnKey">
+        <element name="save">
+            <name>保存</name>
+            <type>ID</type>
+            <path>btnTempSave</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="tijiaohuijia">
+            <name>提交回价</name>
+            <type>ID</type>
+            <path>btnSave</path>
+            <elementType>input</elementType>
+        </element>
+
+    </function>
+    <!--多套新增信息按钮-->
+    <function name="MulMsgBtnKey">
+        <element name="save">
+            <name>保存</name>
+            <type>ID</type>
+            <path>btnSave</path>
+        </element>
+    </function>
+    <!--详细信息框架-->
+    <function name="MsgFrame">
+        <element name="frame">
+            <name>详细信息界面frame</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+        </element>
+    </function>
+    <!--复制新增详细信息-->
+    <function name="DetailData">
+        <element name="xiujialeixing">
+            <name>询价类型</name>
+            <type>ID</type>
+            <path>//*[@id="tbEntrust"]/tbody/tr[2]/td[2]</path>
+            <contain>查询,新建</contain>
+        </element>
+        <element name="baogaoleixing">
+            <name>报告类型</name>
+            <type>ID</type>
+            <path>field_reporttypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="fenzhijigou">
+           <name>分支机构</name>
+            <type>ID</type>
+            <path>field_subcompanyid</path>
+             <elementType>select</elementType>
+        </element>
+        <element name="weituoleixing">
+           <name>委托类型</name>
+            <type>ID</type>
+            <!--<path>field_biztype</path>-->
+            <path>field_righttypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yewubumen">
+           <name>业务部门</name>
+            <type>ID</type>
+            <path>field_departmentid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jishutuandui">
+            <name>技术团队</name>
+            <type>ID</type>
+            <path>field_businesstypeid</path>
+            <elementType>select</elementType>
+        </element>
+
+        <element name="yewuyuan">
+            <name>业务员</name>
+            <type>ID</type>
+            <path>txtSaleManName</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kehuleixing">
+            <name>客户类型</name>
+            <type>ID</type>
+            <path>field_banktype</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofang">
+            <name>委托方</name>
+            <type>id</type>
+            <path>field_clientname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituokehu">
+            <name>委托客户</name>
+            <type>ID</type>
+            <path>field_bankid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yinhanglianxiren">
+            <name>银行联系人</name>
+            <type>ID</type>
+            <path>field_bankcontact</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yinhanglianxirendianhua">
+            <name>银行联系人电话</name>
+            <type>ID</type>
+            <path>field_bankcontactphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chuangjianren">
+            <name>创建人</name>
+            <type>ID</type>
+            <path>field_createusername</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chuangjianshijian">
+            <name>创建时间</name>
+            <type>ID</type>
+            <path>field_createdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kanxianchanglianxiren">
+            <name>看现场联系人</name>
+            <type>ID</type>
+            <path>field_contactuser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kanxianchanglianxirendianhua">
+            <name>看现场联系人电话</name>
+            <type>ID</type>
+            <path>field_contactuser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="lianxirenchuanzhen">
+            <name>联系人传真</name>
+            <type>ID</type>
+            <path>field_contactfax</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yewuyuansuoshubumen">
+            <name>业务员所属部门</name>
+            <type>ID</type>
+            <path>field_saledepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yewusuoshubumenfuzhuren">
+            <name>业务员所属部门负责人</name>
+            <type>ID</type>
+            <path>field_saledepartmentleader</path>
+            <elementType>input</elementType>
+        </element>
+
+        <element name="beizhu">
+            <name>备注</name>
+            <type>ID</type>
+            <path>field_remark</path>
+            <elementType>textarea</elementType>
+        </element>
+
+        <!--委估对象-->
+        <element name="tudishijiyongtu">
+            <name>土地实际用途</name>
+            <type>ID</type>
+            <path>field_landpurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudizhengzaiyongtu">
+            <name>土地证载用途</name>
+            <type>ID</type>
+            <path>field_landstatutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudizhengzaiyongtu">
+            <name>土地证载用途</name>
+            <type>ID</type>
+            <path>field_landstatutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="loupanmingcheng">
+            <name>楼盘名称</name>
+            <type>ID</type>
+            <path>field_projectname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="loudongmingcheng">
+            <name>楼栋名称</name>
+            <type>ID</type>
+            <path>field_buildingname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="loucheng">
+            <name>楼层</name>
+            <type>ID</type>
+            <path>field_floornumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fanghao">
+            <name>房号</name>
+            <type>ID</type>
+            <path>field_housename</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weiguduixiangquancheng">
+            <name>委估对象全称</name>
+            <type>ID</type>
+            <path>field_fullname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="dizhi">
+            <name>地址</name>
+            <type>ID</type>
+            <path>field_address</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanleixing">
+            <name>产权类型</name>
+            <type>ID</type>
+            <path>field_ownertypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jianzhumianji">
+            <name>建筑面积</name>
+            <type>ID</type>
+            <path>field_buildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        土地使用权面积
+        <element name="tudishiyongquanmianji">
+            <name>土地使用权面积</name>
+            <type>ID</type>
+            <path>field_landusearea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudimianji">
+            <name>土地面积</name>
+            <type>ID</type>
+            <path>field_landarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizongjia">
+            <name>土地总价</name>
+            <type>ID</type>
+            <path>field_landtotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="goumairiqi">
+            <name>购买日期</name>
+            <type>ID</type>
+            <path>field_buydate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhengdengjiriqi">
+            <name>房产证登记日期</name>
+            <type>ID</type>
+            <path>field_housecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fushufangwuzongjia">
+            <name>附属房屋总价</name>
+            <type>ID</type>
+            <path>field_subhousealltotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="nidaijin'e">
+            <name>拟贷金额</name>
+            <type>ID</type>
+            <path>field_prepareloanamount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chengjiaojia">
+            <name>成交价</name>
+            <type>ID</type>
+            <path>field_saleprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhenghao">
+            <name>房产证号</name>
+            <type>ID</type>
+            <path>field_housecertno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="taoneimianji">
+            <name>套内面积</name>
+            <type>ID</type>
+            <path>field_innerbuildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zonglouceng">
+            <name>总楼层</name>
+            <type>ID</type>
+            <path>field_totalfloor</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhuangxiu">
+            <name>装修</name>
+            <type>ID</type>
+            <path>field_fitment</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="chufang">
+            <name>厨房</name>
+            <type>ID</type>
+            <path>field_haskitchen</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="weishengjian">
+            <name>卫生间</name>
+            <type>ID</type>
+            <path>field_bathroomcount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jianzhujiegou">
+            <name>建筑结构</name>
+            <type>ID</type>
+            <path>field_structure</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="loumiandijia">
+            <name>楼面地价</name>
+            <type>ID</type>
+            <path>field_floorunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengfazhengjiguan">
+            <name>土地证发证机关</name>
+            <type>ID</type>
+            <path>field_landusecertdepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudishiyongquanleixing">
+            <name>土地使用权类型</name>
+            <type>ID</type>
+            <path>field_landusetype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudishiyongquanzheng">
+            <name>土地使用权证</name>
+            <type>ID</type>
+            <path>field_landusecert</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengfazhengriqi">
+            <name>土地证发证日期</name>
+            <type>ID</type>
+            <path>field_landusecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudishiyongquanren">
+            <name>土地使用权人</name>
+            <type>ID</type>
+            <path>field_landuseperson</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhuangxiujiazhi">
+            <name>装修价值</name>
+            <type>ID</type>
+            <path>field_fitmentprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengzaidizhi">
+            <name>土地证载地址</name>
+            <type>ID</type>
+            <path>field_landusecertaddress</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yongtu">
+            <name>用途</name>
+            <type>ID</type>
+            <path>field_purpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="ting">
+            <name>厅</name>
+            <path>field_hallcount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huxing">
+            <name>户型</name>
+            <type>ID</type>
+            <path>field_housetypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="shifoumanwunian">
+            <name>是否满5年</name>
+            <type>ID</type>
+            <path>field_expiryfiveyear</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="fadingyongtu">
+            <name>法定用途</name>
+            <type>ID</type>
+            <path>field_statutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="chanquanrenlianxirendianhua">
+            <name>产权人联系人电话</name>
+            <type>ID</type>
+            <path>field_ownercontactsphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanrenlianxirenguanxi">
+            <name>产权人联系人关系</name>
+            <type>ID</type>
+            <path>field_ownercontactsrelation</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="dengjijia">
+            <name>登记价</name>
+            <type>ID</type>
+            <path>field_registrationprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanrenlianxireng">
+            <name>产权人联系人</name>
+            <type>ID</type>
+            <path>field_ownercontacts</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangrenhuji">
+            <name>买房人户籍</name>
+            <type>ID</type>
+            <path>field_buyhouseregioer</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="maifangren">
+            <name>买房人</name>
+            <type>ID</type>
+            <path>field_buyhouseowner</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangrenshenfenzheng">
+            <name>买房人身份证</name>
+            <path>field_buyhouseowneridcard</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangrenlianxidianhua">
+            <name>买房人联系电话</name>
+            <type>ID</type>
+            <path>field_buyhouseownerphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shoufujin'e">
+            <name>首付金额</name>
+            <type>ID</type>
+            <path>field_shoufuamount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangjian">
+            <name>房间</name>
+            <path>field_housecount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shoucigoufang">
+            <name>首次购房</name>
+            <type>ID</type>
+            <path>field_firstbuye</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yangtai">
+            <name>阳台</name>
+            <type>ID</type>
+            <path>field_balconynumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shifouweiyizhufang">
+            <name>是否唯一住房</name>
+            <type>ID</type>
+            <path>field_onlylivingroom</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jianzhuniandai">
+            <name>建筑年代</name>
+            <type>ID</type>
+            <path>field_buildingdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jingguan">
+            <name>景观</name>
+            <type>ID</type>
+            <path>field_sight</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="shichangbeijing">
+            <name>市场背景</name>
+            <type>ID</type>
+            <path>30_88669017</path>
+            <elementType>select</elementType>
+        </element>
+
+        <!--产权信息-->
+        <element name="chanquanxinxi">
+            <name>产权信息</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr</path>
+        </element>
+        <element name="chanquanrenxingming">
+            <name>产权人姓名</name>
+            <type>xpth</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[1]/input</path>
+        </element>
+        <element name="qiyegongshangdengjihao">
+            <name>企业工商登记号</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[2]/input</path>
+        </element>
+        <!--附属房屋信息-->
+        <element name="fuzhufangwuxinxi">
+            <name>附属房屋信息</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr</path>
+        </element>
+        <element name="fuzhufangwuleixing">
+            <name>附属房屋类型</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[1]/a</path>
+        </element>
+        <element name="fuzhufangwumiaoji">
+            <name>附属房屋面积</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[2]</path>
+        </element>
+        <element name="fuzhufangwudanjia">
+            <name>附属房屋单价</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[3]</path>
+        </element>
+        <element name="fuzhufangwuzongzhi">
+            <name>附属房屋总值</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[4]</path>
+        </element>
+
+        <!--估价信息-->
+        <element name="tudidanjia">
+            <name>土地单价</name>
+            <type>ID</type>
+            <path>field_landunitprice</path>
+            <elementType>input</elementType>
+        </element>
+
+        <!--必填项  城市 -->
+        <element name="shenfen">
+            <name>省份</name>
+            <type>ID</type>
+            <path>selProvince</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="chengshi">
+            <name>城市</name>
+            <type>ID</type>
+            <path>field_cityid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="xingzhengqu">
+            <name>行政区</name>
+            <type>ID</type>
+            <path>field_areaid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="quyu">
+            <name>区域</name>
+            <type>ID</type>
+            <path>field_subareaid</path>
+            <elementType>select</elementType>
+        </element>
+    </function>
+
+<!--新增询价详细信息-->
+    <function name="AddNewDetail">
+        <!--提示框按钮-->
+        <element name="huijiaOK">
+            <name>确定</name>
+            <type>xpath</type>
+            <path>//input[@value='确定']</path>
+            <elementType>input</elementType>
+        </element>
+      <!--必填信息-->
+        <!--委托类型-->
+        <element name="weituoleixing">
+            <name>委托类型</name>
+            <type>ID</type>
+            <path>field_righttypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <!--技术团队-->
+        <element name="jishutuandui">
+            <name>技术团队</name>
+            <type>ID</type>
+            <path>field_businesstypeid</path>
+            <elementType>select</elementType>
+        </element>
+        <!--行政区-->
+        <element name="xingzhengqu">
+            <name>行政区</name>
+            <type>ID</type>
+            <path>field_areaid</path>
+            <elementType>select</elementType>
+        </element>
+        <!--区域-->
+        <element name="quyu">
+            <name>区域</name>
+            <type>ID</type>
+            <path>field_subareaid</path>
+            <elementType>select</elementType>
+        </element>
+        <!--委估对象全称-->
+        <element name="weiguduixiangquancheng">
+            <name>委估对象全称</name>
+            <type>ID</type>
+            <path>field_fullname</path>
+            <elementType>input</elementType>
+        </element>
+        <!--建筑面积-->
+        <element name="jianzhumianji">
+            <name>建筑面积</name>
+            <type>ID</type>
+            <path>field_buildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        <!--附件类型1-->
+        <element name="fujianleixing1">
+            <name>附件类型1</name>
+            <type>ID</type>
+            <path>field_filetypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="fujianleixing2">
+            <name>附件类型2</name>
+            <type>ID</type>
+            <path>field_filetypesubcode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="shangchuan">
+            <name>上传</name>
+            <type>ID</type>
+            <path>SWFUpload_upload</path>
+            <elementType>object</elementType>
+        </element>
+        <element name="attdel">
+            <name>删除</name>
+            <type>xpath</type>
+            <path>//*[@id="tbFiles"]/tbody/tr[3]/td[7]/a</path>
+            <elementType>a</elementType>
+        </element>
+        <element name="attsuredel">
+            <name>确定删除</name>
+            <type>xpath</type>
+            <path>//input[@value='确定']</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="attcanceldel">
+            <name>取消删除</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input[2]</path>
+            <elementType>input</elementType>
+        </element>
+        <!--Tab显示-->
+        <element name="tabchkbox">
+            <name>选择按钮</name>
+            <type>ID</type>
+            <path>table_chk_tabshow</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tabshowdiv">
+            <name>显示Tab选项框状态</name>
+            <type>xpath</type>
+            <path>//*[@id='queryInfodiv']/div</path>
+            <elementType>div</elementType>
+        </element>
+      <!--估价信息-->
+        <element name="zhengchanggujiadanjia">
+            <name>正常估价单价</name>
+            <type>ID</type>
+            <path>field_normalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="danjia">
+            <name>单价</name>
+            <type>ID</type>
+            <path>field_unitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huijiashenpiliucheng">
+            <name>回价审批流程</name>
+            <type>id</type>
+            <path>field_replypriceworkflowid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudidanjia">
+            <name>土地单价</name>
+            <type>id</type>
+            <path>field_landunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizongjia">
+            <name>土地总价</name>
+            <type>id</type>
+            <path>field_landtotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zidonggujiadanjia">
+            <name>自动估价单价</name>
+            <type>id</type>
+            <path>field_autoprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zidonggujiazongjia">
+            <name>自动估价总价</name>
+            <type>id</type>
+            <path>txtautototalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhengchanggujiadanjia">
+            <name>正常估价单价</name>
+            <type>id</type>
+            <path>field_normalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zongjia">
+            <name>总价</name>
+            <type>id</type>
+            <path>field_totalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="suifei">
+            <name>总税费</name>
+            <type>id</type>
+            <path>field_tax</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jingzhi">
+            <name>净值</name>
+            <type>id</type>
+            <path>field_netprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fadingyouxianshouchangkuan">
+            <name>法定优先受偿款</name>
+            <type>id</type>
+            <path>field_legalpayment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="gujiashi">
+            <name>估价师</name>
+            <type>id</type>
+            <path>txtAppraisersUserName</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="pingguzongjia">
+            <name>评估总价</name>
+            <type>id</type>
+            <path>field_housetotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huijiashijian">
+            <name>回价时间</name>
+            <type>id</type>
+            <path>field_biddate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yingbudijia">
+            <name>应补地价</name>
+            <type>id</type>
+            <path>field_shouldfilllandprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jingzhi">
+            <name>净值</name>
+            <type>id</type>
+            <path>field_netprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="qiangzhibiaoxianzhi">
+            <name>强制变现值</name>
+            <type>id</type>
+            <path>field_liquidityvalue</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jiageshuoming">
+            <name>价格说明</name>
+            <type>id</type>
+            <path>field_priceremark</path>
+            <elementType>textarea</elementType>
+        </element>
+        <element name="qiangzhibianxianshui'e">
+            <name>强制变现税费额</name>
+            <type>id</type>
+            <path>field_liquiditytaxvalue</path>
+            <elementType>input</elementType>
+        </element>
+      <!--客户信息-->
+        <element name="kehuleixing">
+            <name>客户类型</name>
+            <type>ID</type>
+            <path>field_banktype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="weituofang">
+            <name>委托方</name>
+            <type>id</type>
+            <path>field_clientname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofanglianxiren">
+            <name>委托方联系人</name>
+            <type>id</type>
+            <path>field_clientcontactusername</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofanglianxirendianhua">
+            <name>委托方联系人电话</name>
+            <type>id</type>
+            <path>field_clientphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yinhanglianxiren">
+            <name>银行联系人</name>
+            <type>id</type>
+            <path>field_bankcontact</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yinhanglianxirendianhua">
+            <name>银行联系人电话</name>
+            <type>id</type>
+            <path>field_bankcontactphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituokehu">
+            <name>委托客户</name>
+            <type>id</type>
+            <path>field_bankid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="kanxianchanglianxiren">
+            <name>看现场联系人</name>
+            <type>id</type>
+            <path>field_contactuser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kanxianchanglianxirendianhua">
+            <name>看现场联系人电话</name>
+            <type>id</type>
+            <path>field_contacttelephone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yewuyuansuoshubumen">
+            <name>业务员所属部门</name>
+            <type>id</type>
+            <path>field_saledepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="lianxirenchuanzhen">
+            <name>联系人传真</name>
+            <type>id</type>
+            <path>field_contactfax</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yewuyuansuoshubumenfuzheren">
+            <name>业务员所属部门负责人</name>
+            <type>id</type>
+            <path>field_saledepartmentleader</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="beizhu">
+            <name>备注</name>
+            <type>id</type>
+            <path>field_remark</path>
+            <elementType>textarea</elementType>
+        </element>
+
+      <!--委估对象-->
+        <element name="tudizhengfazhengjiguan">
+            <name>土地证发证机关</name>
+            <type>id</type>
+            <path>field_landusecertdepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fudingyongtu">
+            <name>法定用途</name>
+            <type>id</type>
+            <path>field_statutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yongtu">
+            <name>用途</name>
+            <type>id</type>
+            <path>field_purpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudishijiyongtu">
+            <name>土地实际用途</name>
+            <type>id</type>
+            <path>field_landpurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudizhengzaiyongtu">
+            <name>土地证载用途</name>
+            <type>id</type>
+            <path>field_landstatutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="loupanmingcheng">
+            <name>楼盘名称</name>
+            <type>id</type>
+            <path>field_projectname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="loudongmingcheng">
+            <name>楼栋名称</name>
+            <type>id</type>
+            <path>field_buildingname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="louceng">
+            <name>楼层</name>
+            <type>id</type>
+            <path>field_floornumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fanghao">
+            <name>房号</name>
+            <type>id</type>
+            <path>field_housename</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangjian">
+            <name>房间</name>
+            <type>id</type>
+            <path>field_housecount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yangtai">
+            <name>阳台</name>
+            <type>id</type>
+            <path>field_balconynumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="dizhi">
+            <name>地址</name>
+            <type>id</type>
+            <path>field_address</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shifouman5nian">
+            <name>是否满5年</name>
+            <type>id</type>
+            <path>field_expiryfiveyear</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="shoucigoufang">
+            <name>首次购房</name>
+            <type>id</type>
+            <path>field_firstbuye</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jianzhuniandai">
+            <name>建筑年代</name>
+            <type>id</type>
+            <path>field_buildingdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shifouweiyizhufang">
+            <name>是否唯一住房</name>
+            <type>id</type>
+            <path>field_onlylivingroom</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudimianji">
+            <name>土地面积</name>
+            <type>id</type>
+            <path>field_landarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="loumiandijia">
+            <name>楼面地价</name>
+            <type>id</type>
+            <path>field_floorunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chengjiaojia">
+            <name>成交价</name>
+            <type>id</type>
+            <path>field_saleprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhenghao">
+            <name>房产证号</name>
+            <type>id</type>
+            <path>field_housecertno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="taoneimianji">
+            <name>套内面积</name>
+            <type>id</type>
+            <path>field_innerbuildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="dengjijia">
+            <name>登记价</name>
+            <type>id</type>
+            <path>field_registrationprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhengdengjiriqi">
+            <name>房产证登记日期</name>
+            <type>id</type>
+            <path>field_housecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weishengjian">
+            <name>卫生间</name>
+            <type>id</type>
+            <path>field_bathroomcount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="ting">
+            <name>厅</name>
+            <type>id</type>
+            <path>field_hallcount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jianzhujiegou">
+            <name>建筑结构</name>
+            <type>id</type>
+            <path>field_structure</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="zhuangxiujiazhi">
+            <name>装修价值</name>
+            <type>id</type>
+            <path>field_fitmentprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhuangxiu">
+            <name>装修</name>
+            <type>id</type>
+            <path>field_fitment</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yidaijin'e">
+            <name>拟贷金额</name>
+            <type>id</type>
+            <path>field_prepareloanamount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chufang">
+            <name>厨房</name>
+            <type>id</type>
+            <path>field_haskitchen</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jingguan">
+            <name>景观</name>
+            <type>id</type>
+            <path>field_sight</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudishiyongquanleixing">
+            <name>土地使用权类型</name>
+            <type>id</type>
+            <path>field_landusetype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudishiyongquanmianji">
+            <name>土地使用权面积</name>
+            <type>id</type>
+            <path>field_landusearea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudishiyongquanren">
+            <name>土地使用权人</name>
+            <type>id</type>
+            <path>field_landuseperson</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengzaidizhi">
+            <name>土地证载地址</name>
+            <type>id</type>
+            <path>field_landusecertaddress</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengfazhengriqi">
+            <name>土地证发证日期</name>
+            <type>id</type>
+            <path>field_landusecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudishiyongquanzheng">
+            <name>土地使用权证</name>
+            <type>id</type>
+            <path>field_landusecert</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="goumairiqi">
+            <name>购买日期</name>
+            <type>id</type>
+            <path>field_buydate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huxing">
+            <name>户型</name>
+            <type>id</type>
+            <path>field_housetypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="chanquanrenlianxirenguanxi">
+            <name>产权人联系人关系</name>
+            <type>id</type>
+            <path>field_ownercontactsrelation</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="maifangrenhuji">
+            <name>买房人户籍</name>
+            <type>id</type>
+            <path>field_buyhouseregioer</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="maifangrenshenfenzheng">
+            <name>买房人身份证</name>
+            <type>id</type>
+            <path>field_buyhouseowneridcard</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangren">
+            <name>买房人</name>
+            <type>id</type>
+            <path>field_buyhouseowner</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangrenlianxidianhua">
+            <name>买房人联系电话</name>
+            <type>id</type>
+            <path>field_buyhouseownerphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shoufujin'e">
+            <name>首付金额</name>
+            <type>id</type>
+            <path>field_shoufuamount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zongloucheng">
+            <name>总楼层</name>
+            <type>id</type>
+            <path>field_totalfloor</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jianzhumianji">
+            <name>建筑面积</name>
+            <type>id</type>
+            <path>field_buildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chaoxiang">
+            <name>朝向</name>
+            <type>id</type>
+            <path>field_front</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="budongchandanyuanhao">
+            <name>不动产单元号</name>
+            <type>id</type>
+            <path>field_realestateunitno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="budongchanquanzhenghao">
+            <name>不动产权证号</name>
+            <type>id</type>
+            <path>field_realestateno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanleixing">
+            <name>产权类型</name>
+            <type>id</type>
+            <path>field_ownertypecode</path>
+            <elementType>select</elementType>
+        </element>
+      <!--产权信息-->
+        <element name="zengjiachanquanren">
+            <name>增加产权人</name>
+            <type>class</type>
+            <path>lnkaddobject</path>
+            <elementType>a</elementType>
+        </element>
+        <element name="chanquanrenxingming">
+            <name>产权人姓名</name>
+            <type>id</type>
+            <path>field_owner1</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shenfenzhenghao">
+            <name>身份证号</name>
+            <type>id</type>
+            <path>field_owneridcard1</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="qiyegongshandengjihao">
+            <name>企业工商登记号</name>
+            <type>id</type>
+            <path>field_ownerregistrationno1</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="lianxifangshi">
+            <name>联系方式</name>
+            <type>id</type>
+            <path>field_ownerphone1</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="qiyezhusuo">
+            <name>企业住所</name>
+            <type>id</type>
+            <path>field_owneraddress1</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="suozhanbili">
+            <name>所占比例</name>
+            <type>id</type>
+            <path>field_ownership1</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="farendaibiao">
+            <name>法人代表</name>
+            <type>id</type>
+            <path>field_ownerlegal1</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shenfenzhenghao">
+            <name>身份证号</name>
+            <type>id</type>
+            <path>field_owneridcard1</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huji">
+            <name>户籍</name>
+            <type>id</type>
+            <path>field_ownerregioer1</path>
+            <elementType>select</elementType>
+        </element>
+        <!--附属房屋信息-->
+        <element name="tianjiafuzhufangwu">
+            <name>添加附属房屋</name>
+            <type>id</type>
+            <path>btnAddSubHouse</path>
+            <elementType>a</elementType>
+        </element>
+        <element name="fuzhufangwuiframe">
+            <name>附属房屋iframe</name>
+            <type>xpath</type>
+            <!--chrome可以用以下-->
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+            <elementType>iframe</elementType>
+        </element>
+        <element name="fuzhufangwuSave">
+            <name>保存</name>
+            <type>id</type>
+            <path>btnSave</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fuzhufangwuleixing">
+            <name>附属房屋类型</name>
+            <type>id</type>
+            <path>field_subhousetype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="fuzhufangwumianji">
+            <name>附属房屋面积</name>
+            <type>id</type>
+            <path>field_subhousearea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fuzhufangwudanjia">
+            <name>附属房屋单价</name>
+            <type>id</type>
+            <path>field_subhouseunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fuzhufangwuzongjia">
+            <name>附属房屋总价</name>
+            <type>id</type>
+            <path>field_subhousetotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="xiangxixinxiIframe">
+            <name>返回新增界面的iframe</name>
+            <type>xpath</type>
+            <path>/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+            <elementType>iframe</elementType>
+        </element>
+
+    </function>
+   <!--产权信息结果-->
+    <function name="chanquanxinxijieguo">
+        <element name="chanquanrenxingming">
+            <name>产权人姓名</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[1]/input</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shenfenzhenghao">
+            <name>身份证号</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[2]/input</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="qiyegongshandengjihao">
+            <name>企业工商登记号</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[2]/input</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="lianxifangshi">
+            <name>联系方式</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[3]/input</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="qiyezhusuo">
+            <name>企业住所</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[4]/input</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="suozhanbili">
+            <name>所占比例</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[5]/input</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="farendaibiao">
+            <name>法人代表</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[6]/input</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shenfenzhenghao">
+            <name>身份证号</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[2]/input</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huji">
+            <name>户籍</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[4]/select</path>
+            <elementType>select</elementType>
+        </element>
+
+    </function>
+   <!--附属房屋信息结果-->
+    <function name="fuzhufangwuxinxijieguo">
+        <element name="fuzhufangwuleixing">
+            <name>附属房屋类型</name>
+            <type>xpath</type>
+            <path>//*[@id='tbObjectSubHouse']/tbody/tr[3]/td[1]/a</path>
+            <elementType>a</elementType>
+        </element>
+        <element name="fuzhufangwumianji">
+            <name>附属房屋面积</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[2]</path>
+            <elementType>td</elementType>
+        </element>
+        <element name="fuzhufangwudanjia">
+            <name>附属房屋单价</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[3]</path>
+            <elementType>td</elementType>
+        </element>
+        <element name="fuzhufangwuzongjia">
+            <name>附属房屋总价</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[4]</path>
+            <elementType>td</elementType>
+        </element>
+
+    </function>
+ <!--多套询价-->
+    <function name="MultiAddNew">
+        #必填信息
+        <element name="frame">
+            <name>多套询价新增界面框架</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+            <opath>//iframe[@src="/Reports/MoreQueryEdit.aspx?callback=search&amp;queryid=0"]</opath>
+        </element>
+        <element name="tianjiaweiguduixiang">
+            <name>添加委估对象▽</name>
+            <type>id</type>
+            <path>addObject</path>
+            <elementType>span</elementType>
+        </element>
+        <element name="xiangmumingcheng">
+            <name>项目名称</name>
+            <type>id</type>
+            <path>field_projectfullname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofang">
+            <name>委托方</name>
+            <type>id</type>
+            <path>field_clientname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhuzhai">
+            <name>住宅</name>
+            <type>xpath</type>
+            <path>//*[@id="addObject"]/ul/li[1]</path>
+            <elementType>li</elementType>
+        </element>
+        <element name="weiguduixiangframe">
+            <name>委估对象界面框架</name>
+            <type>xpath</type>
+            <path>/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+        </element>
+        <element name="save">
+            <name>保存</name>
+            <type>id</type>
+            <path>btnSave</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="xuyao">
+            <name>需要</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input[1]</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="buxuyao">
+            <name>不需要</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input[2]</path>
+            <elementType>input</elementType>
+        </element>
+        #委估对象信息
+         <!--
+         <element name="loudongmingcheng">
+            <name>楼栋名称</name>
+            <type>id</type>
+            <path>field_buildingname</path>
+            <elementType>input</elementType>
+        </element>
+            委估对象-->
+        <element name="fadingyongtu">
+            <name>法定用途</name>
+            <type>id</type>
+            <path>field_statutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yongtu">
+            <name>用途</name>
+            <type>id</type>
+            <path>field_purpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudishijiyongtu">
+            <name>土地实际用途</name>
+            <type>id</type>
+            <path>field_landpurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudizhengzaiyongtu">
+            <name>土地证载用途</name>
+            <type>id</type>
+            <path>field_landstatutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="loupanmingcheng">
+            <name>楼盘名称</name>
+            <type>id</type>
+            <path>field_projectname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="loudongmingcheng">
+            <name>楼栋名称</name>
+            <type>id</type>
+            <path>field_buildingname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="louceng">
+            <name>楼层</name>
+            <type>id</type>
+            <path>field_floornumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fanghao">
+            <name>房号</name>
+            <type>id</type>
+            <path>field_housename</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangjian">
+            <name>房间</name>
+            <type>id</type>
+            <path>field_housecount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yangtai">
+            <name>阳台</name>
+            <type>id</type>
+            <path>field_balconynumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="dizhi">
+            <name>地址</name>
+            <type>id</type>
+            <path>field_address</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shifouman5nian">
+            <name>是否满5年</name>
+            <type>id</type>
+            <path>field_expiryfiveyear</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="shoucigoufang">
+            <name>首次购房</name>
+            <type>id</type>
+            <path>field_firstbuye</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jianzhuniandai">
+            <name>建筑年代</name>
+            <type>id</type>
+            <path>field_buildingdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shifouweiyizhufang">
+            <name>是否唯一住房</name>
+            <type>id</type>
+            <path>field_onlylivingroom</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudimianji">
+            <name>土地面积</name>
+            <type>id</type>
+            <path>field_landarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="loumiandijia">
+            <name>楼面地价</name>
+            <type>id</type>
+            <path>field_floorunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chengjiaojia">
+            <name>成交价</name>
+            <type>id</type>
+            <path>field_saleprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhenghao">
+            <name>房产证号</name>
+            <type>id</type>
+            <path>field_housecertno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="taoneimianji">
+            <name>套内面积</name>
+            <type>id</type>
+            <path>field_innerbuildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="dengjijia">
+            <name>登记价</name>
+            <type>id</type>
+            <path>field_registrationprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhengdengjiriqi">
+            <name>房产证登记日期</name>
+            <type>id</type>
+            <path>field_housecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weishengjian">
+            <name>卫生间</name>
+            <type>id</type>
+            <path>field_bathroomcount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="ting">
+            <name>厅</name>
+            <type>id</type>
+            <path>field_hallcount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jianzhujiegou">
+            <name>建筑结构</name>
+            <type>id</type>
+            <path>field_structure</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="zhuangxiujiazhi">
+            <name>装修价值</name>
+            <type>id</type>
+            <path>field_fitmentprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhuangxiu">
+            <name>装修</name>
+            <type>id</type>
+            <path>field_fitment</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yidaijin'e">
+            <name>拟贷金额</name>
+            <type>id</type>
+            <path>field_prepareloanamount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chufang">
+            <name>厨房</name>
+            <type>id</type>
+            <path>field_haskitchen</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jingguan">
+            <name>景观</name>
+            <type>id</type>
+            <path>field_sight</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudishiyongquanleixing">
+            <name>土地使用权类型</name>
+            <type>id</type>
+            <path>field_landusetype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudishiyongquanmianji">
+            <name>土地使用权面积</name>
+            <type>id</type>
+            <path>field_landusearea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudishiyongquanren">
+            <name>土地使用权人</name>
+            <type>id</type>
+            <path>field_landuseperson</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengzaidizhi">
+            <name>土地证载地址</name>
+            <type>id</type>
+            <path>field_landusecertaddress</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengfazhengriqi">
+            <name>土地证发证日期</name>
+            <type>id</type>
+            <path>field_landusecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudishiyongquanzheng">
+            <name>土地使用权证</name>
+            <type>id</type>
+            <path>field_landusecert</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="goumairiqi">
+            <name>购买日期</name>
+            <type>id</type>
+            <path>field_buydate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huxing">
+            <name>户型</name>
+            <type>id</type>
+            <path>field_housetypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="chanquanrenlianxirenguanxi">
+            <name>产权人联系人关系</name>
+            <type>id</type>
+            <path>field_ownercontactsrelation</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="maifangrenhuji">
+            <name>买房人户籍</name>
+            <type>id</type>
+            <path>field_buyhouseregioer</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="maifangrenshenfenzheng">
+            <name>买房人身份证</name>
+            <type>id</type>
+            <path>field_buyhouseowneridcard</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangren">
+            <name>买房人</name>
+            <type>id</type>
+            <path>field_buyhouseowner</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangrenlianxidianhua">
+            <name>买房人联系电话</name>
+            <type>id</type>
+            <path>field_buyhouseownerphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shoufujin'e">
+            <name>首付金额</name>
+            <type>id</type>
+            <path>field_shoufuamount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zongloucheng">
+            <name>总楼层</name>
+            <type>id</type>
+            <path>field_totalfloor</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jianzhumianji">
+            <name>建筑面积</name>
+            <type>id</type>
+            <path>field_buildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chaoxiang">
+            <name>朝向</name>
+            <type>id</type>
+            <path>field_front</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="budongchandanyuanhao">
+            <name>不动产单元号</name>
+            <type>id</type>
+            <path>field_realestateunitno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="budongchanquanzhenghao">
+            <name>不动产权证号</name>
+            <type>id</type>
+            <path>field_realestateno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanleixing">
+            <name>产权类型</name>
+            <type>id</type>
+            <path>field_ownertypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <!--客户信息-->
+        <element name="fenzhijigou">
+            <name>分支结构</name>
+            <type>id</type>
+            <path>field_subcompanyid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="weigushuju">
+             <name>委估数据</name>
+             <type>xpath</type>
+             <path>//*[@id='gridEvaluateObjce']/tbody/tr[3]/td[2]/a/span</path>
+             <elementType>span</elementType>
+         </element>
+        <element name="weiguhuijiashuju">
+            <name>委估回价数据</name>
+            <type>xpath</type>
+            <path>//*[@id='gridEvaluateObjce']/tbody/tr[2]/td[2]/a/span</path>
+            <elementType>span</elementType>
+        </element>
+        <element name="weituofanglianxiren">
+            <name>委托方联系人</name>
+            <type>id</type>
+            <path>field_clientcontactusername</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofanglianxidianhua">
+            <name>委托方联系电话</name>
+            <type>id</type>
+            <path>field_clientphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yinhanglianxiren">
+            <name>银行联系人</name>
+            <type>id</type>
+            <path>field_bankcontact</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofanglianxidianhuadianhua">
+            <name>银行联系人电话</name>
+            <type>id</type>
+            <path>field_bankcontactphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kehuleixing">
+            <name>客户类型</name>
+            <type>id</type>
+            <path>field_banktype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="weituokehu">
+            <name>委托客户</name>
+            <type>id</type>
+            <path>field_bankid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="kanxianchanglianxiren">
+            <name>看现场联系人</name>
+            <type>id</type>
+            <path>field_contactuser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kanxianchanglianxirendianhua">
+            <name>看现场联系人电话</name>
+            <type>id</type>
+            <path>field_contacttelephone</path>
+            <elementType>input</elementType>
+        </element>
+         <element name="yewuyuansuoshubumen">
+            <name>业务员所属部门</name>
+            <type>id</type>
+            <path>field_saledepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="lianxirenchuanzhen">
+            <name>联系人传真</name>
+            <type>id</type>
+            <path>field_contactfax</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yewuyuansuoshubumenfuzheren">
+            <name>业务员所属部门负责人</name>
+            <type>id</type>
+            <path>field_saledepartmentleader</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="beizhu">
+            <name>备注</name>
+            <type>id</type>
+            <path>field_remark</path>
+            <elementType>textarea</elementType>
+        </element>
+         <!--估价信息-->
+        <element name="zhengchanggujiadanjia">
+            <name>正常估价单价</name>
+            <type>ID</type>
+            <path>field_normalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudidanjia">
+            <name>土地单价</name>
+            <type>id</type>
+            <path>field_landunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizongjia">
+            <name>土地总价</name>
+            <type>id</type>
+            <path>field_landtotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zidonggujiadanjia">
+            <name>自动估价单价</name>
+            <type>id</type>
+            <path>field_autoprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zidonggujiazongjia">
+            <name>自动估价总价</name>
+            <type>id</type>
+            <path>txtautototalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhengchanggujiadanjia">
+            <name>正常估价单价</name>
+            <type>id</type>
+            <path>field_normalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zongjia">
+            <name>总价</name>
+            <type>id</type>
+            <path>field_totalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="suifei">
+            <name>税费</name>
+            <type>id</type>
+            <path>field_tax</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jingzhi">
+            <name>净值</name>
+            <type>id</type>
+            <path>field_netprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fadingyouxianshouchangkuan">
+            <name>法定优先受偿款</name>
+            <type>id</type>
+            <path>field_legalpayment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="gujiashi">
+            <name>估价师</name>
+            <type>id</type>
+            <path>txtAppraisersUserName</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="pingguzongjia">
+            <name>评估总价</name>
+            <type>id</type>
+            <path>field_housetotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huijiashijian">
+            <name>回价时间</name>
+            <type>id</type>
+            <path>field_biddate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yingbudijia">
+            <name>应补地价</name>
+            <type>id</type>
+            <path>field_shouldfilllandprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jingzhi">
+            <name>净值</name>
+            <type>id</type>
+            <path>field_netprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="qiangzhibiaoxianzhi">
+            <name>强制变现值</name>
+            <type>id</type>
+            <path>field_liquidityvalue</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jiageshuoming">
+            <name>价格说明</name>
+            <type>id</type>
+            <path>field_priceremark</path>
+            <elementType>textarea</elementType>
+        </element>
+        <element name="qiangzhibianxianshui'e">
+            <name>强制变现税费额</name>
+            <type>id</type>
+            <path>field_liquiditytaxvalue</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengfazhengjiguan">
+            <name>土地证发证机关</name>
+            <type>id</type>
+            <path>field_landusecertdepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="danjiaOK">
+            <name>回价完成提示框</name>
+            <type>xpath</type>
+            <path>//input[@value='确定']</path>
+            <ipath>html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input</ipath>
+            <elementType>input</elementType>
+        </element>
+        <element name="danjia">
+            <name>单价</name>
+            <type>ID</type>
+            <path>field_unitprice</path>
+            <elementType>input</elementType>
+        </element>
+
+        <!--附属房屋信息-->
+        <element name="tianjiafuzhufangwu">
+            <name>添加附属房屋</name>
+            <type>id</type>
+            <path>btnAddSubHouse</path>
+            <elementType>a</elementType>
+        </element>
+        <element name="fuzhufangwuiframe">
+            <name>附属房屋iframe</name>
+            <type>xpath</type>
+            <opath>/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</opath>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+            <elementType>iframe</elementType>
+        </element>
+        <element name="fuzhufangwuSave">
+            <name>保存</name>
+            <type>id</type>
+            <path>btnSave</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fuzhufangwuleixing">
+            <name>附属房屋类型</name>
+            <type>id</type>
+            <path>field_subhousetype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="fuzhufangwumianji">
+            <name>附属房屋面积</name>
+            <type>id</type>
+            <path>field_subhousearea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fuzhufangwudanjia">
+            <name>附属房屋单价</name>
+            <type>id</type>
+            <path>field_subhouseunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fuzhufangwuzongjia">
+            <name>附属房屋总价</name>
+            <type>id</type>
+            <path>field_subhousetotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="xiangxixinxiIframe">
+            <name>返回新增界面的iframe</name>
+            <type>xpath</type>
+            <path>/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+            <elementType>iframe</elementType>
+        </element>
+        <element name="fuzhuweiguframe">
+            <name>附属返回委估的frame</name>
+            <type>xpath</type>
+            <path>html/body/div[3]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+        </element>
+        <element name="fuzhuweiguframe2">
+            <name>检查数据进入附属时</name>
+            <type>xpath</type>
+            <path>html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+            <elementType>ifrane</elementType>
+        </element>
+        <element name="resfuzhufangwu">
+            <name>附属房屋数据列表</name>
+            <type>xpath</type>
+            <path>//*[@id='tbObjectSubHouse']/tbody/tr[3]/td[1]/a</path>
+
+        </element>
+
+
+    </function>
+
+<!--查看修改-->
+    <function name="ExamineModif">
+        <element name="keybutton">
+            <name>按钮</name>
+            <type>xpath</type>
+            <path>html/body/div/div[1]/div/input</path>
+        </element>
+        <element name="close">
+            <name>右上角关闭</name>
+            <type>class</type>
+            <path>ui_close</path>
+        </element>
+        <element name="writePreviews">
+            <name>撰写预评报告按钮</name>
+            <type>id</type>
+            <path>btnRequestYP</path>
+        </element>
+
+    <!--撰写预评-->
+        <element name="pReevaluateTab">
+            <name>撰写预评Tab</name>
+            <type>xpath</type>
+            <path>.//*[@id='preevaluateInfoDiv']/div[1]</path>
+        </element>
+        <element name="pReevaluateSave">
+            <name>保存按钮</name>
+            <type>id</type>
+            <path>btnSave</path>
+        </element>
+        <element name="pReevaluateOk">
+            <name>撰写预评确定按钮</name>
+            <type>xpath</type>
+            <path>html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input</path>
+        </element>
+    <!--转业务-->
+        转业务按钮
+        <element name="transferOfBusiness">
+            <name>转业务</name>
+            <type>id</type>
+            <path>btnRequestEntrust</path>
+            <elementType>input</elementType>
+        </element>
+        提交业务按钮
+        <element name="submitBusiness">
+            <name>提交业务</name>
+            <type>id</type>
+            <path>btnSubmit</path>
+        </element>
+        直接提交按钮
+        <element name="nowSubmit">
+            <name>直接提交</name>
+            <type>xpath</type>
+            <path>html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input[1]</path>
+            <opath>//input[@class='btn ml5 btnenter btnactive']</opath>
+        </element>
+        提交成功提示确定按钮
+        <element name="sureOK">
+            <name>提交成功按钮</name>
+            <type>xpath</type>
+            <path>html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input</path>
+        </element>
+        转业务界面iframe
+        <element name="transferOfBusinessiframe">
+            <name>转业务界面iframe</name>
+            <type>xpath</type>
+            <path>html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+        </element>
+        技术团队
+        <element name="jishutuandui">
+            <name>技术团队</name>
+            <type>ID</type>
+            <path>field_businesstypeid</path>
+            <elementType>select</elementType>
+        </element>
+        业务部门
+        <element name="yewubumen">
+           <name>业务部门</name>
+            <type>ID</type>
+            <path>field_departmentid</path>
+            <elementType>select</elementType>
+        </element>
+        报告类型
+        <element name="baogaoleixing">
+            <name>报告类型</name>
+            <type>ID</type>
+            <path>field_reporttypecode</path>
+            <elementType>select</elementType>
+        </element>
+        转业务界面Tab按钮
+        <element name="TOBtabshowdiv">
+            <name>Tab选项框状态</name>
+            <type>xpath</type>
+            <path>//*[@id="entrustInfodiv"]/div[1]</path>
+            <elementType>div</elementType>
+        </element>
+
+    <!--客户信息-->
+        <element name="xujiabianhao">
+            <name>询价编号</name>
+            <type>id</type>
+            <path>field_queryid</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weiguduixiangquancheng">
+            <name>委估对象全称</name>
+            <type>id</type>
+            <path>field_fullname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofang">
+            <name>委托方</name>
+            <type>id</type>
+            <path>field_clientname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofanglianxiren">
+            <name>委托方联系人</name>
+            <type>id</type>
+            <path>field_clientcontactusername</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofanglianxirendianhua">
+            <name>委托方联系电话</name>
+            <type>id</type>
+            <path>field_clientphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yinhanglianxiren">
+            <name>银行联系人</name>
+            <type>id</type>
+            <path>field_bankcontact</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yinhanglianxirendianhua">
+            <name>银行联系人电话</name>
+            <type>id</type>
+            <path>field_bankcontactphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituokehu">
+            <name>委托客户</name>
+            <type>id</type>
+            <path>field_bankid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="kanxianchanglianxiren">
+            <name>看现场联系人</name>
+            <type>id</type>
+            <path>field_contactuser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kanxianchanglianxirendianhua">
+            <name>看现场联系人电话</name>
+            <type>id</type>
+            <path>field_contacttelephone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yewuyuansuoshubumen">
+            <name>业务员所属部门</name>
+            <type>id</type>
+            <path>field_saledepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yewuyuansuoshubumenfuzheren">
+            <name>业务员所属部门负责人</name>
+            <type>id</type>
+            <path>field_saledepartmentleader</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="beizhu">
+            <name>备注</name>
+            <type>id</type>
+            <path>field_remark</path>
+            <elementType>textarea</elementType>
+        </element>
+
+     #委估对象信息
+     <!--委估对象-->
+        土地证发证机关
+        <element name="tudizhengfazhengjiguan">
+            <name>土地证发证机关</name>
+            <type>id</type>
+            <path>field_landusecertdepartment</path>
+            <elementType>input</elementType>
+        </element>
+        法定用途
+        <element name="fudingyongtu">
+            <name>法定用途</name>
+            <type>id</type>
+            <path>field_statutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        用途
+        <element name="yongtu">
+            <name>用途</name>
+            <type>id</type>
+            <path>field_purpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudishijiyongtu">
+            <name>土地实际用途</name>
+            <type>id</type>
+            <path>field_landpurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudizhengzaiyongtu">
+            <name>土地证载用途</name>
+            <type>id</type>
+            <path>field_landstatutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="loupanmingcheng">
+            <name>楼盘名称</name>
+            <type>id</type>
+            <path>field_projectname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="loudongmingcheng">
+            <name>楼栋名称</name>
+            <type>id</type>
+            <path>field_buildingname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="louceng">
+            <name>楼层</name>
+            <type>id</type>
+            <path>field_floornumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fanghao">
+            <name>房号</name>
+            <type>id</type>
+            <path>field_housename</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weiguduixiangquancheng">
+            <name>委估对象全称</name>
+            <type>ID</type>
+            <path>field_fullname</path>
+            <elementType>input</elementType>
+        </element>
+        房间
+        <element name="fangjian">
+            <name>房间</name>
+            <type>id</type>
+            <path>field_housecount</path>
+            <elementType>input</elementType>
+        </element>
+        阳台
+        <element name="yangtai">
+            <name>阳台</name>
+            <type>id</type>
+            <path>field_balconynumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="dizhi">
+            <name>地址</name>
+            <type>id</type>
+            <path>field_address</path>
+            <elementType>input</elementType>
+        </element>
+        是否满5年
+        <element name="shifouman5nian">
+            <name>是否满5年</name>
+            <type>id</type>
+            <path>field_expiryfiveyear</path>
+            <elementType>select</elementType>
+        </element>
+        首次购房
+        <element name="shoucigoufang">
+            <name>首次购房</name>
+            <type>id</type>
+            <path>field_firstbuye</path>
+            <elementType>select</elementType>
+        </element>
+        建筑年代
+        <element name="jianzhuniandai">
+            <name>建筑年代</name>
+            <type>id</type>
+            <path>field_buildingdate</path>
+            <elementType>input</elementType>
+        </element>
+        否唯一住房
+        <element name="shifouweiyizhufang">
+            <name>是否唯一住房</name>
+            <type>id</type>
+            <path>field_onlylivingroom</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudimianji">
+            <name>土地面积</name>
+            <type>id</type>
+            <path>field_landarea</path>
+            <elementType>input</elementType>
+        </element>
+        楼面地价
+        <element name="loumiandijia">
+            <name>楼面地价</name>
+            <type>id</type>
+            <path>field_floorunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chengjiaojia">
+            <name>成交价</name>
+            <type>id</type>
+            <path>field_saleprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhenghao">
+            <name>房产证号</name>
+            <type>id</type>
+            <path>field_housecertno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="taoneimianji">
+            <name>套内面积</name>
+            <type>id</type>
+            <path>field_innerbuildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        登记价
+        <element name="dengjijia">
+            <name>登记价</name>
+            <type>id</type>
+            <path>field_registrationprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhengdengjiriqi">
+            <name>房产证登记日期</name>
+            <type>id</type>
+            <path>field_housecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        卫生间
+        <element name="weishengjian">
+            <name>卫生间</name>
+            <type>id</type>
+            <path>field_bathroomcount</path>
+            <elementType>input</elementType>
+        </element>
+        厅
+        <element name="ting">
+            <name>厅</name>
+            <type>id</type>
+            <path>field_hallcount</path>
+            <elementType>input</elementType>
+        </element>
+        建筑结构
+        <element name="jianzhujiegou">
+            <name>建筑结构</name>
+            <type>id</type>
+            <path>field_structure</path>
+            <elementType>select</elementType>
+        </element>
+        装修价值
+        <element name="zhuangxiujiazhi">
+            <name>装修价值</name>
+            <type>id</type>
+            <path>field_fitmentprice</path>
+            <elementType>input</elementType>
+        </element>
+        装修
+        <element name="zhuangxiu">
+            <name>装修</name>
+            <type>id</type>
+            <path>field_fitment</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yidaijin'e">
+            <name>拟贷金额</name>
+            <type>id</type>
+            <path>field_prepareloanamount</path>
+            <elementType>input</elementType>
+        </element>
+        厨房
+        <element name="chufang">
+            <name>厨房</name>
+            <type>id</type>
+            <path>field_haskitchen</path>
+            <elementType>select</elementType>
+        </element>
+        景观
+        <element name="jingguan">
+            <name>景观</name>
+            <type>id</type>
+            <path>field_sight</path>
+            <elementType>select</elementType>
+        </element>
+        土地使用权类型
+        <element name="tudishiyongquanleixing">
+            <name>土地使用权类型</name>
+            <type>id</type>
+            <path>field_landusetype</path>
+            <elementType>select</elementType>
+        </element>
+        土地使用权面积
+        <element name="tudishiyongquanmianji">
+            <name>土地使用权面积</name>
+            <type>id</type>
+            <path>field_landusearea</path>
+            <elementType>input</elementType>
+        </element>
+        土地使用权人
+        <element name="tudishiyongquanren">
+            <name>土地使用权人</name>
+            <type>id</type>
+            <path>field_landuseperson</path>
+            <elementType>input</elementType>
+        </element>
+        土地证载地址
+        <element name="tudizhengzaidizhi">
+            <name>土地证载地址</name>
+            <type>id</type>
+            <path>field_landusecertaddress</path>
+            <elementType>input</elementType>
+        </element>
+        土地证发证日期
+        <element name="tudizhengfazhengriqi">
+            <name>土地证发证日期</name>
+            <type>id</type>
+            <path>field_landusecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        土地使用权证
+        <element name="tudishiyongquanzheng">
+            <name>土地使用权证</name>
+            <type>id</type>
+            <path>field_landusecert</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="goumairiqi">
+            <name>购买日期</name>
+            <type>id</type>
+            <path>field_buydate</path>
+            <elementType>input</elementType>
+        </element>
+        户型
+        <element name="huxing">
+            <name>户型</name>
+            <type>id</type>
+            <path>field_housetypecode</path>
+            <elementType>select</elementType>
+        </element>
+        产权人联系人
+        <element name="chanquanrenlianxireng">
+            <name>产权人联系人</name>
+            <type>ID</type>
+            <path>field_ownercontacts</path>
+            <elementType>input</elementType>
+        </element>
+        产权人联系人关系
+        <element name="chanquanrenlianxirenguanxi">
+            <name>产权人联系人关系</name>
+            <type>id</type>
+            <path>field_ownercontactsrelation</path>
+            <elementType>select</elementType>
+        </element>
+        产权人联系人电话
+        <element name="chanquanrenlianxirendianhua">
+            <name>产权人联系人电话</name>
+            <type>ID</type>
+            <path>field_ownercontactsphone</path>
+            <elementType>input</elementType>
+        </element>
+        买房人户籍
+        <element name="maifangrenhuji">
+            <name>买房人户籍</name>
+            <type>id</type>
+            <path>field_buyhouseregioer</path>
+            <elementType>select</elementType>
+        </element>
+        买房人身份证
+        <element name="maifangrenshenfenzheng">
+            <name>买房人身份证</name>
+            <type>id</type>
+            <path>field_buyhouseowneridcard</path>
+            <elementType>input</elementType>
+        </element>
+        买房人
+        <element name="maifangren">
+            <name>买房人</name>
+            <type>id</type>
+            <path>field_buyhouseowner</path>
+            <elementType>input</elementType>
+        </element>
+        买房人联系电话
+        <element name="maifangrenlianxidianhua">
+            <name>买房人联系电话</name>
+            <type>id</type>
+            <path>field_buyhouseownerphone</path>
+            <elementType>input</elementType>
+        </element>
+        首付金额
+        <element name="shoufujin'e">
+            <name>首付金额</name>
+            <type>id</type>
+            <path>field_shoufuamount</path>
+            <elementType>input</elementType>
+        </element>
+        总楼层
+        <element name="zongloucheng">
+            <name>总楼层</name>
+            <type>id</type>
+            <path>field_totalfloor</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jianzhumianji">
+            <name>建筑面积</name>
+            <type>id</type>
+            <path>field_buildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chaoxiang">
+            <name>朝向</name>
+            <type>id</type>
+            <path>field_front</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="budongchandanyuanhao">
+            <name>不动产单元号</name>
+            <type>id</type>
+            <path>field_realestateunitno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="budongchanquanzhenghao">
+            <name>不动产权证号</name>
+            <type>id</type>
+            <path>field_realestateno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanleixing">
+            <name>产权类型</name>
+            <type>id</type>
+            <path>field_ownertypecode</path>
+            <elementType>select</elementType>
+        </element>
+
+        <!--估价信息-->
+        <element name="zhengchanggujiadanjia">
+            <name>正常估价单价</name>
+            <type>ID</type>
+            <path>field_normalprice</path>
+            <elementType>input</elementType>
+        </element>
+        单价
+        <element name="danjia">
+            <name>单价</name>
+            <type>ID</type>
+            <path>field_unitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huijiashenpiliucheng">
+            <name>回价审批流程</name>
+            <type>id</type>
+            <path>field_replypriceworkflowid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudidanjia">
+            <name>土地单价</name>
+            <type>id</type>
+            <path>field_landunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizongjia">
+            <name>土地总价</name>
+            <type>id</type>
+            <path>field_landtotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zidonggujiadanjia">
+            <name>自动估价单价</name>
+            <type>id</type>
+            <path>field_autoprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zidonggujiazongjia">
+            <name>自动估价总价</name>
+            <type>id</type>
+            <path>txtautototalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhengchanggujiadanjia">
+            <name>正常估价单价</name>
+            <type>id</type>
+            <path>field_normalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zongjia">
+            <name>总价</name>
+            <type>id</type>
+            <path>field_totalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="suifei">
+            <name>税费</name>
+            <type>id</type>
+            <path>field_tax</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jingzhi">
+            <name>净值</name>
+            <type>id</type>
+            <path>field_netprice</path>
+            <elementType>input</elementType>
+        </element>
+        法定优先受偿款
+        <element name="fadingyouxianshouchangkuan">
+            <name>法定优先受偿款</name>
+            <type>id</type>
+            <path>field_legalpayment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="gujiashi">
+            <name>估价师</name>
+            <type>id</type>
+            <path>txtAppraisersUserName</path>
+            <elementType>input</elementType>
+        </element>
+        评估总价
+        <element name="pingguzongjia">
+            <name>评估总价</name>
+            <type>id</type>
+            <path>field_housetotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        回价时间
+        <element name="huijiashijian">
+            <name>回价时间</name>
+            <type>id</type>
+            <path>field_biddate</path>
+            <elementType>input</elementType>
+        </element>
+        应补地价v
+        <element name="yingbudijia">
+            <name>应补地价</name>
+            <type>id</type>
+            <path>field_shouldfilllandprice</path>
+            <elementType>input</elementType>
+        </element>
+        净值
+        <element name="jingzhi">
+            <name>净值</name>
+            <type>id</type>
+            <path>field_netprice</path>
+            <elementType>input</elementType>
+        </element>
+        强制变现值
+        <element name="qiangzhibiaoxianzhi">
+            <name>强制变现值</name>
+            <type>id</type>
+            <path>field_liquidityvalue</path>
+            <elementType>input</elementType>
+        </element>
+        价格说明
+        <element name="jiageshuoming">
+            <name>价格说明</name>
+            <type>id</type>
+            <path>field_priceremark</path>
+            <elementType>textarea</elementType>
+        </element>
+        强制变现税费额
+        <element name="qiangzhibianxianshui'e">
+            <name>强制变现税费额</name>
+            <type>id</type>
+            <path>field_liquiditytaxvalue</path>
+            <elementType>input</elementType>
+        </element>
+
+
+        <element name="weituokehu">
+            <name>委托客户</name>
+            <type>xpath</type>
+            <path>//*[@id='tbEntrust']/tbody/tr[6]/td[4]/select</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="pingguzongjia">
+            <name>评估总价</name>
+            <type>id</type>
+            <path>field_housetotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shuifei">
+            <name>税费</name>
+            <type>id</type>
+            <path>field_tax</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jingzhi">
+            <name>净值</name>
+            <type>id</type>
+            <path>field_netprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huijiashijian">
+            <name>回价时间</name>
+            <type>id</type>
+            <path>field_biddate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chuangjianshijian">
+            <name>创建时间</name>
+            <type>id</type>
+            <path>field_biddate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanren">
+            <name>产权人</name>
+            <type>xpath</type>
+            <path>//*[@id='Owner']/tbody/tr[2]/td[1]/input</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fenzhijigou">
+            <name>分支机构</name>
+            <type>id</type>
+            <path>field_subcompanyid</path>
+            <elementType>select</elementType>
+        </element>
+
+    </function>
+    <!--列表数据对应的索引-->
+    <function name="Querylist">
+        <element name="xujiabianhao">
+            <name>询价编号</name>
+            <value>3</value>
+        </element>
+        <element name="weiguduixiangquancheng">
+            <name>委估对象全称</name>
+            <value>5</value>
+        </element>
+        <element name="weituofang">
+            <name>委估方</name>
+            <value>10</value>
+        </element>
+        <element name="weituokehu">
+            <name>委托客户</name>
+            <value>9</value>
+        </element>
+        <element name="jianzhumianji">
+            <name>建筑面积</name>
+            <value>17</value>
+        </element>
+        <element name="danjia">
+            <name>单价</name>
+            <value>18</value>
+        </element>
+        <element name="pingguzongjia">
+            <name>评估总值</name>
+            <value>19</value>
+        </element>
+        <element name="shuifei">
+            <name>税费</name>
+            <value>20</value>
+        </element>
+         <element name="jingzhi">
+            <name>净值</name>
+            <value>21</value>
+        </element>
+         <element name="huijiashijian">
+            <name>回价时间</name>
+            <value>24</value>
+        </element>
+        <element name="chuangjianshijian">
+            <name>创建时间</name>
+            <value>27</value>
+        </element>
+        <element name="chanquanren">
+            <name>产权人</name>
+            <value>28</value>
+        </element>
+    </function>
+<!--其他状态信息-->
+    <function name="OtherState">
+        单套与多套询价状态
+        <element name="yitijiao" >
+            <name>已提交</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab_2"]/a</path>
+        </element>
+        <element name="yizhuanjiao" >
+            <name>已转交</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab_9"]/a</path>
+        </element>
+        <element name="daifenpei" >
+            <name>待分配</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab_3"]/a</path>
+        </element>
+        <element name="yifenpei" >
+            <name>已分配</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab_8"]/a</path>
+        </element>
+        <element name="daihuijia" >
+            <name>待回价</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab_4"]/a</path>
+        </element>
+        <element name="yihuijia" >
+            <name>已回价</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab_5"]/a</path>
+        </element>
+        <element name="daishenpi" >
+            <name>待审批</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab_6"]/a</path>
+        </element>
+        <element name="yishenpi" >
+            <name>已审批</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab_7"]/a</path>
+        </element>
+        <element name="yijiucuo" >
+            <name>我纠错的回价</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab_10"]/a</path>
+        </element>
+        盖章
+        <element name="daigaizheng" >
+            <name>待盖章</name>
+            <type>id</type>
+            <path>linkTab_1</path>
+        </element>
+        <element name="yigaizheng" >
+            <name>已盖章</name>
+            <type>id</type>
+            <path>linkTab_2</path>
+        </element>
+
+    </function>
+<!--查询-->
+    <function name="Query">
+        更多条件
+        <element name="moreConditions">
+            <name>更多条件 </name>
+            <type>id</type>
+            <path>aMoreSearch</path>
+        </element>
+        省份，直辖市
+        <element name="province">
+            <name>省份，直辖市</name>
+            <type>id</type>
+            <path>selProvince</path>
+            <elementType>select</elementType>
+        </element>
+        地级行政区
+        <element name="city">
+            <name>地级行政区</name>
+            <type>id</type>
+            <path>selCityId</path>
+            <elementType>select</elementType>
+        </element>
+        县级行政区
+        <element name="area">
+            <name>县级行政区</name>
+            <type>id</type>
+            <path>selAreaId</path>
+            <elementType>select</elementType>
+        </element>
+        查询按钮
+        <element name="queryKey">
+            <name>查询按钮</name>
+            <type>id</type>
+            <path>btnsearch</path>
+            <elementType>input</elementType>
+        </element>
+        分支机构
+        <element name="company">
+            <name>分支机构</name>
+            <type>id</type>
+            <path>selCompanyId</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="fenzhijigou">
+           <name>分支机构</name>
+            <type>ID</type>
+            <path>field_subcompanyid</path>
+             <elementType>select</elementType>
+        </element>
+        部门
+        <element name="department">
+            <name>部门</name>
+            <type>id</type>
+            <path>seldepartmentid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yewuyuansuoshubumen">
+            <name>业务员所属部门</name>
+            <type>id</type>
+            <path>field_saledepartment</path>
+            <elementType>input</elementType>
+        </element>
+        委估对象类型
+        <element name="valuationTypeMode">
+            <name>委估对象类型</name>
+            <type>id</type>
+            <path>selQueryType_Search</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="xunjialeixing">
+            <name>询价类型</name>
+            <type>xpath</type>
+            <path>//*[@id="tbEntrust"]/tbody/tr[2]/td[2]</path>
+            <elementType>td</elementType>
+        </element>
+        来源
+        <element name="source">
+            <name>来源</name>
+            <type>id</type>
+            <path>selSource</path>
+            <elementType>select</elementType>
+        </element>
+        委托客户
+        <element name="entrustCorrespondent">
+            <name>委托客户</name>
+            <type>id</type>
+            <path>selCustCompany</path>
+            <elementType>select</elementType>
+        </element>
+        分行
+        <element name="bankBranch">
+            <name>分行</name>
+            <type>id</type>
+            <path>selCustBranch</path>
+            <elementType>select</elementType>
+        </element>
+        支行
+        <element name="bankSubbranch">
+            <name>支行</name>
+            <type>id</type>
+            <path>selCustSubBranch</path>
+            <elementType>select</elementType>
+        </element>
+        状态
+        <element name="state">
+            <name>状态</name>
+            <type>id</type>
+            <path>selQueryStateCode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="xunjiazhuantai">
+            <name>询价状态</name>
+            <type>id</type>
+            <path>lbQueryState</path>
+            <elementType>lable</elementType>
+        </element>
+        估价师
+        <element name="appraisersUser">
+            <name>估价师</name>
+            <type>id</type>
+            <path>txtAppraisersUser</path>
+            <elementType>input</elementType>
+        </element>
+        查勘状态
+        <element name="surveystate">
+            <name>查勘状态</name>
+            <type>id</type>
+            <path>field_surveystate</path>
+            <elementType>select</elementType>
+        </element>
+        询价时间
+        <element name="beginData">
+            <name>开始时间</name>
+            <type>id</type>
+            <path>txtBeginDate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="endData">
+            <name>结束时间</name>
+            <type>id</type>
+            <path>txtEndDate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chuangjianshijian">
+            <name>创建时间</name>
+            <type>ID</type>
+            <path>field_createdate</path>
+            <elementType>input</elementType>
+        </element>
+        面积
+        <element name="minArea">
+            <name>最小面积</name>
+            <type>id</type>
+            <path>txtminArea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maxArea">
+            <name>最大面积</name>
+            <type>id</type>
+            <path>txtmaxArea</path>
+            <elementType>input</elementType>
+        </element>
+        模糊查询
+        <element name="fuzzyQuery">
+            <name>模糊查询</name>
+            <type>id</type>
+            <path>txtkey</path>
+            <elementType>input</elementType>
+        </element>
+        提交时间
+        <element name="submitBeginData">
+            <name>开始时间</name>
+            <type>id</type>
+            <path>txtQueryBeginDate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="submitEndData">
+            <name>结束时间</name>
+            <type>id</type>
+            <path>txtQueryEndDate</path>
+            <elementType>input</elementType>
+        </element>
+        <!--盖章-->
+        询价单类型
+        <element name="xujiadanleixing">
+            <name>询价单类型</name>
+            <type>id</type>
+            <path>selQuerySheetType</path>
+            <elementType>select</elementType>
+        </element>
+        物业类型
+        <element name="wuyeleixing">
+            <name>物业类型</name>
+            <type>id</type>
+            <path>selQueryType</path>
+            <elementType>select</elementType>
+        </element>
+    </function>
+
+<!--报告-->
+    <function name="RPtoolTip">
+        <element name="tip1">
+            <name>请选择要操作的项</name>
+            <type>xpath</type>
+            <path>//td[@class='ui_main']/div</path>
+            <elementType>div</elementType>
+        </element>
+        <element name="tip2">
+            <name>确定删除</name>
+            <type>xpath</type>
+            <path>//div[@class='ui_buttons']/input[1]</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tip3">
+            <name>确定转交</name>
+            <type>xpath</type>
+            <path>//div[@class='ui_buttons']/input[1]</path>
+            <elementType>input</elementType>
+        </element>
+
+    </function>
+    <function name="RPLeftTilte">
+        <element name="zhengshibaogao">
+            <name>正式报告</name>
+            <type>id</type>
+            <path>newtree_201_212</path>
+            <elementType>li</elementType>
+        </element>
+        <element name="yupingbaogao">
+            <name>预评报告</name>
+            <type>id</type>
+            <path>newtree_201_214</path>
+            <elementType>li</elementType>
+        </element>
+        <element name="yewudengji">
+            <name>预评报告</name>
+            <type>id</type>
+            <path>newtree_201_210</path>
+            <elementType>li</elementType>
+        </element>
+    </function>
+    <function name="RPCheck">
+        <element name="zhengshibaogao">
+            <name>正式报告</name>
+            <type>xpath</type>
+            <path>//*[@id="mytab_212"]/div[1]</path>
+            <elementType>div</elementType>
+        </element>
+        <element name="yewudengji">
+            <name>业务登记</name>
+            <type>xpath</type>
+            <path>//*[@id="mytab_210"]/div[1]</path>
+            <elementType>div</elementType>
+        </element>
+        <element name="yupingbaogao">
+            <name>预评报告</name>
+            <type>xpath</type>
+            <path>//*[@id="mytab_214"]/div[1]</path>
+            <elementType>div</elementType>
+        </element>
+        <element name="tabwebcheck">
+            <name>Tab页检查,多个li</name>
+            <type>xpath</type>
+            <path>//*[@id="linkTab"]/ul/li</path>
+            <elementType>li-m</elementType>
+        </element>
+    </function>
+    <function name="RPiframe">
+        <element name="ZSBGtable">
+            <name>正式报告</name>
+            <type>id</type>
+            <path>mytab_212Frame</path>
+        </element>
+        <element name="YWDJtable">
+            <name>业务登记</name>
+            <type>id</type>
+            <path>mytab_210Frame</path>
+        </element>
+        <element name="YPBGtable">
+            <name>预评报告</name>
+            <type>id</type>
+            <path>mytab_214Frame</path>
+        </element>
+        <element name="dDetail">
+            <name>复制/新增</name>
+            <type>xpath</type>
+            <path>/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+            <elementType>iframe</elementType>
+        </element>
+        <element name="AbusinessUser">
+            <name>新增</name>
+            <type>xpath</type>
+            <path>/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+        </element>
+        <element name="Object">
+            <name>导入委估对象</name>
+            <type>xpath</type>
+            <path>/html/body/div[2]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe</path>
+            <elementType>iframe</elementType>
+        </element>
+
+    </function>
+    <function name="RPtabweb">
+        <element name="tab1">
+            <name>全部</name>
+            <type>id</type>
+            <path>linkTab_1</path>
+        </element>
+        <element name="tab2">
+            <name>我的业务/我要撰写的</name>
+            <type>id</type>
+            <path>linkTab_2</path>
+        </element>
+        <element name="tab3">
+            <name>业务登记待我分配的</name>
+            <type>id</type>
+            <path>linkTab_3</path>
+        </element>
+        <element name="tab4">
+            <name>业务登记我已分配的/正式报告我已审的/预评报告转交待我确认的</name>
+            <type>id</type>
+            <path>linkTab_4</path>
+        </element>
+        <element name="tab5">
+            <name>业务登记微信个人业务/正式报告我已审的/预评报告已转交他人的</name>
+            <type>id</type>
+            <path>linkTab_5</path>
+        </element>
+        <element name="tab6">
+            <name>正式报告我已完成的/预评报告我提审的</name>
+            <type>id</type>
+            <path>linkTab_6</path>
+        </element>
+        <element name="tab7">
+            <name>正式报告我提审的/预评报告待我审的</name>
+            <type>id</type>
+            <path>linkTab_7</path>
+        </element>
+        <element name="tab8">
+            <name>预评报告我已审的/转交待我确认的</name>
+            <type>id</type>
+            <path>linkTab_8</path>
+        </element>
+        <element name="tab9">
+            <name>预评报告我已完成的/正式报告已转交他人的</name>
+            <type>id</type>
+            <path>linkTab_9</path>
+        </element>
+        <element name="tab10">
+            <name>正式报告待我分配的</name>
+            <type>id</type>
+            <path>linkTab_10</path>
+        </element>
+        <element name="tab11">
+            <name>正式报告我已分配的</name>
+            <type>id</type>
+            <path>linkTab_11</path>
+        </element>
+
+    </function>
+    <function name="RPbutton">
+        <element name="addbutton">
+            <name>新增报告/新增业务/新增预评</name>
+            <type>id</type>
+            <path>btnAdd</path>
+        </element>
+        <element name="copybutton">
+            <name>复制新增</name>
+            <type>id</type>
+            <path>btnCopy</path>
+        </element>
+        <element name="deletebutton">
+            <name>删除</name>
+            <type>id</type>
+            <path>btnDelete</path>
+        </element>
+        <element name="reassignbutton">
+            <name>转交</name>
+            <type>id</type>
+            <path>btnRequestReAssign</path>
+        </element>
+        <element name="assignbutton">
+            <name>分配</name>
+            <type>id</type>
+            <path>btnAssign</path>
+        </element>
+        <element name="ZhuanJiaobutton">
+            <name>转交（待我审的）</name>
+            <type>id</type>
+            <path>btnZhuanJiao</path>
+        </element>
+        <element name="okbutton">
+            <name>确认</name>
+            <type>id</type>
+            <path>btnConfirmAssign</path>
+        </element>
+        <element name="btnDel">
+            <name>删除</name>
+            <type>id</type>
+            <path>btnDel</path>
+        </element>
+        <element name="btnExport">
+            <name>导出数据</name>
+            <type>id</type>
+            <path>btnExport</path>
+        </element>
+    </function>
+    <function name="RPreportInfo">
+        <element name="getnumber">
+            <name>获取编号</name>
+            <type>id</type>
+            <path>getNumber</path>
+            <elementType>a</elementType>
+        </element>
+        <element name="completedate">
+            <name>完成时间</name>
+            <type>id</type>
+            <path>field_completedate</path>
+            <elementType>input</elementType>
+        </element>
+    </function>
+    <function name="RPrequestInfo">
+        <element name="technicalTeam">
+            <name>技术团队</name>
+            <type>id</type>
+            <path>field_businesstypeid</path>
+            <elementType>select</elementType>
+        </element>
+    </function>
+    <function name="RPtabchk">
+        <element name="tabchkbox">
+            <name>Tab按钮</name>
+            <type>ID</type>
+            <path>table_chk_tabshow</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tabstate">
+            <name> Tab状态</name>
+            <type>id</type>
+            <path>table_tab_box</path>
+        </element>
+        <element name="tabshowdiv">
+            <name>Tab状态</name>
+            <type>xpath</type>
+            <path>//*[@id="infoDiv"]/div</path>
+            <elementType>div</elementType>
+        </element>
+        <element name="Mtabshowdiv">
+            <name>Tab状态</name>
+            <type>xpath</type>
+            <path>//*[@id="preevaluateInfoDiv"]/div</path>
+            <elementType>div</elementType>
+        </element>
+        <element name="Ytabshowdiv">
+            <name>Tab状态</name>
+            <type>xpath</type>
+            <path>//*[@id="entrustInfodiv"]/div</path>
+            <elementType>div</elementType>
+        </element>
+        <element name="tabshow">
+            <name> Tab显示</name>
+            <type>id</type>
+            <path>table_chk_tabshow</path>
+            <elementType>input</elementType>
+        </element>
+    </function>
+    <function name="RPdataButton">
+        <element name="save">
+            <name>保存</name>
+            <type>id</type>
+            <path>btnSave</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="btnSubmit">
+            <name>提交业务</name>
+            <type>id</type>
+            <path>btnSubmit</path>
+            <elementType>input</elementType>
+        </element>
+    </function>
+    <function name="RPuser">
+        <element name="sinput">
+            <name>搜索框</name>
+            <type>id</type>
+            <path>txtKey</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="Mtan1">
+            <name>tan1</name>
+            <type>id</type>
+            <path>userchkTree_129_check</path>
+        </element>
+        <element name="Atan1">
+            <name>tan1</name>
+            <type>id</type>
+            <path>userchkTree_128_check</path>
+        </element>
+        <element name="Ctan1">
+            <name>tan1</name>
+            <type>ID</type>
+            <path>userchkTree_132_check</path>
+            <elementType>checkbox</elementType>
+        </element>
+        <element name="Gtan1">
+            <name>tan1</name>
+            <type>ID</type>
+            <path>userchkTree_132_check</path>
+            <elementType>checkbox</elementType>
+        </element>
+        <element name="GAtan1">
+            <name>tan1</name>
+            <type>ID</type>
+            <path>userchkTree_10_check</path>
+            <elementType>checkbox</elementType>
+        </element>
+        <element name="GAtan2">
+            <name>tan2</name>
+            <type>ID</type>
+            <path>userchkTree_25_check</path>
+            <elementType>checkbox</elementType>
+        </element>
+        <element name="ALtan1">
+            <name>tan1</name>
+            <type>ID</type>
+            <path>userchkTree_166_check</path>
+            <elementType>checkbox</elementType>
+        </element>
+        <element name="users">
+            <name>账户</name>
+            <type>id</type>
+            <path>userchkTree</path>
+            <elementType>ul</elementType>
+        </element>
+        <element name="btnOk">
+            <name>确定</name>
+            <type>id</type>
+            <path>btnOk</path>
+        </element>
+
+    </function>
+    <function name="RPuserTxet">
+        <element name="BusinessUser">
+            <name>业务员</name>
+            <type>id</type>
+            <path>txtBusinessUser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="BusinessFollower">
+            <name>业务跟进人</name>
+            <type>id</type>
+            <path>txtBusinessFollower</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="SurveyUser">
+            <name>查勘员</name>
+            <type>id</type>
+            <path>txtSurveyUser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="backupdatauser">
+            <name>归档资料负责人</name>
+            <type>id</type>
+            <path>txtbackupdatauser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="txtBusinessUserName">
+            <name>业务员</name>
+            <type>id</type>
+            <path>txtBusinessUserName</path>
+            <elementType>input</elementType>
+        </element>
+    </function>
+    <function name="RPdataDetail">
+        <element name="technicalteam">
+            <name>技术团队</name>
+            <type>id</type>
+            <path>field_businesstypeid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="SelectUser">
+            <name>业务员</name>
+            <type>id</type>
+            <path>btnSelectUser_field_businessuserid</path>
+            <elementType>button</elementType>
+        </element>
+
+        <element name="completedate">
+            <name>完成时间</name>
+            <type>id</type>
+            <path>field_completedate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="getNumber">
+            <name>获取报告编号</name>
+            <type>id</type>
+            <path>getNumber</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="reportno">
+            <name>报告编号</name>
+            <type>id</type>
+            <path>field_reportno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="btnsave">
+            <name>保存报告</name>
+            <type>id</type>
+            <path>btnSave</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="btnSubmit">
+            <name>提交业务</name>
+            <type>id</type>
+            <path>btnSubmit</path>
+            <elementType>button</elementType>
+        </element>
+
+        <element name="embranchment">
+            <name>分支机构</name>
+            <type>id</type>
+            <path>field_subcompanyid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="Province">
+            <name>省份</name>
+            <type>id</type>
+            <path>selProvince</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="city">
+            <name>城市</name>
+            <type>id</type>
+            <path>field_cityid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="area">
+            <name>区</name>
+            <type>id</type>
+            <path>field_areaid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="subarea">
+            <name>片区</name>
+            <type>id</type>
+            <path>field_subareaid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="department">
+            <name>业务部门</name>
+            <type>id</type>
+            <path>field_departmentid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="biztype">
+            <name>委托类型</name>
+            <type>id</type>
+            <path>field_biztype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="banktype">
+            <name>客户类型</name>
+            <type>id</type>
+            <path>field_banktype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="bankid">
+            <name>委托客户</name>
+            <type>id</type>
+            <path>field_bankid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="bankbranchid">
+            <name>委托客户分行</name>
+            <type>id</type>
+            <path>field_bankbranchid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="banksubbranchid">
+            <name>委托客户支行</name>
+            <type>id</type>
+            <path>field_banksubbranchid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="customercompanyfullname">
+            <name>客户全称</name>
+            <type>id</type>
+            <path>field_customercompanyfullname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="reporttypecode">
+            <name>报告类型</name>
+            <type>id</type>
+            <path>field_reporttypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="reportsubtype">
+            <name>报告子类型</name>
+            <type>ID</type>
+            <path>field_reportsubtype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="assesstype">
+            <name>评估目的</name>
+            <type>id</type>
+            <path>txt_assesstype</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="businessfollowerid">
+            <name>业务跟进人</name>
+            <type>id</type>
+            <path>btnSelectUser_field_businessfollowerid</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="BusinessFollower">
+            <name>业务跟进人显示框</name>
+            <type>id</type>
+            <path>txtBusinessFollower</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="projectname">
+            <name>项目名称 </name>
+            <type>id</type>
+            <path>field_projectname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="mobile">
+            <name>业务员电话 </name>
+            <type>id</type>
+            <path>field_mobile</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="borrowerwhetherowner">
+            <name>借款人是否为产权人</name>
+            <type>ID</type>
+            <path>field_borrowerwhetherowner</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="bankusername">
+            <name>业务联系人 </name>
+            <type>id</type>
+            <path>field_bankusername</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="bankuserphone">
+            <name>业务联系人电话 </name>
+            <type>id</type>
+            <path>field_bankusername</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="clientname">
+            <name>委托方</name>
+            <type>id</type>
+            <path>field_clientname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="clientphone">
+            <name>委托方联系电话</name>
+            <type>id</type>
+            <path>field_clientphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="projectaddress">
+            <name>估价对象位置</name>
+            <type>id</type>
+            <path>field_projectaddress</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="agencyconpany">
+            <name>中介公司</name>
+            <type>id</type>
+            <path>field_agencyconpany</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="agencybroker">
+            <name>中介经纪人</name>
+            <type>id</type>
+            <path>field_agencybroker</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="entrustno">
+            <name>委托合同编号</name>
+            <type>id</type>
+            <path>field_entrustno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="reportwantdate">
+            <name>要求出具报告时间</name>
+            <type>id</type>
+            <path>field_reportwantdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="clientaddress">
+            <name>委托人地址</name>
+            <type>id</type>
+            <path>field_clientaddress</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="clientlegalperson">
+            <name>委托人法人代表</name>
+            <type>id</type>
+            <path>field_clientlegalperson</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chargetype">
+            <name>收费类型</name>
+            <type>ID</type>
+            <path>field_chargetype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="submittype">
+            <name>报告投递方式</name>
+            <type>ID</type>
+            <path>field_submittype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="ischargemonthly">
+            <name>是否月结</name>
+            <type>ID</type>
+            <path>field_ischargemonthly</path>
+            <elementType>checkbox</elementType>
+        </element>
+        <element name="bankapplyforbforaf">
+            <name>银行申请状态</name>
+            <type>ID</type>
+            <path>field_bankapplyforbforaf</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="reportnumber">
+            <name>报告复印份数</name>
+            <type>id</type>
+            <path>field_reportnumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="saledepartment">
+            <name>业务员所属部门</name>
+            <type>id</type>
+            <path>field_saledepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="saledepartmentleader">
+            <name>业务员所属部门负责人</name>
+            <type>ID</type>
+            <path>field_saledepartmentleader</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="pledgeormortgage">
+            <name>业务类型</name>
+            <type>ID</type>
+            <path>field_pledgeormortgage</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="entrustsource">
+            <name>业务来源</name>
+            <type>ID</type>
+            <path>field_entrustsource</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="clientownerrelation">
+            <name>委托方与权利人关系</name>
+            <type>ID</type>
+            <path>field_clientownerrelation</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="clientcensusregister">
+            <name>委托人户籍</name>
+            <type>ID</type>
+            <path>field_clientcensusregister</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="commonguarantor">
+            <name>按揭贷款是否有共同保证人</name>
+            <type>ID</type>
+            <path>field_commonguarantor</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="ownercontactsphone">
+            <name>委托方联系人电话</name>
+            <type>ID</type>
+            <path>field_ownercontactsphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="clientcontact">
+            <name>委托方联系人</name>
+            <type>ID</type>
+            <path>field_clientcontact</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="reportuserid">
+            <name>报告使用方</name>
+            <type>ID</type>
+            <path>field_reportuserid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="reportuserbranchid">
+            <name>报告使用方分行</name>
+            <type>ID</type>
+            <path>field_reportuserbranchid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="reportusersubbranchid">
+            <name>报告使用方支行</name>
+            <type>ID</type>
+            <path>field_reportusersubbranchid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="clientshenfenzheng">
+            <name>委托人身份证</name>
+            <type>ID</type>
+            <path>field_clientshenfenzheng</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="remarks">
+            <name>备注</name>
+            <type>ID</type>
+            <path>field_remarks</path>
+            <elementType>textarea</elementType>
+        </element>
+        <element name="lbReportStateName">
+            <name>报告状态</name>
+            <type>id</type>
+            <path>lbReportStateName</path>
+            <elementType>label</elementType>
+        </element>
+
+
+        <element name="surveybegindate">
+            <name>查勘开始时间</name>
+            <type>id</type>
+            <path>field_surveybegindate</path>
+            <elementType>readonly</elementType>
+        </element>
+        <element name="surveyenddate">
+            <name>查勘结束时间</name>
+            <type>id</type>
+            <path>field_surveyenddate</path>
+            <elementType>readonly</elementType>
+        </element>
+        <element name="surveystate">
+            <name>查勘状态</name>
+            <type>ID</type>
+            <path>field_surveystate</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="surveyuserid">
+            <name>查勘员</name>
+            <type>ID</type>
+            <path>btnSelectUser_field_surveyuserid</path>
+            <elementType>button</elementType>
+        </element>
+
+
+        <element name="querytotalarea">
+            <name>评估总面积</name>
+            <type>ID</type>
+            <path>field_querytotalarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="reportedresults">
+            <name>是否上报协会</name>
+            <type>ID</type>
+            <path>field_reportedresults</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="querytotalprice">
+            <name>评估总值</name>
+            <type>ID</type>
+            <path>field_querytotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="preevaluateTotalprice">
+            <name>预评评估总值</name>
+            <type>ID</type>
+            <path>field_totalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tax">
+            <name>总税费</name>
+            <type>ID</type>
+            <path>field_tax</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="netprice">
+            <name>总净值</name>
+            <type>ID</type>
+            <path>field_netprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="netprice">
+            <name>总净值</name>
+            <type>ID</type>
+            <path>field_netprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="valuationdate">
+            <name>价值时点</name>
+            <type>ID</type>
+            <path>field_valuationdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="reportvalidbegindate">
+            <name>报告有效期开始</name>
+            <type>ID</type>
+            <path>field_reportvalidbegindate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="reportvalidenddate">
+            <name>报告有效期结束</name>
+            <type>ID</type>
+            <path>field_reportvalidenddate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="reportbegindate">
+            <name>报告作业日期开始</name>
+            <type>ID</type>
+            <path>field_reportbegindate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="reportenddate">
+            <name>报告作业日期结束</name>
+            <type>ID</type>
+            <path>field_reportenddate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shouldfilllandprice">
+            <name>应补地价总额</name>
+            <type>ID</type>
+            <path>field_shouldfilllandprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="legalpayment">
+            <name>法定优先受偿款总额</name>
+            <type>ID</type>
+            <path>field_legalpayment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="otherAppraisers">
+            <name>其它估价人员</name>
+            <type>ID</type>
+            <path>field_appraisers</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="writermobile">
+            <name>撰写人联系电话</name>
+            <type>ID</type>
+            <path>field_writermobile</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="assistedwriterids">
+            <name>报告撰写辅助人</name>
+            <type>ID</type>
+            <path>btnSelectUser_field_assistedwriterids</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="RPIreportsubtype">
+            <name>报告细分类型</name>
+            <type>xpath</type>
+            <path>//*[@id="field_reportsubtype" and @type="text"]</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="totalsubhouseprice">
+            <name>附属房屋评估总值</name>
+            <type>ID</type>
+            <path>field_totalsubhouseprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="backupdatauser">
+            <name>归档资料负责人</name>
+            <type>ID</type>
+            <path>btnSelectUser_field_backupdatauser</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="totallandprice">
+            <name>土地评估总值</name>
+            <type>ID</type>
+            <path>field_totallandprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="totalhouseprice">
+            <name>主房评估总值</name>
+            <type>ID</type>
+            <path>field_totalhouseprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="printdate">
+            <name>打印日期</name>
+            <type>ID</type>
+            <path>field_printdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="reportnotype">
+            <name>编号类型</name>
+            <type>ID</type>
+            <path>field_reportnotype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="totallandarea">
+            <name>土地总面积</name>
+            <type>ID</type>
+            <path>field_totallandarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="printnumber">
+            <name>打印份数</name>
+            <type>ID</type>
+            <path>field_printnumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="liquiditytaxsumvalue">
+            <name>强制变现税费总额</name>
+            <type>ID</type>
+            <path>field_liquiditytaxsumvalue</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="liquidityvaluesum">
+            <name>强制变现值总额</name>
+            <type>ID</type>
+            <path>field_liquidityvaluesum</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="remark">
+            <name>报告备注</name>
+            <type>ID</type>
+            <path>field_remark</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="roundSelect">
+            <name>评估总值取整</name>
+            <type>id</type>
+            <path>roundSelect_field_querytotalprice</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="preevaluateRoundSelect">
+            <name>预评评估总值取整</name>
+            <type>id</type>
+            <path>roundSelect_field_totalprice</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="RSnetprice">
+            <name>总净值取整</name>
+            <type>id</type>
+            <path>roundSelect_field_netprice</path>
+            <elementType>select</elementType>
+        </element>
+
+        <element name="appraisers">
+            <name>添加估价师</name>
+            <type>id</type>
+            <path>btnAppraisers</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="appraisersType">
+            <name>估价师类型</name>
+            <type>xpath</type>
+            <path>//*[@id="btnAppraisers"]/ul/li</path>
+            <elementType>li</elementType>
+        </element>
+        <element name="appraisersTable">
+            <name>估价师数据</name>
+            <type>xpath</type>
+            <path>//*[@id="tbAppraisers"]/tbody/tr</path>
+            <elementType>tr</elementType>
+        </element>
+
+        <element name="SWFUpload">
+            <name>上传</name>
+            <type>ID</type>
+            <path>SWFUpload_upload</path>
+            <elementType>object</elementType>
+        </element>
+        <element name="filetypecode">
+            <name>附件类型1</name>
+            <type>ID</type>
+            <path>field_filetypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="filetypesubcode">
+            <name>附件类型2</name>
+            <type>ID</type>
+            <path>field_filetypesubcode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="attTable">
+            <name>附件数据</name>
+            <type>xpath</type>
+            <path>//*[@id="tbFiles"]/tbody/tr</path>
+            <elementType>tr</elementType>
+        </element>
+
+        <element name="submittalsmarketprice">
+            <name>送审市场价</name>
+            <type>ID</type>
+            <path>field_submittalsmarketprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="selWorkFlow">
+            <name>报告审批流程</name>
+            <type>id</type>
+            <path>selWorkFlow</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="SubmitApproval">
+            <name>提交审批</name>
+            <type>id</type>
+            <path>btnSubmitApproval</path>
+            <elementType>button</elementType>
+        </element>
+
+        <element name="importObject">
+            <name> 导入委估对象 </name>
+            <type>id</type>
+            <path>importObject</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="SWFUpload_upload">
+            <name> 导入委估对象 </name>
+            <type>id</type>
+            <path>SWFUpload_upload</path>
+            <elementType>button</elementType>
+        </element>
+
+        <element name="addObject">
+            <name>  添加委估对象</name>
+            <type>id</type>
+            <path>addObject</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="addObjectType">
+            <name>委估对象类型</name>
+            <type>xpath</type>
+            <path>//*[@id="addObject"]/ul/li</path>
+            <elementType>button</elementType>
+        </element>
+
+        <element name="AutoReport">
+            <name>生成报告</name>
+            <type>id</type>
+            <path>btnAutoReport</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="CreateFile">
+            <name>附件生成</name>
+            <type>id</type>
+            <path>btnCreateFile</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="tbFollowUP">
+            <name>跟进</name>
+            <type>xpath</type>
+            <path>//*[@id="tbFollowUP"]/tbody/tr[3]/td/div</path>
+        </element>
+
+        <element name="ypdate">
+            <name>预评时间</name>
+            <type>id</type>
+            <path>field_ypdate</path>
+            <elementType>readonly</elementType>
+        </element>
+        <element name="overdate">
+            <name>有效期</name>
+            <type>id</type>
+            <path>field_overdate</path>
+            <elementType>readonly</elementType>
+        </element>
+        <element name="ypnumber">
+            <name>预评编号</name>
+            <type>id</type>
+            <path>field_ypnumber</path>
+            <elementType>input</elementType>
+        </element>
+
+    </function>
+    <function name="EntrustObject">
+        <element name="xiujialeixing">
+            <name>询价类型</name>
+            <type>ID</type>
+            <path>//*[@id="tbEntrust"]/tbody/tr[2]/td[2]</path>
+            <contain>查询,新建</contain>
+        </element>
+        <element name="baogaoleixing">
+            <name>报告类型</name>
+            <type>ID</type>
+            <path>field_reporttypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="fenzhijigou">
+           <name>分支机构</name>
+            <type>ID</type>
+            <path>field_subcompanyid</path>
+             <elementType>select</elementType>
+        </element>
+        <element name="weituoleixing">
+           <name>委托类型</name>
+            <type>ID</type>
+            <!--<path>field_biztype</path>-->
+            <path>field_righttypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yewubumen">
+           <name>业务部门</name>
+            <type>ID</type>
+            <path>field_departmentid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jishutuandui">
+            <name>技术团队</name>
+            <type>ID</type>
+            <path>field_businesstypeid</path>
+            <elementType>select</elementType>
+        </element>
+
+        <element name="yewuyuan">
+            <name>业务员</name>
+            <type>ID</type>
+            <path>txtSaleManName</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kehuleixing">
+            <name>客户类型</name>
+            <type>ID</type>
+            <path>field_banktype</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituofang">
+            <name>委托方</name>
+            <type>id</type>
+            <path>field_clientname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weituokehu">
+            <name>委托客户</name>
+            <type>ID</type>
+            <path>field_bankid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yinhanglianxiren">
+            <name>银行联系人</name>
+            <type>ID</type>
+            <path>field_bankcontact</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yinhanglianxirendianhua">
+            <name>银行联系人电话</name>
+            <type>ID</type>
+            <path>field_bankcontactphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chuangjianren">
+            <name>创建人</name>
+            <type>ID</type>
+            <path>field_createusername</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chuangjianshijian">
+            <name>创建时间</name>
+            <type>ID</type>
+            <path>field_createdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kanxianchanglianxiren">
+            <name>看现场联系人</name>
+            <type>ID</type>
+            <path>field_contactuser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="kanxianchanglianxirendianhua">
+            <name>看现场联系人电话</name>
+            <type>ID</type>
+            <path>field_contactuser</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="lianxirenchuanzhen">
+            <name>联系人传真</name>
+            <type>ID</type>
+            <path>field_contactfax</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yewuyuansuoshubumen">
+            <name>业务员所属部门</name>
+            <type>ID</type>
+            <path>field_saledepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yewusuoshubumenfuzhuren">
+            <name>业务员所属部门负责人</name>
+            <type>ID</type>
+            <path>field_saledepartmentleader</path>
+            <elementType>input</elementType>
+        </element>
+
+        <element name="beizhu">
+            <name>备注</name>
+            <type>ID</type>
+            <path>field_remark</path>
+            <elementType>textarea</elementType>
+        </element>
+
+        <!--委估对象-->
+        <element name="tudishijiyongtu">
+            <name>土地实际用途</name>
+            <type>ID</type>
+            <path>field_landpurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudizhengzaiyongtu">
+            <name>土地证载用途</name>
+            <type>ID</type>
+            <path>field_landstatutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudizhengzaiyongtu">
+            <name>土地证载用途</name>
+            <type>ID</type>
+            <path>field_landstatutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="loupanmingcheng">
+            <name>楼盘名称</name>
+            <type>ID</type>
+            <path>field_projectname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="loudongmingcheng">
+            <name>楼栋名称</name>
+            <type>ID</type>
+            <path>field_buildingname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="loucheng">
+            <name>楼层</name>
+            <type>ID</type>
+            <path>field_floornumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fanghao">
+            <name>房号</name>
+            <type>ID</type>
+            <path>field_housename</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="weiguduixiangquancheng">
+            <name>委估对象全称</name>
+            <type>ID</type>
+            <path>field_fullname</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="dizhi">
+            <name>地址</name>
+            <type>ID</type>
+            <path>field_address</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanleixing">
+            <name>产权类型</name>
+            <type>ID</type>
+            <path>field_ownertypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jianzhumianji">
+            <name>建筑面积</name>
+            <type>ID</type>
+            <path>field_buildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        土地使用权面积
+        <element name="tudishiyongquanmianji">
+            <name>土地使用权面积</name>
+            <type>ID</type>
+            <path>field_landusearea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudimianji">
+            <name>土地面积</name>
+            <type>ID</type>
+            <path>field_landarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizongjia">
+            <name>土地总价</name>
+            <type>ID</type>
+            <path>field_landtotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="goumairiqi">
+            <name>购买日期</name>
+            <type>ID</type>
+            <path>field_buydate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhengdengjiriqi">
+            <name>房产证登记日期</name>
+            <type>ID</type>
+            <path>field_housecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fushufangwuzongjia">
+            <name>附属房屋总价</name>
+            <type>ID</type>
+            <path>field_subhousealltotalprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="nidaijin'e">
+            <name>拟贷金额</name>
+            <type>ID</type>
+            <path>field_prepareloanamount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chengjiaojia">
+            <name>成交价</name>
+            <type>ID</type>
+            <path>field_saleprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangchanzhenghao">
+            <name>房产证号</name>
+            <type>ID</type>
+            <path>field_housecertno</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="taoneimianji">
+            <name>套内面积</name>
+            <type>ID</type>
+            <path>field_innerbuildingarea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zonglouceng">
+            <name>总楼层</name>
+            <type>ID</type>
+            <path>field_totalfloor</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhuangxiu">
+            <name>装修</name>
+            <type>ID</type>
+            <path>field_fitment</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="chufang">
+            <name>厨房</name>
+            <type>ID</type>
+            <path>field_haskitchen</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="weishengjian">
+            <name>卫生间</name>
+            <type>ID</type>
+            <path>field_bathroomcount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jianzhujiegou">
+            <name>建筑结构</name>
+            <type>ID</type>
+            <path>field_structure</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="loumiandijia">
+            <name>楼面地价</name>
+            <type>ID</type>
+            <path>field_floorunitprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengfazhengjiguan">
+            <name>土地证发证机关</name>
+            <type>ID</type>
+            <path>field_landusecertdepartment</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudishiyongquanleixing">
+            <name>土地使用权类型</name>
+            <type>ID</type>
+            <path>field_landusetype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="tudishiyongquanzheng">
+            <name>土地使用权证</name>
+            <type>ID</type>
+            <path>field_landusecert</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengfazhengriqi">
+            <name>土地证发证日期</name>
+            <type>ID</type>
+            <path>field_landusecertdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudishiyongquanren">
+            <name>土地使用权人</name>
+            <type>ID</type>
+            <path>field_landuseperson</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="zhuangxiujiazhi">
+            <name>装修价值</name>
+            <type>ID</type>
+            <path>field_fitmentprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="tudizhengzaidizhi">
+            <name>土地证载地址</name>
+            <type>ID</type>
+            <path>field_landusecertaddress</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="yongtu">
+            <name>用途</name>
+            <type>ID</type>
+            <path>field_purpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="ting">
+            <name>厅</name>
+            <path>field_hallcount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="huxing">
+            <name>户型</name>
+            <type>ID</type>
+            <path>field_housetypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="shifoumanwunian">
+            <name>是否满5年</name>
+            <type>ID</type>
+            <path>field_expiryfiveyear</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="fadingyongtu">
+            <name>法定用途</name>
+            <type>ID</type>
+            <path>field_statutorypurpose</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="chanquanrenlianxirendianhua">
+            <name>产权人联系人电话</name>
+            <type>ID</type>
+            <path>field_ownercontactsphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanrenlianxirenguanxi">
+            <name>产权人联系人关系</name>
+            <type>ID</type>
+            <path>field_ownercontactsrelation</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="dengjijia">
+            <name>登记价</name>
+            <type>ID</type>
+            <path>field_registrationprice</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chanquanrenlianxireng">
+            <name>产权人联系人</name>
+            <type>ID</type>
+            <path>field_ownercontacts</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangrenhuji">
+            <name>买房人户籍</name>
+            <type>ID</type>
+            <path>field_buyhouseregioer</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="maifangren">
+            <name>买房人</name>
+            <type>ID</type>
+            <path>field_buyhouseowner</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangrenshenfenzheng">
+            <name>买房人身份证</name>
+            <path>field_buyhouseowneridcard</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maifangrenlianxidianhua">
+            <name>买房人联系电话</name>
+            <type>ID</type>
+            <path>field_buyhouseownerphone</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shoufujin'e">
+            <name>首付金额</name>
+            <type>ID</type>
+            <path>field_shoufuamount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="fangjian">
+            <name>房间</name>
+            <path>field_housecount</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shoucigoufang">
+            <name>首次购房</name>
+            <type>ID</type>
+            <path>field_firstbuye</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yangtai">
+            <name>阳台</name>
+            <type>ID</type>
+            <path>field_balconynumber</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="shifouweiyizhufang">
+            <name>是否唯一住房</name>
+            <type>ID</type>
+            <path>field_onlylivingroom</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="jianzhuniandai">
+            <name>建筑年代</name>
+            <type>ID</type>
+            <path>field_buildingdate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="jingguan">
+            <name>景观</name>
+            <type>ID</type>
+            <path>field_sight</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="shichangbeijing">
+            <name>市场背景</name>
+            <type>ID</type>
+            <path>30_88669017</path>
+            <elementType>select</elementType>
+        </element>
+
+        <!--产权信息-->
+        <element name="chanquanxinxi">
+            <name>产权信息</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr</path>
+        </element>
+        <element name="chanquanrenxingming">
+            <name>产权人姓名</name>
+            <type>xpth</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[1]/input</path>
+        </element>
+        <element name="qiyegongshangdengjihao">
+            <name>企业工商登记号</name>
+            <type>xpath</type>
+            <path>//*[@id="Owner"]/tbody/tr[2]/td[2]/input</path>
+        </element>
+        <!--附属房屋信息-->
+        <element name="fuzhufangwuxinxi">
+            <name>附属房屋信息</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr</path>
+        </element>
+        <element name="fuzhufangwuleixing">
+            <name>附属房屋类型</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[1]/a</path>
+        </element>
+        <element name="fuzhufangwumiaoji">
+            <name>附属房屋面积</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[2]</path>
+        </element>
+        <element name="fuzhufangwudanjia">
+            <name>附属房屋单价</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[3]</path>
+        </element>
+        <element name="fuzhufangwuzongzhi">
+            <name>附属房屋总值</name>
+            <type>xpath</type>
+            <path>//*[@id="tbObjectSubHouse"]/tbody/tr[3]/td[4]</path>
+        </element>
+
+        <!--估价信息-->
+        <element name="tudidanjia">
+            <name>土地单价</name>
+            <type>ID</type>
+            <path>field_landunitprice</path>
+            <elementType>input</elementType>
+        </element>
+
+        <!--必填项  城市 -->
+        <element name="shenfen">
+            <name>省份</name>
+            <type>ID</type>
+            <path>selProvince</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="chengshi">
+            <name>城市</name>
+            <type>ID</type>
+            <path>field_cityid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="xingzhengqu">
+            <name>行政区</name>
+            <type>ID</type>
+            <path>field_areaid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="quyu">
+            <name>区域</name>
+            <type>ID</type>
+            <path>field_subareaid</path>
+            <elementType>select</elementType>
+        </element>
+
+        <element name="btnSave">
+            <name>保存</name>
+            <type>ID</type>
+            <path>btnSave</path>
+            <elementType>button</elementType>
+        </element>
+    </function>
+    <function name="RPquery">
+        <element name="aMoreSearch">
+            <name>更多条件</name>
+            <type>id</type>
+            <path>aMoreSearch</path>
+        </element>
+         更多条件
+        <element name="moreConditions">
+            <name>更多条件 </name>
+            <type>id</type>
+            <path>aMoreSearch</path>
+        </element>
+        省份，直辖市
+        <element name="province">
+            <name>省份，直辖市</name>
+            <type>id</type>
+            <path>selProvince</path>
+            <elementType>select</elementType>
+        </element>
+        地级行政区
+        <element name="city">
+            <name>地级行政区</name>
+            <type>id</type>
+            <path>selCityId</path>
+            <elementType>select</elementType>
+        </element>
+        县级行政区
+        <element name="area">
+            <name>县级行政区</name>
+            <type>id</type>
+            <path>selAreaId</path>
+            <elementType>select</elementType>
+        </element>
+        查询按钮
+        <element name="queryKey">
+            <name>查询按钮</name>
+            <type>id</type>
+            <path>btnsearch</path>
+            <elementType>input</elementType>
+        </element>
+        分支机构
+        <element name="company">
+            <name>分支机构</name>
+            <type>id</type>
+            <path>selSubCompanyId</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="fenzhijigou">
+           <name>分支机构</name>
+            <type>ID</type>
+            <path>field_subcompanyid</path>
+             <elementType>select</elementType>
+        </element>
+        部门
+        <element name="department">
+            <name>部门</name>
+            <type>id</type>
+            <path>seldepartmentid</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="yewuyuansuoshubumen">
+            <name>业务员所属部门</name>
+            <type>id</type>
+            <path>field_saledepartment</path>
+            <elementType>input</elementType>
+        </element>
+        委估对象类型
+        <element name="valuationTypeMode">
+            <name>委估对象类型</name>
+            <type>id</type>
+            <path>selQueryType_Search</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="xunjialeixing">
+            <name>询价类型</name>
+            <type>xpath</type>
+            <path>//*[@id="tbEntrust"]/tbody/tr[2]/td[2]</path>
+            <elementType>td</elementType>
+        </element>
+        来源
+        <element name="source">
+            <name>来源</name>
+            <type>id</type>
+            <path>selSource</path>
+            <elementType>select</elementType>
+        </element>
+        委托客户
+        <element name="entrustCorrespondent">
+            <name>委托客户</name>
+            <type>id</type>
+            <path>selCustCompany</path>
+            <elementType>select</elementType>
+        </element>
+        分行
+        <element name="bankBranch">
+            <name>分行</name>
+            <type>id</type>
+            <path>selCustBranch</path>
+            <elementType>select</elementType>
+        </element>
+        支行
+        <element name="bankSubbranch">
+            <name>支行</name>
+            <type>id</type>
+            <path>selCustSubBranch</path>
+            <elementType>select</elementType>
+        </element>
+        状态
+        <element name="state">
+            <name>状态</name>
+            <type>id</type>
+            <path>selQueryStateCode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="xunjiazhuantai">
+            <name>询价状态</name>
+            <type>id</type>
+            <path>lbQueryState</path>
+            <elementType>lable</elementType>
+        </element>
+        估价师
+        <element name="appraisersUser">
+            <name>估价师</name>
+            <type>id</type>
+            <path>txtAppraisersUser</path>
+            <elementType>input</elementType>
+        </element>
+        查勘状态
+        <element name="surveystate">
+            <name>查勘状态</name>
+            <type>id</type>
+            <path>field_surveystate</path>
+            <elementType>select</elementType>
+        </element>
+        创建时间
+        <element name="beginData">
+            <name>开始时间</name>
+            <type>id</type>
+            <path>txtBeginDate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="endData">
+            <name>结束时间</name>
+            <type>id</type>
+            <path>txtEndDate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="chuangjianshijian">
+            <name>创建时间</name>
+            <type>ID</type>
+            <path>datetype</path>
+            <elementType>select</elementType>
+        </element>
+        面积
+        <element name="minArea">
+            <name>最小面积</name>
+            <type>id</type>
+            <path>txtminArea</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="maxArea">
+            <name>最大面积</name>
+            <type>id</type>
+            <path>txtmaxArea</path>
+            <elementType>input</elementType>
+        </element>
+        关键字查询
+        <element name="fuzzyQuery">
+            <name>关键字查询</name>
+            <type>id</type>
+            <path>txtkey</path>
+            <elementType>input</elementType>
+        </element>
+        提交时间
+        <element name="submitBeginData">
+            <name>开始时间</name>
+            <type>id</type>
+            <path>txtQueryBeginDate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="submitEndData">
+            <name>结束时间</name>
+            <type>id</type>
+            <path>txtQueryEndDate</path>
+            <elementType>input</elementType>
+        </element>
+        <!--盖章-->
+        询价单类型
+        <element name="xujiadanleixing">
+            <name>询价单类型</name>
+            <type>id</type>
+            <path>selQuerySheetType</path>
+            <elementType>select</elementType>
+        </element>
+        物业类型
+        <element name="wuyeleixing">
+            <name>物业类型</name>
+            <type>id</type>
+            <path>selQueryType</path>
+            <elementType>select</elementType>
+        </element>
+
+        <element name="ReportType">
+            <name>报告类型</name>
+            <type>id</type>
+            <path>selReportType</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="Assesstype">
+            <name>评估目的</name>
+            <type>id</type>
+            <path>assesstype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="statetype">
+            <name>报告状态</name>
+            <type>id</type>
+            <path>statetype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="SelectAppsUser">
+            <name>撰写人</name>
+            <type>id</type>
+            <path>btnSelectAppsUser</path>
+            <elementType>button</elementType>
+        </element>
+
+        <element name="SelectBusinessUser">
+            <name>业务员</name>
+            <type>id</type>
+            <path>btnSelectBusinessUser</path>
+            <elementType>button</elementType>
+        </element>
+        <element name="YWDJselectBusinessUser">
+            <name>业务登记业务员</name>
+            <type>id</type>
+            <path>btnSelectUser_txtBusinessUserName</path>
+            <elementType>button</elementType>
+        </element>
+
+        <element name="BackupBeginDate">
+            <name>归档开始时间</name>
+            <type>id</type>
+            <path>txtBackupBeginDate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="BackupEndDate">
+            <name>归档结束时间</name>
+            <type>id</type>
+            <path>txtBackupEndDate</path>
+            <elementType>input</elementType>
+        </element>
+
+        <element name="FeeBeginDate">
+            <name>报告收费开始时间</name>
+            <type>id</type>
+            <path>txtFeeBeginDate</path>
+            <elementType>input</elementType>
+        </element>
+        <element name="FeeEndDate">
+            <name>报告收费结束时间</name>
+            <type>id</type>
+            <path>txtFeeEndDate</path>
+            <elementType>input</elementType>
+        </element>
+
+        <element name="reportedresults">
+            <name>是否上报协会</name>
+            <type>id</type>
+            <path>sel_reportedresults</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="lbStateName">
+            <name>预评状态</name>
+            <type>xpath</type>
+            <path>//*[@tagname="预评状态"]</path>
+            <elementType>input</elementType>
+        </element>
+
+        <element name="selReporttypecode">
+            <name>业务报告类型</name>
+            <type>id</type>
+            <path>selReporttypecode</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="selAssesstype">
+            <name>业务评估目的</name>
+            <type>id</type>
+            <path>selAssesstype</path>
+            <elementType>select</elementType>
+        </element>
+        <element name="selBusinessStage">
+            <name>业务报告状态</name>
+            <type>id</type>
+            <path>selBusinessStage</path>
+            <elementType>select</elementType>
+        </element>
+
+
+    </function>
+
+
+
+</page>

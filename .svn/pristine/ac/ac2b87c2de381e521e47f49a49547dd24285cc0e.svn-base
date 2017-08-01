@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+import os
+import COMMON.DRIVER as DR
+import COMMON.ELEMNET as EL
+import COMMON.LOG as LG
+import unittest
+from COMMON import CONFIG as CFG
+xmlpath=os.path.join(CFG.prjDir,'BaseCase\GJB')
+url=CFG.ReadConfig().getConfigValue('Url')
+logger=LG.MyLog().get_log().get_myLogger()
+AddNewDetail=EL.get_el_name('AddNewDetail',xmlpath)
+class unittestBase(unittest.TestCase):
+
+    def setUp(self):
+
+        # driver=DR.MyDriver.driverGrid()
+        #Firefox
+        #driver = DR.MyDriver.get_driver('Firefox')
+        #chrome
+        driver = DR.MyDriver.get_driver('Chrome')
+        #IE
+        #driver=DR.MyDriver.get_driver()
+        driver.maximize_window()
+
+        #driver=DR.MyDriver.getDriver()
+
+        #self.el=EL.Element(driver,'http://gjb.fxtchina.com/?type=logout',xmlpath)
+        #self.el = EL.Element(driver, 'http://gjb.yungujia.com/?type=logout', xmlpath)
+
+        self.el = EL.Element(driver, url, xmlpath)
+        self.driver = self.el.getDriver()
+        self.log = LG.MyLog().get_log()
+        self.logger = self.log.get_myLogger()
+
+    @LG.endLog
+    def tearDown(self):
+        self.driver.quit()

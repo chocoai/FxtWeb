@@ -1,0 +1,165 @@
+# -*- coding: utf-8 -*-
+import os
+import unittest
+from time import sleep
+import COMMON.DRIVER as DR
+import COMMON.ELEMNET as EL
+import COMMON.LOG as LG
+from BaseCase.GJB import commond
+from BaseCase.GJB import unittestBase
+
+
+from COMMON import CONFIG as CFG
+xmlpath=os.path.join(CFG.prjDir,'BaseCase\GJB')
+url=CFG.ReadConfig().getConfigValue('Url')
+
+logger=LG.MyLog().get_log().get_myLogger()
+class testBase(unittestBase.unittestBase):
+    """基本功能"""
+
+    # 此用例无法使用谷歌浏览器
+    # fixed by Luis 2016.10.13
+    @LG.caseLog(u'XJ_GN_027_数据导出')
+    def testShuJuDaoChu027(self):
+        commond.DaoChuDetail(self, self.el, 'select')
+
+    @LG.caseLog(u'打印询价单')
+    def testPrintInquirysheet(self):
+        pass
+
+    @LG.caseLog(u'XJ_GN015_删除多条数据')
+    def testXJ_GN015_MulDelete(self):
+        self.muldelete = EL.get_el_name('Shanchu',xmlpath)
+        DeList = commond.DeleteDataOperate(self, self.el, self.muldelete, 14, 0)
+        sleep(3)
+        DataList = commond.data_List(self.el)
+        sleep(3)
+        self.assertEqual(set(DeList).issubset(set(DataList)), False)
+
+    @LG.caseLog(u'XJ_GN_019_撰写预评')
+    def testXJ_GN_019_ZuanxineYuPing(self):
+        commond.ZuanXieYuPing(self, self.el, 1, u'待回价')
+        commond.DataDetail(self.el, 'dZuanxieyuping', None, 'baogaoleixing')
+        sleep(2)
+
+
+    @LG.caseLog(u'XJ_GN014_删除一条数据')
+    def test_XJ_GN014_ADelete(self):
+        self.adelete = EL.get_el_name('Shanchu',xmlpath)
+        DeList = commond.DeleteDataOperate(self, self.el, self.adelete, 1, 0)
+        DataList = commond.data_List(self.el)
+        self.assertEqual(set(DeList).issubset(set(DataList)), False)
+
+    @LG.caseLog(u'XJ_GN_022_撰写预评')
+    def testXJ_GN_022_ZuanxineYuPing(self):
+        commond.ZuanXieYuPing(self, self.el, 1)
+        commond.DataDetail(self.el, 'dZuanxieyuping', u'生成预评报告')
+        self.driver.switch_to.default_content()
+        elDict = self.driver.find_element_by_xpath(
+            '/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/font/div').text
+        self.assertEqual(elDict, u'报告类型')
+
+    @LG.caseLog(u'XJ_GN_021_撰写预评')
+    def testXJ_GN_021_ZuanxineYuPing(self):
+        commond.ZuanXieYuPing(self, self.el, 1, u'已回价')
+        commond.DataDetail(self.el, 'dZuanxieyuping', None, 'baogaoleixing')
+
+
+    @LG.caseLog(u'XJ_GN_020_撰写预评')
+    def testXJ_GN_020ZuanxineYuPing(self):
+        commond.ZuanXieYuPing(self, self.el, 1, u'已回价')
+        commond.DataDetail(self.el, 'dZuanxieyuping', None, 'baogaoleixing')
+
+
+    @LG.caseLog(u'XJ_GN_004_办公')
+    def testXJ_GN_004_BanGong(self):
+        commond.Duantao(self, self.el,'Bangong')
+
+    @LG.caseLog(u'XJ_GN_016_转业务')
+    def testXJ_GN_016_ZhuanYeWu(self):
+        self.zhuanyewu = EL.get_el_name('Zhuanyewu',xmlpath)
+        commond.NoDataOperate(self, self.el, self.zhuanyewu)
+        '''
+        self.driver.switch_to.default_content()
+        txt = self.driver.find_element_by_xpath(
+            '/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/font').text
+        self.assertEqual(txt, u'请选择要操作的项')
+        '''
+
+    @LG.caseLog(u'XJ_GN_013_点击删除')
+    def testXJ_GN_013_Delete(self):
+        self.delete = EL.get_el_name('Shanchu',xmlpath)
+        commond.NoDataOperate(self, self.el, self.delete)
+
+
+    @LG.caseLog(u'XJ_GN_001_全部')
+    def testXJ_GN_001_QuanBu001(self):
+        commond.Duantao(self,self.el,'Quanbu')
+
+
+    @LG.caseLog(u'XJ_GN_002_住宅 ')
+    def testXJ_GN_002_ZhuZhai(self):
+        commond.Duantao(self,self.el,'Zhuzai')
+        self.assertEqual('','')
+
+    @LG.caseLog(u'XJ_GN_003_商业')
+    def testXJ_GN_003_ShangYe(self):
+        commond.Duantao(self,self.el,'Shangye')
+
+    @LG.caseLog(u'XJ_GN_005_工业')
+    def testXJ_GN_005_Gongye(self):
+        commond.Duantao(self,self.el,'Gongye')
+
+    @LG.caseLog(u'XJ_GN_006_土地')
+    def testXJ_GN_006_Tudi(self):
+        commond.Duantao(self,self.el,'Tudi')
+
+    @LG.caseLog(u'XJ_GN_007_资产')
+    def testXJ_GN_007_ZiCan(self):
+        commond.Duantao(self,self.el,'Zican')
+
+    @LG.caseLog(u'XJ_GN_008_其他')
+    def testXJ_GN_008_QiTa(self):
+        commond.Duantao(self,self.el,'Qita')
+
+    @LG.caseLog(u'XJ_GN_010_自动询价')
+    def testXJ_GN_010_ZiDongXuJia(self):
+        commond.OtherXujia(self,self.el,'Zidongxujia')
+
+    @LG.caseLog(u'XJ_GN_009_多套询价')
+    def testXJ_GN_009_DuoTao(self):
+        commond.OtherXujia(self, self.el, 'Duotao')
+
+    @LG.caseLog(u'XJ_GN_011_待盖章')
+    def testXJ_GN_011_DaiGaiZhang(self):
+        self.daigaizhang = EL.get_el_name('Daigaizhang',xmlpath)
+        commond.GaiZhang(self, self.el, self.daigaizhang)
+
+    @LG.caseLog(u'XJ_GN_012_已盖章')
+    def testXJ_GN_012_YiGaiZhang(self):
+        self.yigaizhang = EL.get_el_name('Yigaizhang',xmlpath)
+        commond.GaiZhang(self, self.el, self.yigaizhang)
+
+    @LG.caseLog(u'XJ_GN_016_转业务')
+    def testXJ_GN_016_ZhuanYeWuData(self):
+        self.zhuanyewudata = EL.get_el_name('Zhuanyewu',xmlpath)
+        commond.ZhuanYeWu(self, self.el, self.zhuanyewudata)
+
+    @LG.caseLog(u'XJ_GN_017_撰写预评')
+    def testXJ_GN_017_ZuanXieYuping(self):
+        self.zuanxieyuping017 = EL.get_el_name('Zuanxieyuping',xmlpath)
+        commond.NoDataOperate(self, self.el, self.zuanxieyuping017)
+
+    @LG.caseLog(u'XJ_GN_018_撰写预评')
+    def testXJ_GN_018_ZuanXieYuPing(self):
+        result = commond.ZuanXieYuPing(self, self.el, 2, u'待回价')
+        self.assertTrue(result)
+
+
+if __name__=='__main__':
+    unittest.main()
+
+
+
+
+

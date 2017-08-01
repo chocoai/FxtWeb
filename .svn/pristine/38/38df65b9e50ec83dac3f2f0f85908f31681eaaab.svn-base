@@ -1,0 +1,575 @@
+# -*- coding: utf-8 -*-
+import os
+import unittest
+from time import sleep
+import paramunittest
+import COMMON.DRIVER as DR
+import COMMON.ELEMNET as EL
+import COMMON.LOG as LG
+from BaseCase.GJB import examineModification as QM
+from BaseCase.GJB import unittestBase
+
+from COMMON import CONFIG as CFG
+xmlpath=os.path.join(CFG.prjDir,'BaseCase\GJB')
+url=CFG.ReadConfig().getConfigValue('Url')
+logger=LG.MyLog().get_log().get_myLogger()
+
+class ExamineModefication(unittestBase.unittestBase):
+    """单套询价-数据修改"""
+
+    @LG.caseLog(u'XJ_CKXG_152_修改估价数据_房地产类型')
+    def testXJ_CKXG_152(self):
+        result = QM.WritePreviews(self, self.el, "weituofang", u'aaaabbbbbb')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_153_修改估价数据_房地产类型')
+    def testXJ_CKXG_153(self):
+        result = QM.TransferOfBusiness(self, self.el, "weituofang", u'aaaabbbbbb')
+        # self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_006_查看数据_撤销询价按钮')
+    def testXJ_CKXG_006(self):
+        result = QM.QueryData(self, self.el, u'撤销询价', button=1, link=u'待分配询价')
+        self.assertEqual(result, u'撤销询价')
+
+
+    @LG.caseLog(u'XJ_CKXG_086_修改数据_厅')
+    def testXJ_CKXG_086(self):
+        result = QM.ModificationData(self, self.el, "ting", u'3', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_085_修改数据_用途')
+    def testXJ_CKXG_085(self):
+        result = QM.ModificationData(self, self.el, "yongtu", u'普通住宅', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_023_查看数据_税费')
+    def testXJ_CKXG_023(self):
+        result = QM.QueryData(self, self.el, 'shuifei')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_022_查看数据_评估总价')
+    def testXJ_CKXG_022(self):
+        result = QM.QueryData(self, self.el, 'pingguzongjia')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_015_查看数据_查看询价编号')
+    def testXJ_CKXG_015(self):
+        result = QM.QueryData(self, self.el, 'xujiabianhao')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_CKXG_072_修改数据_总楼层')
+    def testXJ_CKXG_072(self):
+        result = QM.ModificationData(self, self.el, "zongloucheng", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_017_查看数据_委估方')
+    def testXJ_CKXG_017(self):
+        result = QM.QueryData(self, self.el, 'weituofang')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_047_修改数据_业务员所属部门')
+    def testXJ_CKXG_0047(self):
+        result = QM.ModificationData(self, self.el, 'yewuyuansuoshubumen', u'业务员所属部门', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_001_查看数据_验证数据查看')
+    def testXJ_CKXG_001(self):
+        result = QM.QueryData(self, self.el, u'保存', button=1, link=u'待回价')
+        self.assertEqual(result, u'保存')
+
+    @LG.caseLog(u'XJ_CKXG_003_查看数据_转业务按钮')
+    def testXJ_CKXG_003(self):
+        result = QM.QueryData(self, self.el, u'转业务', button=1, link=u'待回价')
+        self.assertEqual(result, u'转业务')
+
+    @LG.caseLog(u'XJ_CKXG_002_查看数据_提交回价按钮')
+    def testXJ_CKXG_002(self):
+        result = QM.QueryData(self, self.el, u'提交回价', button=1, link=u'待回价')
+        self.assertEqual(result, u'提交回价')
+
+
+    @LG.caseLog(u'XJ_CKXG_007_查看数据_查看绩效按钮')
+    def testXJ_CKXG_007(self):
+        result = QM.QueryData(self, self.el, u'查看绩效', button=1, link=u'报告已完成')
+        self.assertEqual(result, u'查看绩效')
+
+    @LG.caseLog(u'XJ_CKXG_008_查看数据_打印询价单按钮')
+    def testXJ_CKXG_008(self):
+        result = QM.QueryData(self, self.el, u'打印询价单', button=1, link=u'预评已完成')
+        self.assertEqual(result, u'打印询价单')
+
+
+
+    @LG.caseLog(u'XJ_CKXG_004_查看数据_撰写预评按钮')
+    def testXJ_CKXG_004(self):
+        result=QM.QueryData(self,self.el,u'撰写预评',button=1,link=u'待回价')
+        self.assertEqual(result,u'撰写预评')
+
+    @LG.caseLog(u'XJ_CKXG_020_查看数据_建筑面积')
+    def testXJ_CKXG_020(self):
+        result = QM.QueryData(self, self.el, 'jianzhumianji')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_011_查看数据_保存按钮')
+    def testXJ_CKXG_011(self):
+        result = QM.QueryData(self, self.el, u'保存', button=1, link=u'待回价')
+        self.assertEqual(result, u'保存')
+
+    @LG.caseLog(u'XJ_CKXG_015_查看数据_查看询价编号')
+    def testXJ_CKXG_011(self):
+        result = QM.QueryData(self, self.el, 'xujiabianhao')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_CKXG_016_查看数据_委估对象全称')
+    def testXJ_CKXG_016(self):
+        result = QM.QueryData(self, self.el, 'weiguduixiangquancheng')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_CKXG_018_查看数据_委估对象全称')
+    def testXJ_CKXG_018(self):
+        result = QM.QueryData(self, self.el, 'weituokehu')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_021_查看数据_单价')
+    def testXJ_CKXG_021(self):
+        result = QM.QueryData(self, self.el, 'danjia')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_025_查看数据_净值')
+    def testXJ_CKXG_025(self):
+        result = QM.QueryData(self, self.el, 'jingzhi')
+
+    @LG.caseLog(u'XJ_CKXG_029_查看数据_回价时间')
+    def testXJ_CKXG_029(self):
+        result = QM.QueryData(self, self.el, 'huijiashijian')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_030_查看数据_创建时间')
+    def testXJ_CKXG_030(self):
+        result = QM.QueryData(self, self.el, 'chuangjianshijian')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_031_查看数据_产权人信息')
+    def testXJ_CKXG_031(self):
+        result = QM.QueryData(self, self.el, 'chanquanren')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_031_查看数据_产权人信息')
+    def testXJ_CKXG_031(self):
+        result = QM.QueryData(self, self.el, 'chanquanren')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_002_查看数据_提交回价按钮')
+    def testXJ_CKXG_002(self):
+        result = QM.QueryData(self, self.el, u'提交回价', button=1, link=u'待回价')
+        self.assertEqual(result, u'提交回价')
+
+    @LG.caseLog(u'XJ_CKXG_033_修改_分支机构')
+    def testXJ_CKXG_0033(self):
+        result = QM.ModificationData(self, self.el, 'fenzhijigou',u'深圳房讯通', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_037_修改数据_委托方')
+    def testXJ_CKXG_0037(self):
+        result = QM.ModificationData(self, self.el, 'weituofang',u'委托方', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_038_修改数据_委托方')
+    def testXJ_CKXG_0037(self):
+        result = QM.ModificationData(self, self.el, 'weituofang',u'委托方', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_040_修改数据_委托方联系人')
+    def testXJ_CKXG_0040(self):
+        result = QM.ModificationData(self, self.el, 'weituofanglianxiren',u'委托方联系人', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_041_修改数据_委托方联系电话')
+    def testXJ_CKXG_0041(self):
+        result = QM.ModificationData(self, self.el, 'weituofanglianxirendianhua',u'12345678901', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_042_修改数据_银行联系人')
+    def testXJ_CKXG_0042(self):
+        result = QM.ModificationData(self, self.el, 'yinhanglianxiren', u'银行联系人', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_043_修改数据_银行联系人电话')
+    def testXJ_CKXG_0043(self):
+        result = QM.ModificationData(self, self.el, 'yinhanglianxirendianhua', u'13788888888', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_044_修改数据_看现场联系人')
+    def testXJ_CKXG_0044(self):
+        result = QM.ModificationData(self, self.el, 'yinhanglianxiren', u'看现场联系人', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_045_修改数据_看现场联系人电话')
+    def testXJ_CKXG_0045(self):
+        result = QM.ModificationData(self, self.el, 'yinhanglianxirendianhua', u'13800000000', link=u'待回价')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_CKXG_048_修改数据_业务员所属部门负责人')
+    def testXJ_CKXG_0048(self):
+        result = QM.ModificationData(self, self.el, 'yewuyuansuoshubumenfuzheren', u'业务员所属部门负责人', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_046_修改数据_联系人传真')
+    def testXJ_CKXG_0046(self):
+        result = QM.ModificationData(self, self.el, 'yinhanglianxirendianhua', u'13800000000', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_049_修改数据_备注')
+    def testXJ_CKXG_0049(self):
+        result = QM.ModificationData(self, self.el, 'beizhu', u'备注', link=u'待回价')
+        self.assertTrue(result)
+
+    ######委估对象####################
+    @LG.caseLog(u'XJ_CKXG_051_修改数据_土地实际用途')
+    def testXJ_CKXG_0051(self):
+        result = QM.ModificationData(self, self.el, 'tudishijiyongtu', u'商业', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_052_修改数据_土地证载用途')
+    def testXJ_CKXG_0052(self):
+        result = QM.ModificationData(self, self.el, 'tudizhengzaiyongtu', u'商业', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_053_修改数据_楼盘名称')
+    def testXJ_CKXG_0053(self):
+        result = QM.ModificationData(self, self.el, 'loupanmingcheng', u'楼盘名称', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_054_修改数据_楼栋名称')
+    def testXJ_CKXG_0054(self):
+        result = QM.ModificationData(self, self.el, 'loudongmingcheng', u'楼盘名称', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_055_修改数据_楼层')
+    def testXJ_CKXG_0055(self):
+        result = QM.ModificationData(self, self.el, 'louceng', u'30', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_056_修改数据_房号')
+    def testXJ_CKXG_0056(self):
+        result = QM.ModificationData(self, self.el, 'fanghao', u'305', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_057_修改数据_委估对象全称')
+    def testXJ_CKXG_0057(self):
+        result = QM.ModificationData(self, self.el, 'weiguduixiangquancheng', u'委估对象全称', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_058_修改数据_地址')
+    def testXJ_CKXG_0058(self):
+        result = QM.ModificationData(self, self.el, 'dizhi', u'地址', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_059_修改数据_产权类型')
+    def testXJ_CKXG_0059(self):
+        result = QM.ModificationData(self, self.el, 'chanquanleixing', u'个人', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_060_修改数据_建筑面积')
+    def testXJ_CKXG_060(self):
+        result = QM.ModificationData(self, self.el, 'jianzhumianji', u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_061_修改数据_土地使用权面积')
+    def testXJ_CKXG_061(self):
+        result = QM.ModificationData(self, self.el, 'tudishiyongquanmianji', u'999', link=u'待回价')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_CKXG_062_修改数据_土地单价')
+    def testXJ_CKXG_062(self):
+        result = QM.ModificationData(self, self.el, 'tudidanjia', u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_063_修改数据_土地面积')
+    def testXJ_CKXG_063(self):
+        result = QM.ModificationData(self, self.el, 'tudimianji', u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_064_修改数据_土地总价')
+    def testXJ_CKXG_064(self):
+        result = QM.ModificationData(self, self.el, 'tudizongjia', u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_065_修改数据_购买日期')
+    def testXJ_CKXG_065(self):
+        result = QM.ModificationData(self, self.el, 'goumairiqi', u'2016-07-01', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_066_修改数据_房产证登记日期')
+    def testXJ_CKXG_066(self):
+        result = QM.ModificationData(self, self.el, 'fangchanzhengdengjiriqi', u'2016-07-01', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_068_修改数据_拟贷金额')
+    def testXJ_CKXG_068(self):
+        result = QM.ModificationData(self, self.el, "yidaijin'e", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_069_修改数据_成交价')
+    def testXJ_CKXG_069(self):
+        result = QM.ModificationData(self, self.el, "chengjiaojia", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_070_修改数据_房产证号')
+    def testXJ_CKXG_070(self):
+        result = QM.ModificationData(self, self.el, "fangchanzhenghao", u'房产证号99999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_071_修改数据_套内面积')
+    def testXJ_CKXG_071(self):
+        result = QM.ModificationData(self, self.el, "taoneimianji", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_CKXG_073_修改数据_装修')
+    def testXJ_CKXG_073(self):
+        result = QM.ModificationData(self, self.el, "zhuangxiu", u'普通装修', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_074_修改数据_厨房')
+    def testXJ_CKXG_074(self):
+        result = QM.ModificationData(self, self.el, "chufang", u'有', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_075_修改数据_卫生间')
+    def testXJ_CKXG_075(self):
+        result = QM.ModificationData(self, self.el, "weishengjian", u'2', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_076_修改数据_建筑结构')
+    def testXJ_CKXG_076(self):
+        result = QM.ModificationData(self, self.el, "jianzhujiegou", u'混合', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_077_修改数据_楼面地价')
+    def testXJ_CKXG_077(self):
+        result = QM.ModificationData(self, self.el, "loumiandijia", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_078_修改数据_土地证发证机关')
+    def testXJ_CKXG_078(self):
+        result = QM.ModificationData(self, self.el, "tudizhengfazhengjiguan", u'土地证发证机关', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_079_修改数据_土地使用权类型')
+    def testXJ_CKXG_079(self):
+        result = QM.ModificationData(self, self.el, "tudishiyongquanleixing", u'出让', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_080_修改数据_土地使用权证')
+    def testXJ_CKXG_080(self):
+        result = QM.ModificationData(self, self.el, "tudishiyongquanzheng", u'土地使用权证000009A', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_081_修改数据_土地证发证日期')
+    def testXJ_CKXG_081(self):
+        result = QM.ModificationData(self, self.el, "tudizhengfazhengriqi", u'2016-07-01', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_082_修改数据_土地使用权人')
+    def testXJ_CKXG_082(self):
+        result = QM.ModificationData(self, self.el, "tudishiyongquanren", u'土地使用权人', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_083_修改数据_装修价值')
+    def testXJ_CKXG_083(self):
+        result = QM.ModificationData(self, self.el, "zhuangxiujiazhi", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_084_修改数据_土地证载地址')
+    def testXJ_CKXG_084(self):
+        result = QM.ModificationData(self, self.el, "tudizhengzaidizhi", u'土地证载地址001A', link=u'待回价')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_CKXG_087_修改数据_户型')
+    def testXJ_CKXG_087(self):
+        result = QM.ModificationData(self, self.el, "huxing", u'单房', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_088_修改数据_是否满5年')
+    def testXJ_CKXG_088(self):
+        result = QM.ModificationData(self, self.el, "shifouman5nian", u'否', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_089_修改数据_法定用途')
+    def testXJ_CKXG_089(self):
+        result = QM.ModificationData(self, self.el, "fudingyongtu", u'住宅', link=u'待回价')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_CKXG_090_修改数据_产权人联系人电话')
+    def testXJ_CKXG_090(self):
+        result = QM.ModificationData(self, self.el, "chanquanrenlianxirendianhua", u'13777777777', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_091_修改数据_产权人联系人关系')
+    def testXJ_CKXG_091(self):
+        result = QM.ModificationData(self, self.el, "chanquanrenlianxirenguanxi", u'中介', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_092_修改数据_登记价')
+    def testXJ_CKXG_092(self):
+        result = QM.ModificationData(self, self.el, "dengjijia", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_093_修改数据_产权人联系人')
+    def testXJ_CKXG_093(self):
+        result = QM.ModificationData(self, self.el, "chanquanrenlianxireng", u'产权人联系人', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_094_修改数据_买房人户籍')
+    def testXJ_CKXG_094(self):
+        result = QM.ModificationData(self, self.el, "maifangrenhuji", u'买房人户籍', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_095_修改数据_买房人')
+    def testXJ_CKXG_095(self):
+        result = QM.ModificationData(self, self.el, "maifangren", u'买房人', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_096_修改数据_买房人身份证')
+    def testXJ_CKXG_096(self):
+        result = QM.ModificationData(self, self.el, "maifangrenshenfenzheng", u'买房人身份证', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_097_修改数据_买房人联系电话')
+    def testXJ_CKXG_097(self):
+        result = QM.ModificationData(self, self.el, "maifangrenlianxidianhua", u'13999999999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_098_修改数据_首付金额')
+    def testXJ_CKXG_098(self):
+        result = QM.ModificationData(self, self.el, "shoufujin'e", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_099_修改数据_房间')
+    def testXJ_CKXG_099(self):
+        result = QM.ModificationData(self, self.el, "fangjian", u'9', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_100_修改数据_首次购房')
+    def testXJ_CKXG_100(self):
+        result = QM.ModificationData(self, self.el, "shoucigoufang", u'是', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_101_修改数据_阳台')
+    def testXJ_CKXG_101(self):
+        result = QM.ModificationData(self, self.el, "yangtai", u'9', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_102_修改数据_否唯一住房')
+    def testXJ_CKXG_102(self):
+        result = QM.ModificationData(self, self.el, "shifouweiyizhufang", u'是', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_103_修改数据_建筑年代')
+    def testXJ_CKXG_103(self):
+        result = QM.ModificationData(self, self.el, "jianzhuniandai", u'90年代', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_104_修改数据_景观')
+    def testXJ_CKXG_104(self):
+        result = QM.ModificationData(self, self.el, "jingguan", u'山景', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_105_修改数据_市场背景')
+    def XJ_CKXG_105(self):
+        result = QM.ModificationData(self, self.el, "", u'', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_106_修改数据_是否为首套房')
+    def XJ_CKXG_106(self):
+        result = QM.ModificationData(self, self.el, "", u'', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_107_修改数据_估价时点')
+    def XJ_CKXG_107(self):
+        result = QM.ModificationData(self, self.el, "", u'', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_108_修改数据_土地证号')
+    def XJ_CKXG_108(self):
+        result = QM.ModificationData(self, self.el, "", u'', link=u'待回价')
+        self.assertTrue(result)
+
+    ####估价信息
+    @LG.caseLog(u'XJ_CKXG_130_修改估价数据_估价信息')
+    def testXJ_CKXG_130(self):
+        result = QM.ModificationData(self, self.el, "danjia", u'999', link=u'待回价')
+        self.assertTrue(result)
+    @LG.caseLog(u'XJ_CKXG_131_修改估价数据_单价')
+    def testXJ_CKXG_131(self):
+        result = QM.ModificationData(self, self.el, "danjia", u'998', link=u'待回价')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_CKXG_132_修改估价数据_总价')
+    def testXJ_CKXG_132(self):
+        result = QM.ModificationData(self, self.el, "zongjia", u'999', link=u'待回价')
+        self.assertTrue(result)
+    #@LG.caseLog(u'XJ_CKXG_133_修改估价数据_联动计算')
+    #def XJ_CKXG_133(self):
+        #result = QM.ModificationData(self, self.el, "", u'', link=u'待回价')
+        #self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_134_修改估价数据_评估总价')
+    def XJ_CKXG_134(self):
+        result = QM.ModificationData(self, self.el, "pingguzongjia", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_135_修改估价数据_净值')
+    def XJ_CKXG_135(self):
+        result = QM.ModificationData(self, self.el, "jingzhi", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_136_修改估价数据_法定优先受偿款')
+    def XJ_CKXG_136(self):
+        result = QM.ModificationData(self, self.el, "fadingyouxianshouchangkuan", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_137_修改估价数据_回价时间')
+    def XJ_CKXG_137(self):
+        result = QM.ModificationData(self, self.el, "huijiashijian", u'2016-01-01', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_138_修改估价数据_应补地价')
+    def XJ_CKXG_138(self):
+        result = QM.ModificationData(self, self.el, "yingbudijia", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_139_修改估价数据_强制变现值')
+    def XJ_CKXG_139(self):
+        result = QM.ModificationData(self, self.el, "qiangzhibiaoxianzhi", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_140_修改估价数据_价格说明')
+    def XJ_CKXG_140(self):
+        result = QM.ModificationData(self, self.el, "jiageshuoming", u'价格说明', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_141_修改估价数据_强制变现税费额')
+    def XJ_CKXG_141(self):
+        result = QM.ModificationData(self, self.el, "qiangzhibianxianshui'e", u'999', link=u'待回价')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_CKXG_142_修改估价数据_房地产类型')
+    def XJ_CKXG_142(self):
+        result = QM.ModificationData(self, self.el, "'e", u'', link=u'待回价')
+        self.assertTrue(result)
+
+if __name__=="__main__":
+    unittest.main()

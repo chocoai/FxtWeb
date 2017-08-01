@@ -1,0 +1,1620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="d92258d0-8db7-4d2c-9ed5-eda655efb184" name="Default" comment="1、更改报告转交的转交人代码&#10;2、重新更改报告子类型的输入方式">
+      <change type="DELETED" beforePath="F:\workFxt\FxtWeb\TestCase\GJB\testBase.py" afterPath="" />
+      <change type="DELETED" beforePath="F:\workFxt\FxtWeb\TestCase\GJB\testAddNew.py" afterPath="" />
+      <change type="DELETED" beforePath="F:\workFxt\FxtWeb\TestCase\GJB\testExamineModification.py" afterPath="" />
+      <change type="DELETED" beforePath="F:\workFxt\FxtWeb\TestCase\GJB\testAddNewMulti.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportZSBGquery.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportZSBGquery.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/config.ini" afterPath="$PROJECT_DIR$/TestCase/GJB/config.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseCase/GJB/chkdata.json" afterPath="$PROJECT_DIR$/BaseCase/GJB/chkdata.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testQueryAutomatedValuation.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testQueryAutomatedValuation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportYWDJquery.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportYWDJquery.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/COMMON/CONFIG.py" afterPath="$PROJECT_DIR$/COMMON/CONFIG.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/COMMON/COMMON.py" afterPath="$PROJECT_DIR$/COMMON/COMMON.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/run.py" afterPath="$PROJECT_DIR$/TestCase/GJB/run.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseCase/GJB/reportQuery.py" afterPath="$PROJECT_DIR$/BaseCase/GJB/reportQuery.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportYPBGModification.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportYPBGModification.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseCase/GJB/commond.py" afterPath="$PROJECT_DIR$/BaseCase/GJB/commond.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportYPBGadd.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportYPBGadd.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportZSBGbase.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportZSBGbase.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportYPBGbase.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportYPBGbase.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/COMMON/RUN.py" afterPath="$PROJECT_DIR$/COMMON/RUN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportYPBGquery.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportYPBGquery.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/COMMON/LOG.py" afterPath="$PROJECT_DIR$/COMMON/LOG.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportYWDJmodification.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportYWDJmodification.py" />
+      <change type="MOVED" beforePath="F:\workFxt\FxtWeb\TestCase\GJB\testQueryMultInquiry.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testArtificialQuery.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportYWDJbase.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportYWDJbase.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseCase/GJB/element.xml" afterPath="$PROJECT_DIR$/BaseCase/GJB/element.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/aa" afterPath="$PROJECT_DIR$/TestCase/GJB/aa" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseCase/GJB/unittestBase.py" afterPath="$PROJECT_DIR$/BaseCase/GJB/unittestBase.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportYWDJadd.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportYWDJadd.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseCase/GJB/reportbase.py" afterPath="$PROJECT_DIR$/BaseCase/GJB/reportbase.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseCase/GJB/query.py" afterPath="$PROJECT_DIR$/BaseCase/GJB/query.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseCase/GJB/reportModificaton.py" afterPath="$PROJECT_DIR$/BaseCase/GJB/reportModificaton.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/caseList.txt" afterPath="$PROJECT_DIR$/TestCase/GJB/caseList.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaseCase/GJB/reportadd.py" afterPath="$PROJECT_DIR$/BaseCase/GJB/reportadd.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/COMMON/ELEMNET.py" afterPath="$PROJECT_DIR$/COMMON/ELEMNET.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TestCase/GJB/testReportZSBGModification.py" afterPath="$PROJECT_DIR$/TestCase/GJB/testReportZSBGModification.py" />
+    </list>
+    <ignored path="FxtWebw.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/FxtWeb$testArtificialQuery.coverage" NAME="testArtificialQuery Coverage Results" MODIFIED="1501493167678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testQueryMultInquiry.coverage" NAME="testQueryMultInquiry Coverage Results" MODIFIED="1493970699218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportYPBGModification.coverage" NAME="testReportYPBGModification Coverage Results" MODIFIED="1498205712121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$reportadd.coverage" NAME="reportadd Coverage Results" MODIFIED="1484788088180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BaseCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportYWDJmodification.coverage" NAME="testReportYWDJmodification Coverage Results" MODIFIED="1498445917486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$run.coverage" NAME="run Coverage Results" MODIFIED="1498461513626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$reportbase.coverage" NAME="reportbase Coverage Results" MODIFIED="1486711793784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BaseCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testAddNew.coverage" NAME="testAddNew Coverage Results" MODIFIED="1479092573268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$reportModificaton.coverage" NAME="reportModificaton Coverage Results" MODIFIED="1482887301958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BaseCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testExamineModification.coverage" NAME="testExamineModification Coverage Results" MODIFIED="1481271066732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testQueryAutomatedValuation.coverage" NAME="testQueryAutomatedValuation Coverage Results" MODIFIED="1501492482644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$test_report_ZSBGadd.coverage" NAME="testReportZSBGadd Coverage Results" MODIFIED="1480920740167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$test_report_ZSBGquery.coverage" NAME="testReportZSBGquery Coverage Results" MODIFIED="1480929739774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testQueryAll.coverage" NAME="testQueryAll Coverage Results" MODIFIED="1482896908298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportZSBGquery.coverage" NAME="testReportZSBGquery Coverage Results" MODIFIED="1498120759829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportYWDJadd.coverage" NAME="testReportYWDJadd Coverage Results" MODIFIED="1501493279165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testCopyNew.coverage" NAME="testCopyNew Coverage Results" MODIFIED="1476870326710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testdiscovery.coverage" NAME="testdiscovery Coverage Results" MODIFIED="1484042582090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportYPBGadd.coverage" NAME="testReportYPBGadd Coverage Results" MODIFIED="1498201607384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$Nosetests_in_testReportYPBGbase.coverage" NAME="Nosetests in testReportYPBGbase Coverage Results" MODIFIED="1498443485568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportZSBGModification.coverage" NAME="testReportZSBGModification Coverage Results" MODIFIED="1498457994082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportYPBGquery.coverage" NAME="testReportYPBGquery Coverage Results" MODIFIED="1498441637114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportZSBGadd.coverage" NAME="testReportZSBGadd Coverage Results" MODIFIED="1501558942812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportYWDJquery.coverage" NAME="testReportYWDJquery Coverage Results" MODIFIED="1498447182137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testBase.coverage" NAME="testBase Coverage Results" MODIFIED="1476345573419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$DIFF.coverage" NAME="DIFF Coverage Results" MODIFIED="1476779630337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/COMMON" />
+    <SUITE FILE_PATH="coverage/FxtWeb$test_report_base.coverage" NAME="test_report_base Coverage Results" MODIFIED="1479697673448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportYWDJbase.coverage" NAME="testReportYWDJbase Coverage Results" MODIFIED="1498443629463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$Nosetests_in_reportAdd.coverage" NAME="Nosetests in reportAdd Coverage Results" MODIFIED="1483092032889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$MySQL.coverage" NAME="MySQL Coverage Results" MODIFIED="1497951332135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/COMMON" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportYPBGbase.coverage" NAME="testReportYPBGbase Coverage Results" MODIFIED="1498443555162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+    <SUITE FILE_PATH="coverage/FxtWeb$testReportZSBGbase.coverage" NAME="testReportZSBGbase Coverage Results" MODIFIED="1498458270296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TestCase/GJB" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="FxtWebw" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="testReportZSBGadd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportZSBGadd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unittestBase.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BaseCase/GJB/unittestBase.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestCase/GJB/config.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reportadd.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BaseCase/GJB/reportadd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.629683">
+              <caret line="1104" column="0" selection-start-line="1104" selection-start-column="0" selection-end-line="1104" selection-end-column="0" />
+              <folding>
+                <element signature="e#571#45592#0" expanded="false" />
+                <element signature="e#609#721#1" expanded="false" />
+                <element signature="e#929#19327#0" expanded="false" />
+                <element signature="e#19363#20446#0" expanded="false" />
+                <element signature="e#20504#22499#0" expanded="false" />
+                <element signature="e#20504#20610#1" expanded="false" />
+                <element signature="e#22557#25926#0" expanded="false" />
+                <element signature="e#22557#22651#1" expanded="false" />
+                <element signature="e#25970#26360#0" expanded="false" />
+                <element signature="e#26420#32104#0" expanded="false" />
+                <element signature="e#26420#26536#1" expanded="false" />
+                <element signature="e#32165#33641#0" expanded="false" />
+                <element signature="e#32165#32281#1" expanded="false" />
+                <element signature="e#33701#35124#0" expanded="false" />
+                <element signature="e#33701#33816#1" expanded="false" />
+                <element signature="e#35181#36334#0" expanded="false" />
+                <element signature="e#35181#35309#1" expanded="false" />
+                <element signature="e#36378#38082#0" expanded="false" />
+                <element signature="e#38133#39818#0" expanded="false" />
+                <element signature="e#39868#40814#0" expanded="false" />
+                <element signature="e#40870#45592#0" expanded="false" />
+                <element signature="e#45688#46160#0" expanded="false" />
+                <element signature="e#46235#46913#0" expanded="false" />
+                <element signature="e#46983#47167#0" expanded="false" />
+                <element signature="e#47239#47878#0" expanded="false" />
+                <element signature="e#47932#48067#0" expanded="false" />
+                <element signature="e#48124#48693#0" expanded="false" />
+                <element signature="e#48756#49032#0" expanded="false" />
+                <element signature="e#49093#49401#0" expanded="false" />
+                <element signature="e#49465#49736#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>GJB_ZSBG_XG_QB_033</find>
+      <find>args[i]</find>
+      <find>return False</find>
+      <find>kwargs[i]</find>
+      <find>完成时间</find>
+      <find>sleep</find>
+      <find>RPtabweb</find>
+      <find>城市</find>
+      <find>ga</find>
+      <find>DR</find>
+      <find>查询_查询面积_默认</find>
+      <find>testGJB_YPBG_XZ_QB_05</find>
+      <find>check_roundColumn</find>
+      <find>tearDown</find>
+      <find>._tearDownFunc()</find>
+      <find>生成报告</find>
+      <find>RPuserTxet</find>
+      <find>txtBusinessUserName</find>
+      <find>报告撰写辅助人</find>
+      <find>check_addObject</find>
+      <find>GJB_ZSBG_XZ_QB_094</find>
+      <find>state</find>
+      <find>print</find>
+      <find>check_reassignBtn</find>
+      <find>selUserType</find>
+      <find>Query</find>
+      <find>field_mobile</find>
+      <find>委托方</find>
+      <find>querytotalarea</find>
+      <find>----run case failed---</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>kwargs[i]</replace>
+      <replace>DataE</replace>
+      <replace>args[0]</replace>
+      <replace>self.get_SelData</replace>
+      <replace>self.getAssignData</replace>
+      <replace>报告归档时间</replace>
+      <replace>提交审批时间</replace>
+      <replace>ra.reportAdd().choices_Auser</replace>
+      <replace>idatatype</replace>
+      <replace>报告信息</replace>
+      <replace>self.el,sub=u'预评报告'</replace>
+      <replace>GJB_YPBG_GN</replace>
+      <replace>,**</replace>
+      <replace>func.driver</replace>
+      <replace>【预评信息】</replace>
+      <replace>业务登记</replace>
+      <replace>YWDJ</replace>
+      <replace>dtime</replace>
+      <replace>#@LG.caseLog</replace>
+      <replace>rdR</replace>
+      <replace>预评报告</replace>
+      <replace>YPBG</replace>
+      <replace>strdata</replace>
+      <replace>args[1]</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/TestCase/GJB/test_report_ZSBGadd.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testQueryAll.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/examineModification.py" />
+        <option value="$PROJECT_DIR$/COMMON/SENDEMAIL.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testCopyNew.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testdiscovery.py" />
+        <option value="D:/Python27/Lib/unittest/case.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/EntrustObject.json" />
+        <option value="$PROJECT_DIR$/COMMON/__init__.py" />
+        <option value="$PROJECT_DIR$/COMMON/DIFF.py" />
+        <option value="D:/Python27/Lib/site-packages/ddt.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/config.py" />
+        <option value="$PROJECT_DIR$/Lib/HTMLTestRunner.py" />
+        <option value="D:/Python27/Lib/site-packages/selenium/webdriver/common/utils.py" />
+        <option value="D:/Python27/Lib/site-packages/selenium/webdriver/remote/webelement.py" />
+        <option value="$PROJECT_DIR$/COMMON/LOG.py" />
+        <option value="$PROJECT_DIR$/COMMON/RUN.py" />
+        <option value="$PROJECT_DIR$/COMMON/CONFIG.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testQueryMultInquiry.py" />
+        <option value="$PROJECT_DIR$/COMMON/DRIVER.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/run.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/chkdata.json" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/reportQuery.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/caseList.txt" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/aa" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportYPBGbase.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportYPBGModification.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportYWDJbase.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportYWDJmodification.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportYWDJquery.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportZSBGModification.py" />
+        <option value="$PROJECT_DIR$/COMMON/MySQL.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportYPBGadd.py" />
+        <option value="D:/Python27/Lib/unittest/main.py" />
+        <option value="$PROJECT_DIR$/COMMON/ELEMNET.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportZSBGbase.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/reportbase.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportZSBGquery.py" />
+        <option value="$PROJECT_DIR$/COMMON/COMMON.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/unittestBase.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testQueryAutomatedValuation.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/query.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/reportModificaton.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportYPBGquery.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportYWDJadd.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testReportZSBGadd.py" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/testArtificialQuery.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/commond.py" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/element.xml" />
+        <option value="$PROJECT_DIR$/TestCase/GJB/config.ini" />
+        <option value="$PROJECT_DIR$/BaseCase/GJB/reportadd.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Buildout</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FxtWeb">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FxtWeb">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TestCase">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FxtWeb">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="TestCase">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="GJB">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FxtWeb">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Lib">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FxtWeb">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BaseCase">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FxtWeb">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BaseCase">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="GJB">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestCase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestCase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GJB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="COMMON" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BaseCase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FxtWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BaseCase" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GJB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/BaseCase/GJB/unittestBase.py" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workFxt\FxtWeb\BaseCase\GJB\data\09" />
+      <recent name="F:\workFxt\FxtWeb\Upload" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\workFxt\FxtWeb\TestCase\GJB" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.testReportZSBGadd">
+    <configuration default="false" name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestCase/GJB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestCase/GJB/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testReportYWDJadd" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestCase/GJB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestCase/GJB/testReportYWDJadd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testArtificialQuery" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestCase/GJB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestCase/GJB/testArtificialQuery.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testQueryAutomatedValuation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestCase/GJB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestCase/GJB/testQueryAutomatedValuation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testReportZSBGadd" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestCase/GJB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestCase/GJB/testReportZSBGadd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FxtWebw" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.run" />
+      <item index="1" class="java.lang.String" itemvalue="Python.testReportYWDJadd" />
+      <item index="2" class="java.lang.String" itemvalue="Python.testArtificialQuery" />
+      <item index="3" class="java.lang.String" itemvalue="Python.testQueryAutomatedValuation" />
+      <item index="4" class="java.lang.String" itemvalue="Python.testReportZSBGadd" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.testReportZSBGadd" />
+        <item index="1" class="java.lang.String" itemvalue="Python.testReportYWDJadd" />
+        <item index="2" class="java.lang.String" itemvalue="Python.testArtificialQuery" />
+        <item index="3" class="java.lang.String" itemvalue="Python.testQueryAutomatedValuation" />
+        <item index="4" class="java.lang.String" itemvalue="Python.run" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\luyb\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d92258d0-8db7-4d2c-9ed5-eda655efb184" name="Default" comment="" />
+      <created>1476069265184</created>
+      <option name="number" value="Default" />
+      <updated>1476069265184</updated>
+    </task>
+    <task id="LOCAL-00001" summary="change browser to chrome">
+      <created>1476237927134</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1476237927134</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change browser to Firefox">
+      <created>1476238662226</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1476238662226</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change browser to Chrome">
+      <created>1476239934014</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1476239934014</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add file testBase">
+      <created>1476266054271</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1476266054271</updated>
+    </task>
+    <task id="LOCAL-00005" summary="#fixed caselist file">
+      <created>1476266241249</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1476266241249</updated>
+    </task>
+    <task id="LOCAL-00006" summary="#修改caselist文件">
+      <created>1476267202861</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1476267202861</updated>
+    </task>
+    <task id="LOCAL-00007" summary="增加Download，Upload文件 &#10;修改DIFF文件">
+      <created>1476348026672</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1476348026672</updated>
+    </task>
+    <task id="LOCAL-00008" summary="修改autoit的exe文件，支持Chrome浏览器上传">
+      <created>1476431135720</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1476431135720</updated>
+    </task>
+    <task id="LOCAL-00009" summary="修改autoit的exe文件，支持Chrome浏览器上传">
+      <created>1476431318601</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1476431318601</updated>
+    </task>
+    <task id="LOCAL-00010" summary="修改配置文件，邮件发送设置true，设置收件人，发件人，发件账号">
+      <created>1476433631564</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1476433631564</updated>
+    </task>
+    <task id="LOCAL-00011" summary="1、优化附件上传功能，修复excel文件对比的BUG（只能对比第一个表单，不能打印不同的内容）&#10;2、去掉caselist.txt文件中重复项">
+      <created>1476777793234</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1476777793234</updated>
+    </task>
+    <task id="LOCAL-00012" summary="1、更改confing为10环境测试环境&#10;2、去掉caselist.txt除全部查询测试例">
+      <created>1477638920923</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1477638920923</updated>
+    </task>
+    <task id="LOCAL-00013" summary="1、邮件更改为多人收件&#10;2、配置多个收件人">
+      <created>1477644412323</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1477644412323</updated>
+    </task>
+    <task id="LOCAL-00014" summary="修复配置文件，10环境登陆密码错误的问题">
+      <created>1478071354480</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1478071354480</updated>
+    </task>
+    <task id="LOCAL-00015" summary="修复配置文件，10环境登陆密码错误的问题">
+      <created>1478071443904</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1478071443904</updated>
+    </task>
+    <task id="LOCAL-00016" summary="修复配置文件，10环境登陆密码错误的问题">
+      <created>1478238098776</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1478238098776</updated>
+    </task>
+    <task id="LOCAL-00017" summary="分离10， 09测试环境在Jenkins上单独运行。">
+      <created>1478245398551</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1478245398551</updated>
+    </task>
+    <task id="LOCAL-00018" summary="开启邮件发送功能。">
+      <created>1481267141481</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1481267141481</updated>
+    </task>
+    <task id="LOCAL-00019" summary="修复无法发送邮件报告功能">
+      <created>1481715493583</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1481715493583</updated>
+    </task>
+    <task id="LOCAL-00020" summary="1、增加报告模块的预评，报告，业务的的脚本！">
+      <created>1483407908422</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1483407908422</updated>
+    </task>
+    <task id="LOCAL-00021" summary="1、更改测试账户&#10;2、更改发送邮箱账户">
+      <created>1483509473380</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1483509473380</updated>
+    </task>
+    <task id="LOCAL-00022" summary="更改测试脚本列表">
+      <created>1483514270359</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1483514270359</updated>
+    </task>
+    <task id="LOCAL-00023" summary="屏蔽生成附件与生成报告测试用例.">
+      <created>1483941826870</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1483941826870</updated>
+    </task>
+    <task id="LOCAL-00024" summary="报告脚本">
+      <created>1484209629346</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1484209629346</updated>
+    </task>
+    <task id="LOCAL-00025" summary="针对10系统，对新增业务，报告，预评的必填项进行判断，填写">
+      <created>1484271565933</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1484271565933</updated>
+    </task>
+    <task id="LOCAL-00026" summary="增加报告收件人2225770941@qq.com">
+      <created>1484295895482</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1484295895482</updated>
+    </task>
+    <task id="LOCAL-00027" summary="10环境，默认转交人为luyoubiao">
+      <created>1486533733425</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1486533733425</updated>
+    </task>
+    <task id="LOCAL-00028" summary="修改脚本，适用10环境测试">
+      <created>1487043638222</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1487043638222</updated>
+    </task>
+    <task id="LOCAL-00029" summary="1、更改报告转交的转交人代码&#10;2、重新更改报告子类型的输入方式">
+      <created>1487319476048</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1487319476048</updated>
+    </task>
+    <task id="LOCAL-00030" summary="修改RUN文件，支持多个测试case文件">
+      <created>1487323293722</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1487323293722</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Nosetests_in_reportAdd - 2016.12.30 at 18h 00m 16s.xml">
+      <configuration name="Nosetests in reportAdd" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_reportAdd - 2016.12.30 at 18h 00m 35s.xml">
+      <configuration name="Nosetests in reportAdd" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_testReportYPBGbase - 2017.06.26 at 10h 18m 09s.xml">
+      <configuration name="Nosetests in testReportYPBGbase" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19746122" sideWeight="0.49203187" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32742155" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26739427" sideWeight="0.5028986" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287858" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3888131" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33516484" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6666667" sideWeight="0.49710146" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2348378" sideWeight="0.5086207" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32742155" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2348378" sideWeight="0.5079681" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.62346524" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329235" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32417583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329235" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294271" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26739427" sideWeight="0.5028986" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33653846" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39148352" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5192308" sideWeight="0.49710146" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32742155" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2200282" sideWeight="0.49203187" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32469305" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="top" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287858" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2348378" sideWeight="0.5086207" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4952251" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2348378" sideWeight="0.5079681" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change browser to Chrome" />
+    <MESSAGE value="add file testBase" />
+    <MESSAGE value="#fixed caselist file" />
+    <MESSAGE value="#修改caselist文件" />
+    <MESSAGE value="增加Download，Upload文件 &#10;修改DIFF文件" />
+    <MESSAGE value="修改autoit的exe文件，支持Chrome浏览器上传" />
+    <MESSAGE value="修改配置文件，邮件发送设置true，设置收件人，发件人，发件账号" />
+    <MESSAGE value="1、优化附件上传功能，修复excel文件对比的BUG（只能对比第一个表单，不能打印不同的内容）&#10;2、去掉caselist.txt文件中重复项" />
+    <MESSAGE value="1、更改confing为10环境测试环境&#10;2、去掉caselist.txt除全部查询测试例" />
+    <MESSAGE value="1、邮件更改为多人收件&#10;2、配置多个收件人" />
+    <MESSAGE value="修复配置文件，10环境登陆密码错误的问题" />
+    <MESSAGE value="分离10， 09测试环境在Jenkins上单独运行。" />
+    <MESSAGE value="开启邮件发送功能。" />
+    <MESSAGE value="修复无法发送邮件报告功能" />
+    <MESSAGE value="1、增加报告模块的预评，报告，业务的的脚本！" />
+    <MESSAGE value="1、更改测试账户&#10;2、更改发送邮箱账户" />
+    <MESSAGE value="更改测试脚本列表" />
+    <MESSAGE value="屏蔽生成附件与生成报告测试用例." />
+    <MESSAGE value="报告脚本" />
+    <MESSAGE value="针对10系统，对新增业务，报告，预评的必填项进行判断，填写" />
+    <MESSAGE value="增加报告收件人2225770941@qq.com" />
+    <MESSAGE value="10环境，默认转交人为luyoubiao" />
+    <MESSAGE value="修改脚本，适用10环境测试" />
+    <MESSAGE value="1、更改报告转交的转交人代码&#10;2、重新更改报告子类型的输入方式" />
+    <MESSAGE value="修改RUN文件，支持多个测试case文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改RUN文件，支持多个测试case文件" />
+    <option name="CHANGE_BROWSER_SETTINGS">
+      <map>
+        <entry key="svn">
+          <value>
+            <ChangeBrowserSettings />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="277" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportYWDJadd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/LOG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+          <folding>
+            <element signature="e#2758#3573#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportZSBGadd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/RUN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testArtificialQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="293" column="21" selection-start-line="293" selection-start-column="13" selection-end-line="293" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/chkdata.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/aa">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/unittest/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/node.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/MySQL.py" />
+    <entry file="file://D:/Python27/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="130" column="6" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/site.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="359" column="0" selection-start-line="359" selection-start-column="0" selection-end-line="359" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/unittest/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="239" column="18" selection-start-line="239" selection-start-column="18" selection-end-line="239" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="41" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/EntrustObject.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportZSBGquery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/caseList.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="434" column="34" selection-start-line="434" selection-start-column="34" selection-end-line="434" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportYPBGbase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportYWDJbase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportYWDJmodification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportYWDJquery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportZSBGModification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportZSBGbase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportYPBGModification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/site-packages/ddt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="190" column="48" selection-start-line="190" selection-start-column="48" selection-end-line="190" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/element.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="217" column="39" selection-start-line="217" selection-start-column="39" selection-end-line="217" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testArtificialQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/commond.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportYPBGadd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="39" selection-start-line="137" selection-start-column="39" selection-end-line="137" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportYWDJadd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/reportbase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="223" column="29" selection-start-line="223" selection-start-column="29" selection-end-line="223" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/reportModificaton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="230" column="34" selection-start-line="230" selection-start-column="34" selection-end-line="230" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/reportQuery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="47" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/DRIVER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/ELEMNET.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.027377522">
+          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/LOG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+          <folding>
+            <element signature="e#2758#3573#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/RUN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="74" selection-start-line="43" selection-start-column="74" selection-end-line="43" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/DIFF.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="214" column="7" selection-start-line="214" selection-start-column="7" selection-end-line="214" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/CONFIG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportYPBGquery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/COMMON/COMMON.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+          <folding>
+            <element signature="e#32#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testQueryAutomatedValuation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6023055">
+          <caret line="87" column="31" selection-start-line="80" selection-start-column="3" selection-end-line="87" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/testReportZSBGadd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/unittestBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCase/GJB/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BaseCase/GJB/reportadd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.629683">
+          <caret line="1104" column="0" selection-start-line="1104" selection-start-column="0" selection-end-line="1104" selection-end-column="0" />
+          <folding>
+            <element signature="e#571#45592#0" expanded="false" />
+            <element signature="e#609#721#1" expanded="false" />
+            <element signature="e#929#19327#0" expanded="false" />
+            <element signature="e#19363#20446#0" expanded="false" />
+            <element signature="e#20504#22499#0" expanded="false" />
+            <element signature="e#20504#20610#1" expanded="false" />
+            <element signature="e#22557#25926#0" expanded="false" />
+            <element signature="e#22557#22651#1" expanded="false" />
+            <element signature="e#25970#26360#0" expanded="false" />
+            <element signature="e#26420#32104#0" expanded="false" />
+            <element signature="e#26420#26536#1" expanded="false" />
+            <element signature="e#32165#33641#0" expanded="false" />
+            <element signature="e#32165#32281#1" expanded="false" />
+            <element signature="e#33701#35124#0" expanded="false" />
+            <element signature="e#33701#33816#1" expanded="false" />
+            <element signature="e#35181#36334#0" expanded="false" />
+            <element signature="e#35181#35309#1" expanded="false" />
+            <element signature="e#36378#38082#0" expanded="false" />
+            <element signature="e#38133#39818#0" expanded="false" />
+            <element signature="e#39868#40814#0" expanded="false" />
+            <element signature="e#40870#45592#0" expanded="false" />
+            <element signature="e#45688#46160#0" expanded="false" />
+            <element signature="e#46235#46913#0" expanded="false" />
+            <element signature="e#46983#47167#0" expanded="false" />
+            <element signature="e#47239#47878#0" expanded="false" />
+            <element signature="e#47932#48067#0" expanded="false" />
+            <element signature="e#48124#48693#0" expanded="false" />
+            <element signature="e#48756#49032#0" expanded="false" />
+            <element signature="e#49093#49401#0" expanded="false" />
+            <element signature="e#49465#49736#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

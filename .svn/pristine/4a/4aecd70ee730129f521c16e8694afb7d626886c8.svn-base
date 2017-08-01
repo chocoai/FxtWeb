@@ -1,0 +1,689 @@
+# -*- coding: utf-8 -*-
+import os
+import unittest
+from time import sleep
+import COMMON.DRIVER as DR
+import COMMON.ELEMNET as EL
+import COMMON.LOG as LG
+from BaseCase.GJB import commond
+from BaseCase.GJB import copynew
+from BaseCase.GJB import unittestBase
+from COMMON import CONFIG as CFG
+xmlpath=os.path.join(CFG.prjDir,'BaseCase\GJB')
+url=CFG.ReadConfig().getConfigValue('Url')
+
+logger=LG.MyLog().get_log().get_myLogger()
+
+class testCopyNew(unittestBase.unittestBase):
+    """复制新增"""
+
+    @LG.caseLog(u'复制新增-环节_006')
+    def testXJ_FZ_006(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'待分配询价')
+        sleep(2)
+        commond.Switchto_Frame(self)
+        new = commond.LinkDate(self.el, 1, u'待分配询价')
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'XJ_FZ_027_复制新增-客户信息-委托方')
+    def testXJ_FZ_027(self):
+        result = copynew.NewCopyDetail(self, self.el, 'weituofang')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_FZ_036_复制新增-客户信息-看现场联系人电话')
+    def testXJ_FZ_036(self):
+        result = copynew.NewCopyDetail(self, self.el, 'kanxianchanglianxirendianhua')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_040_复制新增-客户信息-备注')
+    def testXJ_FZ_040(self):
+        result = copynew.NewCopyDetail(self, self.el, 'beizhu')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_053_复制新增-委估对象-土地使用权面积')
+    def testXJ_FZ_053(self):
+        result = copynew.NewCopyDetail(self, self.el, 'tudishiyongquanmianji')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_038_复制新增-客户信息-业务员所属部门')
+    def testXJ_FZ_038(self):
+        result = copynew.NewCopyDetail(self, self.el, 'lianxirenchuanzhen')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_050_复制新增-委估对象-地址')
+    def testXJ_FZ_050(self):
+        result = copynew.NewCopyDetail(self, self.el, 'dizhi')
+        self.assertTrue(result)
+    @LG.caseLog(u'XJ_FZ_111_复制新增-产权信息-产权人姓名')
+    def testXJ_FZ_111(self):
+        result = copynew.PropertyRightMessage(self, self.el, 'chanquanrenxingming')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_033_复制新增-客户信息-创建人')
+    def testXJ_FZ_033(self):
+        result = copynew.NewCopyDetail(self, self.el, 'chuangjianren')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_120_复制新增-附属房屋类型-附属房屋总值')
+    def testXJ_FZ_120(self):
+        result = copynew.SubHouse(self, self.el, 'fuzhufangwuzongzhi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_118_复制新增-附属房屋类型-附属房屋面积')
+    def testXJ_FZ_118(self):
+        result = copynew.SubHouse(self, self.el, 'fuzhufangwumiaoji')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_119_复制新增-附属房屋类型-附属房屋单价')
+    def testXJ_FZ_119(self):
+        result = copynew.SubHouse(self, self.el, 'fuzhufangwudanjia')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_117_复制新增-附属房屋类型-附属房屋类型')
+    def testXJ_FZ_117(self):
+        result = copynew.SubHouse(self, self.el, 'fuzhufangwuleixing')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'复制新增-环节_016')
+    def testXJ_FZ_016(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'撰写预评中')
+        sleep(3)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        #logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'复制新增-环节_013')
+    def testXJ_FZ_013(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'业务待分配')
+        sleep(3)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        #logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+
+    @LG.caseLog(u'02x_复制新增-环节_随机')
+    def testXJ_FZ_02x(self):
+        old = copynew.NewCopyMold(self, self.el, 1)
+        sleep(5)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        #logger.info(u'新增前：' + old + u' ---- 新增后：' + new)
+        self.assertNotEqual(old, new)
+
+
+
+    @LG.caseLog(u'XJ_FZ_060_复制新增-委估对象-拟贷金额')
+    def testXJ_FZ_060(self):
+        result = copynew.NewCopyDetail(self, self.el, "nidaijin'e")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'复制新增-环节_004')
+    def testXJ_FZ_004(self):
+        old=copynew.NewCopyMold(self,self.el,1,u'待回价')
+        sleep(2)
+        commond.Switchto_Frame(self)
+        new=commond.FirstListData(self)
+        logger.info(new)
+        #new = commond.LinkDate(self.el, 1, u'待回价')
+        self.assertNotEqual(old,new)
+
+    @LG.caseLog(u'XJ_FZ_080_复制新增-委估对象-是否满5年')
+    def testXJ_FZ_080(self):
+        result = copynew.NewCopyDetail(self, self.el, "shifoumanwunian")
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'复制新增-环节_011')
+    def testXJ_FZ_011(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'询价已撤销')
+        #sleep(2)
+        commond.Switchto_Frame(self)
+        new = commond.LinkDate(self.el, 1, u'询价已撤销')
+        logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'复制新增002')
+    def testXJ_GN_002(self):
+        #self.xj_gn_002=EL.get_el_name('Fuzhixinzeng')
+        copynew.NewData(self,self.el,'s')
+        sleep(3)
+    @LG.caseLog(u'复制新增003')
+    def testXJ_GN_003(self):
+        text=copynew.NewData(self,self.el,Num=2)
+        self.assertEqual(text,u'只能选择一条进行复制',u'内容显示不一致')
+
+    @LG.caseLog(u'复制新增004')
+    def textXJ_GN_004(self):
+        pass
+
+    @LG.caseLog(u'复制新增XXX')
+    def testXJ_GN_xxx01(self):
+        #self.xj_gn_xxx01=EL.get_el_name('Duotao')
+        text=copynew.NewData(self,self.el,None,2,'Duotao')
+        self.assertEqual(text, u'只能选择一条进行复制', u'内容显示不一致')
+
+    @LG.caseLog(u'复制新增XXX01')
+    def testXJ_GN_xxx02(self):
+        #self.xj_gn_xxx02 = EL.get_el_name('Duotao')
+        text = copynew.NewData(self, self.el, None, 1, 'Duotao')
+        #self.assertEqual(text, u'只能选择一条进行复制', u'内容显示不一致')
+
+    @LG.caseLog(u'复制新增-环节_005')
+    def testXJ_FZ_005(self):
+        copynew.NewCopyMold(self, self.el, 1, u'已回价')
+        sleep(2)
+        commond.Switchto_Frame(self)
+        new=commond.LinkDate(self.el,1,u'已回价')
+        #logger.info(u'新增前'+old+u'；新增后'+new)
+        #self.assertNotEqual(old,new)
+
+
+    @LG.caseLog(u'复制新增-环节_008')
+    def testXJ_FZ_008(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'待撰写预评')
+        sleep(2)
+        commond.Switchto_Frame(self)
+        new = commond.LinkDate(self.el, 1, u'待撰写预评')
+        logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'复制新增-环节_007')
+    def testXJ_FZ_007(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'待撰写预评')
+        sleep(2)
+        commond.Switchto_Frame(self)
+        new = commond.LinkDate(self.el, 1, u'待撰写预评')
+        logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'复制新增-环节_009')
+    def testXJ_FZ_009(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'业务已撤销')
+        sleep(2)
+        commond.Switchto_Frame(self)
+        new = commond.LinkDate(self.el, 1, u'业务已撤销')
+        #logger.info(u'新增前' + old + u'；新增后' + new)
+        #self.assertNotEqual(old, new)
+
+
+    #需要填写技术团队，环节变为待回价，待修改
+    @LG.caseLog(u'复制新增-环节_010')
+    def XJ_FZ_010(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'已回价,待初审')
+        sleep(2)
+        commond.Switchto_Frame(self)
+        new = commond.LinkDate(self.el, 1, u'已回价,待初审')
+        logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+
+    @LG.caseLog(u'复制新增-环节_012')
+    def testXJ_FZ_012(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'预评已完成')
+        sleep(3)
+        commond.Switchto_Frame(self)
+        new = commond.LinkDate(self.el, 1, u'预评已完成')
+        logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+
+
+    @LG.caseLog(u'复制新增-环节_014')
+    def testXJ_FZ_014(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'已回价待终审')
+        sleep(3)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'复制新增-环节_015')
+    def testXJ_FZ_015(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'已回价待终审')
+        sleep(3)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'复制新增-环节_015')
+    def testXJ_FZ_015(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'报告待终审')
+        sleep(3)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        logger.info(u'新增前' + old + u'；新增后' + new)
+        self.assertNotEqual(old, new)
+
+
+    @LG.caseLog(u'复制新增-环节_017')
+    def testXJ_FZ_017(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'业务已分配')
+        sleep(5)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        logger.info(u'新增前：' + old + u' ---- 新增后：' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'复制新增-环节_018')
+    def testXJ_FZ_018(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'已回价待打印')
+        sleep(5)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        logger.info(u'新增前：' + old + u' ---- 新增后：' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'复制新增-环节_019')
+    def testXJ_FZ_019(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'撰写报告中')
+        sleep(5)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        logger.info(u'新增前：' + old + u' ---- 新增后：' + new)
+        self.assertNotEqual(old, new)
+
+
+    @LG.caseLog(u'复制新增-环节_020')
+    def testXJ_FZ_020(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'预评待编审')
+        sleep(5)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        logger.info(u'新增前：' + old + u' ---- 新增后：' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'021_复制新增-环节_待撰写报告')
+    def testXJ_FZ_021(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'待撰写报告')
+        sleep(5)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        logger.info(u'新增前：' + old + u' ---- 新增后：' + new)
+        self.assertNotEqual(old, new)
+
+    @LG.caseLog(u'022_复制新增-环节_待撰写预评')
+    def testXJ_FZ_022(self):
+        old = copynew.NewCopyMold(self, self.el, 1, u'待撰写预评')
+        sleep(5)
+        commond.Switchto_Frame(self)
+        new = commond.FirstListData(self)
+        logger.info(u'新增前：' + old + u' ---- 新增后：' + new)
+        self.assertNotEqual(old, new)
+
+
+
+    @LG.caseLog(u'XJ_FZ_025_复制新增-客户信息')
+    def testXJ_FZ_025(self):
+        result=copynew.NewCopyDetail(self,self.el,'jishutuandui')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_026_复制新增-客户信息')
+    def testXJ_FZ_026(self):
+        result = copynew.NewCopyDetail(self, self.el, 'yewuyuan')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_FZ_028_复制新增-客户信息-客户类型')
+    def testXJ_FZ_028(self):
+        result = copynew.NewCopyDetail(self, self.el, 'kehuleixing')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_029_复制新增-客户信息-客户类型')
+    def testXJ_FZ_029(self):
+        result = copynew.NewCopyDetail(self, self.el, 'kehuleixing')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_030_复制新增-客户信息-委托客户')
+    def testXJ_FZ_030(self):
+        result = copynew.NewCopyDetail(self, self.el, 'weituokehu')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_031_复制新增-客户信息-银行联系人')
+    def testXJ_FZ_031(self):
+        result = copynew.NewCopyDetail(self, self.el, 'yinhanglianxiren')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_032_复制新增-客户信息-银行联系人电话')
+    def testXJ_FZ_032(self):
+        result = copynew.NewCopyDetail(self, self.el, 'yinhanglianxirendianhua')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_FZ_034_复制新增-客户信息-创建时间')
+    def testXJ_FZ_034(self):
+        result = copynew.NewCopyDetail(self, self.el, 'chuangjianshijian')
+        self.assertFalse(result)
+
+    @LG.caseLog(u'XJ_FZ_035_复制新增-客户信息-看现场联系人')
+    def testXJ_FZ_035(self):
+        result = copynew.NewCopyDetail(self, self.el, 'kanxianchanglianxiren')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_FZ_037_复制新增-客户信息-联系人传真')
+    def testXJ_FZ_037(self):
+        result = copynew.NewCopyDetail(self, self.el, 'lianxirenchuanzhen')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_FZ_039_复制新增-客户信息-业务员所属部门负责人')
+    def testXJ_FZ_039(self):
+        result = copynew.NewCopyDetail(self, self.el, 'yewusuoshubumenfuzhuren')
+        self.assertTrue(result)
+
+
+
+
+    @LG.caseLog(u'XJ_FZ_041_复制新增-委估对象-城市')
+    def testXJ_FZ_041(self):
+        result = copynew.NewCopyDetail(self, self.el, 'chengshi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_042_复制新增-委估对象-行政区')
+    def testXJ_FZ_042(self):
+        result = copynew.NewCopyDetail(self, self.el, 'xingzhengqu')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_043_复制新增-委估对象-土地实际用途')
+    def testXJ_FZ_043(self):
+        result = copynew.NewCopyDetail(self, self.el, 'tudishijiyongtu')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_044_复制新增-委估对象-土地证载用途')
+    def testXJ_FZ_044(self):
+        result = copynew.NewCopyDetail(self, self.el, 'tudizhengzaiyongtu')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_045_复制新增-委估对象-楼盘名称')
+    def testXJ_FZ_045(self):
+        result = copynew.NewCopyDetail(self, self.el, 'loupanmingcheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_046_复制新增-委估对象-楼栋名称')
+    def testXJ_FZ_046(self):
+        result = copynew.NewCopyDetail(self, self.el, 'loudongmingcheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_047_复制新增-委估对象-楼层')
+    def testXJ_FZ_047(self):
+        result = copynew.NewCopyDetail(self, self.el, 'loucheng')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_048_复制新增-委估对象-房号')
+    def testXJ_FZ_048(self):
+        result = copynew.NewCopyDetail(self, self.el, 'fanghao')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_049_复制新增-委估对象-委估对象全称')
+    def testXJ_FZ_049(self):
+        result = copynew.NewCopyDetail(self, self.el, 'weiguduixiangquancheng')
+        self.assertTrue(result)
+
+
+
+
+    @LG.caseLog(u'XJ_FZ_051_复制新增-委估对象-产权类型')
+    def testXJ_FZ_051(self):
+        result = copynew.NewCopyDetail(self, self.el, 'chanquanleixing')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_052_复制新增-委估对象-建筑面积')
+    def testXJ_FZ_052(self):
+        result = copynew.NewCopyDetail(self, self.el, 'jianzhumianji')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_FZ_054_复制新增-估价信息-土地单价')
+    def testXJ_FZ_054(self):
+        result = copynew.NewCopyDetail(self, self.el, 'tudidanjia')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_055_复制新增-估价信息-土地面积')
+    def testXJ_FZ_055(self):
+        result = copynew.NewCopyDetail(self, self.el, 'tudimianji')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_FZ_056_复制新增-估价信息-土地总价')
+    def testXJ_FZ_056(self):
+        result = copynew.NewCopyDetail(self, self.el, 'tudizongjia')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_FZ_057_复制新增-委估对象-购买日期')
+    def testXJ_FZ_057(self):
+        result = copynew.NewCopyDetail(self, self.el, 'goumairiqi')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_FZ_058_复制新增-委估对象-房产证登记日期')
+    def testXJ_FZ_058(self):
+        result = copynew.NewCopyDetail(self, self.el, 'fangchanzhengdengjiriqi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_059_复制新增-委估对象-附属房屋总价')
+    def testXJ_FZ_059(self):
+        result = copynew.NewCopyDetail(self, self.el, 'fushufangwuzongjia')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_FZ_061_复制新增-委估对象-成交价')
+    def testXJ_FZ_061(self):
+        result = copynew.NewCopyDetail(self, self.el, "chengjiaojia")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_062_复制新增-委估对象-房产证号')
+    def testXJ_FZ_062(self):
+        result = copynew.NewCopyDetail(self, self.el, "fangchanzhenghao")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_063_复制新增-委估对象-套内面积')
+    def testXJ_FZ_063(self):
+        result = copynew.NewCopyDetail(self, self.el, "taoneimianji")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_064_复制新增-委估对象-总楼层')
+    def testXJ_FZ_064(self):
+        result = copynew.NewCopyDetail(self, self.el, "zonglouceng")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_065_复制新增-委估对象-装修')
+    def testXJ_FZ_065(self):
+        result = copynew.NewCopyDetail(self, self.el, "zhuangxiu")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_066_复制新增-委估对象-厨房')
+    def testXJ_FZ_066(self):
+        result = copynew.NewCopyDetail(self, self.el, "chufang")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_067_复制新增-委估对象-卫生间')
+    def testXJ_FZ_067(self):
+        result = copynew.NewCopyDetail(self, self.el, "weishengjian")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_068_复制新增-委估对象-建筑结构')
+    def testXJ_FZ_068(self):
+        result = copynew.NewCopyDetail(self, self.el, "jianzhujiegou")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_069_复制新增-委估对象-楼面地价')
+    def testXJ_FZ_069(self):
+        result = copynew.NewCopyDetail(self, self.el, "loumiandijia")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_070_复制新增-委估对象-土地证发证机关')
+    def testXJ_FZ_070(self):
+        result = copynew.NewCopyDetail(self, self.el, "tudizhengfazhengjiguan")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_071_复制新增-委估对象-土地使用权类型')
+    def testXJ_FZ_071(self):
+        result = copynew.NewCopyDetail(self, self.el, "tudishiyongquanleixing")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_072_复制新增-委估对象-土地使用权证')
+    def testXJ_FZ_072(self):
+        result = copynew.NewCopyDetail(self, self.el, "tudishiyongquanzheng")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_073_复制新增-委估对象-土地证发证日期')
+    def testXJ_FZ_073(self):
+        result = copynew.NewCopyDetail(self, self.el, "tudizhengfazhengriqi")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_074_复制新增-委估对象-土地使用权人')
+    def testXJ_FZ_074(self):
+        result = copynew.NewCopyDetail(self, self.el, "tudishiyongquanren")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_075_复制新增-委估对象-装修价值')
+    def testXJ_FZ_075(self):
+        result = copynew.NewCopyDetail(self, self.el, "zhuangxiujiazhi")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_076_复制新增-委估对象-土地证载地址')
+    def testXJ_FZ_076(self):
+        result = copynew.NewCopyDetail(self, self.el, "tudizhengzaidizhi")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_077_复制新增-委估对象-用途')
+    def testXJ_FZ_077(self):
+        result = copynew.NewCopyDetail(self, self.el, "yongtu")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_078_复制新增-委估对象-厅')
+    def testXJ_FZ_078(self):
+        result = copynew.NewCopyDetail(self, self.el, "yongtu")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_079_复制新增-委估对象-户型')
+    def testXJ_FZ_079(self):
+        result = copynew.NewCopyDetail(self, self.el, "huxing")
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_FZ_081_复制新增-委估对象-法定用途')
+    def testXJ_FZ_081(self):
+        result = copynew.NewCopyDetail(self, self.el, "fadingyongtu")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_082_复制新增-委估对象-产权人联系人电话')
+    def testXJ_FZ_082(self):
+        result = copynew.NewCopyDetail(self, self.el, "chanquanrenlianxirendianhua")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_083_复制新增-委估对象-产权人联系人关系')
+    def testXJ_FZ_083(self):
+        result = copynew.NewCopyDetail(self, self.el, "chanquanrenlianxirenguanxi")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_084_复制新增-委估对象-登记价')
+    def testXJ_FZ_084(self):
+        result = copynew.NewCopyDetail(self, self.el, "dengjijia")
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_FZ_085_复制新增-委估对象-产权人联系人')
+    def testXJ_FZ_085(self):
+        result = copynew.NewCopyDetail(self, self.el, "chanquanrenlianxireng")
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_FZ_086_复制新增-委估对象-买房人户籍')
+    def testXJ_FZ_086(self):
+        result = copynew.NewCopyDetail(self, self.el, "maifangrenhuji")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_087_复制新增-委估对象-买房人')
+    def testXJ_FZ_087(self):
+        result = copynew.NewCopyDetail(self, self.el, "maifangrenhuji")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_088_复制新增-委估对象-买房人身份证')
+    def testXJ_FZ_088(self):
+        result = copynew.NewCopyDetail(self, self.el, "maifangrenshenfenzheng")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_089_复制新增-委估对象-买房人联系电话')
+    def testXJ_FZ_089(self):
+        result = copynew.NewCopyDetail(self, self.el, "maifangrenlianxidianhua")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_090_复制新增-委估对象-首付金额')
+    def testXJ_FZ_090(self):
+        result = copynew.NewCopyDetail(self, self.el, "shoufujin'e")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_091_复制新增-委估对象-房间')
+    def testXJ_FZ_091(self):
+        result = copynew.NewCopyDetail(self, self.el, "shoufujin'e")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_092_复制新增-委估对象-首次购房')
+    def testXJ_FZ_092(self):
+        result = copynew.NewCopyDetail(self, self.el, "shoucigoufang")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_093_复制新增-委估对象-阳台')
+    def testXJ_FZ_093(self):
+        result = copynew.NewCopyDetail(self, self.el, "yangtai")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_094_复制新增-委估对象-是否唯一住房')
+    def testXJ_FZ_094(self):
+        result = copynew.NewCopyDetail(self, self.el, "shifouweiyizhufang")
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_FZ_095_复制新增-委估对象-建筑年代')
+    def testXJ_FZ_095(self):
+        result = copynew.NewCopyDetail(self, self.el, "jianzhuniandai")
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_FZ_112_复制新增-产权信息-企业工商登记号')
+    def XJ_FZ_112(self):
+        result=copynew.PropertyRightMessage(self,self.el,'qiyegongshangdengjihao')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_FZ_111_复制新增-产权信息-产权人姓名')
+    def testXJ_FZ_111(self):
+        result = copynew.PropertyRightMessage(self, self.el, 'chanquanrenxingming')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'复制新增003')
+    def testXJ_GN_duotao(self):
+        #duotao=EL.get_el_name('Duotao',xmlpath)
+        text = copynew.NewData(self, self.el,Num=2,Inquiry='Duotao')
+        self.assertEqual(text, u'只能选择一条进行复制', u'内容显示不一致')
+
+
+
+if __name__=='__main__':
+    unittest.main()
+
+    '''
+
+        #暂不支持
+    @LG.caseLog(u'XJ_FZ_113_复制新增-产权信息-企业工商登记号')
+    def XJ_FZ_113(self):
+            result=copynew.PropertyRightMessage(self,self.el,'qiyegongshangdengjihao')
+            self.assertTrue(result)
+
+    ######自动义字段########
+    @LG.caseLog(u'XJ_FZ_097_复制新增-委估对象-市场背景')
+    def XJ_FZ_097(self):
+        result = copynew.NewCopyDetail(self, self.el, "shichangbeijing")
+        self.assertTrue(result)
+    '''

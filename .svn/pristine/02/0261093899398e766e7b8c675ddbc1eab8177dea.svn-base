@@ -1,0 +1,215 @@
+#!/usr/bin/python
+# coding:utf-8
+from xlrd import open_workbook
+import sys,os
+import CONFIG as CFG
+import logging
+#解决UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3问题
+reload(sys)
+sys.setdefaultencoding("utf-8")
+class ExcelDiff(object):
+    def print_workbook(self,wb):
+        """
+        # 输出整个Excel文件的内容
+        :param wb:
+        :return:
+        """
+        for s in wb.sheets():
+            print "Sheet:", s.name
+            for r in range(s.nrows):
+                strRow = ""
+                for c in s.row(r):
+                    strRow += ("\t" + str(c.value))
+                print "ROW[" + str(r) + "]:", strRow
+
+                # 把一行转化为一个字符串
+
+    def row_to_str(self,row):
+        strRow = ""
+        for c in row:
+            strRow += ("\t" + str(c.value))
+        return strRow;
+
+    def print_report(self,report):
+        """
+        # 打印diff结果报表
+        :param report:
+        :return:
+        """
+        for o in report:
+            if isinstance(o, list):
+                for i in o:
+                    print "\t" + i
+            else:
+                print o
+
+    def diff_file(self):
+        """
+        #diff文件
+        :return:
+        """
+        filePath1=os.path.join(CFG.prjDir,'Download')
+        fnList=os.listdir(filePath1)
+
+        fileDict1={}
+        for i in fnList:
+            fnPath=os.path.join(filePath1,i)
+            bTime=os.stat(fnPath).st_ctime
+            fileDict1[fnPath]=bTime
+
+        filePath2 = os.path.join(CFG.prjDir, 'Upload')
+        fnList = os.listdir(filePath2)
+
+        fileDict2 = {}
+        for i in fnList:
+            fnPath = os.path.join(filePath2, i)
+            bTime = os.stat(fnPath).st_ctime
+            fileDict2[fnPath] = bTime
+
+        #获取最近修改文件
+        file1=sorted(fileDict1.iteritems(),key=lambda d:d[1],reverse=True)[0][0]
+        file2=sorted(fileDict2.iteritems(),key=lambda d:d[1],reverse=True)[0][0]
+
+        wb1 = open_workbook(file1)
+        wb2 = open_workbook(file2)
+        #print wb1.sheet_names(),wb2.sheet_names()
+        wb1List=[]
+        wb2List=[]
+
+        #判断表格的sheet表单
+        if wb1.sheet_names()!=wb2.sheet_names():
+            print u'表格sheet不同！'
+            logging.info(u'表格sheet不同！')
+            return False
+
+        for i in wb1.sheet_names():
+            sheet=wb1.sheet_by_name(i)
+            print sheet.name,sheet.nrows,sheet.ncols
+            wb1List.append(sheet)
+        for i in wb2.sheet_names():
+            sheet=wb2.sheet_by_name(i)
+            print sheet.name, sheet.nrows, sheet.ncols
+            wb2List.append(sheet)
+        report=[]
+        sheetn=min(wb1.sheet_names(),wb2.sheet_names())
+        for i in range(len(sheetn)):
+            diffRP=self.diff_sheet(wb1.sheet_by_index(i), wb2.sheet_by_index(i))
+            if diffRP:
+                #print diffRP
+                report.append(diffRP)
+        print file1 + "\n" + file2 + "\n#############################"
+        #print report,2222
+        # 打印diff结果
+        if report :
+            for i in report:
+                #print 1111
+                self.print_report(i)
+            return False
+        return True
+
+    def diff_sheet(self,sheet1, sheet2):
+        """
+        diff两个Sheet
+        :param sheet1:
+        :param sheet2:
+        :return:
+        """
+        nr1 = sheet1.nrows
+        nr2 = sheet2.nrows
+        if nr1!=nr2:
+            print u'表格的行数不一致'
+            logging.info(u'表格的行数不一致')
+            #return False
+        nr = max(nr1, nr2)
+        report = []
+        for r in range(nr):
+            row1 = None;
+            row2 = None;
+            if r < nr1:
+                row1 = sheet1.row(r)
+            if r < nr2:
+                row2 = sheet2.row(r)
+
+            diff = 0;  # 0:equal, 1: not equal, 2: row2 is more, 3: row2 is less
+            if row1 == None and row2 != None:
+                diff = 2
+                report.append("+ROW[" + str(r + 1) + "]: " + row_to_str(row2))
+
+            if row1 == None and row2 == None:
+                diff = 0
+            if row1 != None and row2 == None:
+                diff = 3
+                report.append("-ROW[" + str(r + 1) + "]: " + self.row_to_str(row1))
+            if row1 != None and row2 != None:
+                # diff the two rows
+                reportRow = self.diff_row(row1, row2)
+                if len(reportRow) > 0:
+                    report.append("#ROW[" + str(r + 1) + "]1: " + self.row_to_str(row1))
+                    report.append("#ROW[" + str(r + 1) + "]2: " + self.row_to_str(row2))
+                    report.append(reportRow)
+        #print report,'diff'
+        return report;
+
+    def diff_row(self,row1, row2):
+        """
+        diff两行
+        :param row1:
+        :param row2:
+        :return:
+        """
+        nc1 = len(row1)
+        nc2 = len(row2)
+        nc = max(nc1, nc2)
+        report = []
+        for c in range(nc):
+            ce1 = None;
+            ce2 = None;
+            if c < nc1:
+                ce1 = row1[c]
+            if c < nc2:
+                ce2 = row2[c]
+
+            diff = 0;  # 0:equal, 1: not equal, 2: row2 is more, 3: row2 is less
+            if ce1 == None and ce2 != None:
+                diff = 2
+                report.append("+CELL[" + str(c + 1) + ": " + ce2.value)
+            if ce1 == None and ce2 == None:
+                diff = 0
+
+            if ce1 != None and ce2 == None:
+                diff = 3
+                report.append("-CELL[" + str(c + 1) + ": " + ce1.value)
+
+            if ce1 != None and ce2 != None:
+                if ce1.value == ce2.value:
+                    diff = 0
+                else:
+                    diff = 1
+                    report.append("#CELL[" + str(c + 1) + "]1: " + str(ce1.value))
+                    report.append("#CELL[" + str(c + 1) + "]2: " + str(ce2.value))
+
+        return report
+
+if __name__ == '__main__':
+    pass
+    print ExcelDiff().diff_file()
+    '''
+    if len(sys.argv) < 3:
+        print 'No files'
+        exit()
+
+    file1 = sys.argv[1]
+    file2 = sys.argv[2]
+
+    wb1 = open_workbook(file1)
+    wb2 = open_workbook(file2)
+
+    print_workbook(wb1)
+    print_workbook(wb2)
+
+    # diff两个文件的第一个sheet
+    report = diff_sheet(wb1.sheet_by_index(0), wb2.sheet_by_index(0))
+    print file1 + "\n" + file2 + "\n#############################"
+    # 打印diff结果
+    print_report(report)
+    '''

@@ -1,0 +1,983 @@
+#coding:utf-8
+import COMMON.ELEMNET as EL
+import os
+import sys
+import time
+import random
+import logging
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import Select
+from COMMON import CONFIG as CFG
+GJBpath=os.path.join(CFG.prjDir, 'BaseCase/GJB')
+dataDetail=EL.get_el_name('DetailData', GJBpath)
+
+datapath=os.getcwd()
+TitleMode = EL.get_el_name('Xujia', GJBpath)
+eldantao=EL.get_el_name('Dantao', GJBpath)
+elquanbu=EL.get_el_name('Quanbu', GJBpath)
+elGaizhang=EL.get_el_name('Gaizhang', GJBpath)
+elData=EL.get_el_name('Checkbox', GJBpath)
+elZXYP=EL.get_el_name('Zuanxieyuping', GJBpath)
+elDateDetail=EL.get_el_name('DetailData', GJBpath)
+eDaochu=EL.get_el_name('Daochu', GJBpath)
+Distributed=CFG.ReadConfig().getConfigValue('Distributed')
+MsgFrm=EL.get_el_name('MsgFrame', GJBpath)
+State=EL.get_el_name('OtherState', GJBpath)
+
+if len(sys.argv)>=2:
+    if sys.argv[1]=='09':
+        username = CFG.ReadConfig().getConfigValue('09username')
+        password = CFG.ReadConfig().getConfigValue('09password')
+    elif sys.argv[1]=='10':
+        username = CFG.ReadConfig().getConfigValue('10username')
+        password = CFG.ReadConfig().getConfigValue('10password')
+    else:
+        exit('exit system!')
+else:
+    username=CFG.ReadConfig().getConfigValue('username')
+    password=CFG.ReadConfig().getConfigValue('password')
+sessionName=CFG.SessionUserName
+Browser=CFG.ReadConfig().getConfigValue('Browser')
+def Login(self,func,*args):
+    """
+    登陆
+    :param self:
+    :param func: element对象
+    :return:
+    """
+    func.getFunctionName('Login')
+    func.get_element('username')
+    func.get().clear()
+    if len(args)==0 :
+        args = (username, password, '')
+    date=args
+    self.logger.info(u'输入账号:' + date[0])
+    func.get().send_keys(date[0])
+    self.logger.info(u'输入密码：' +str(date[1]))
+    func.get_element('password')
+    func.get().send_keys(date[1])
+    func.get_element('login')
+    func.get().click()
+    time.sleep(1)
+
+def TitleHand(self,el,mode=None):
+    """
+    选择标题栏
+    :param self:
+    :param el: Element 对象
+    :param mode: 模块名
+    :return:
+    """
+    #不使用Grid则可以使用Cookies，免登陆,不支持IE浏览器
+    if Distributed!='ON' and Browser!='IE':
+        if CFG.Cookies == None :
+            Login(self, el)
+            CFG.Cookies=self.driver.get_cookies()
+    else:
+        logging.info('loaded cookies')
+        Login(self, el)
+    time.sleep(1)
+    self.driver.implicitly_wait(3)
+    #获取账号信息
+    el.getFunctionName('account')
+    el.get_element('username')
+    self.driver.implicitly_wait(3)
+    time.sleep(3)
+    if CFG.SessionUserName==None:
+        CFG.SessionUserName=el.get().text.split(' ')[1].split('(')[0]
+    el.getFunctionName(TitleMode[0])
+    el.get_element(TitleMode[1])
+
+    lenTitle=len(el.gets())
+    #time.sleep(1)
+    for i in range(lenTitle):
+        if mode==None:
+            if el.gets()[i].text==u'询价':
+                el.gets()[i].click()
+                break
+        elif mode!=None:
+            if el.gets()[i].text==mode:
+                el.gets()[i].click()
+                break
+
+def ShowLink(el,num=None,mol=None):
+    """
+    显示指定数据
+    :param self:
+    :param el:
+    :param num:
+    :return:
+    """
+
+    time.sleep(1)
+    el.getFunctionName(elData[0])
+    el.get_element(elData[1])
+    if num==None:
+        num=0
+
+    dId = el.gets()[num].find_element_by_xpath('td[3]/div').text
+    dLink=el.gets()[num].find_element_by_xpath('td[7]/div').text
+    logging.info(u'当前数据的环节为：'+dLink)
+    return dLink
+
+def Duantao(self, el, submode=None, substate=None):
+    """
+    单套询价
+    :param self:
+    :param el:
+    :param elemnetList: 房屋类型元素集
+    :return:
+    """
+    #try:
+    TitleHand(self,el,u'询价')
+    #el.getFunctionName(eldantao[0])
+    #print eldantao[1],1111
+    logging.info(u'点击询价')
+    #time.sleep(1)
+    #el.get_element(eldantao[1])
+    #el.get().click()
+    if submode!=None:
+        mode=EL.get_el_name(submode, GJBpath)
+        el.getFunctionName(mode[0])
+        logging.info(u'点击'+str(mode[0]))
+        el.get_element(mode[1])
+        el.get().click()
+        ldata=mode
+    else:
+        time.sleep(1)
+        el.getFunctionName(elquanbu[0])
+        logging.info(u'点击'+str(elquanbu[0]))
+        el.get_element(elquanbu[1])
+        el.get().click()
+        ldata=elquanbu
+    time.sleep(3)
+    iframepath = el.get_elementframe(ldata[2])
+    logging.info(u'切换iframe')
+    el.getDriver().switch_to.frame(iframepath)
+    if substate!=None:
+        el.getFunctionName(State[0])
+        el.get_element(substate)
+        if el.get():
+            el.get().click()
+        else:
+            logging.error('not found element!')
+            exit('not found element!')
+
+def OtherXujia(self, el, inquiry,substate=None):
+    """
+    其他的询价方式,自动估价，多套询价
+    盖章
+    :param self:
+    :param el:
+    :param inquiry:
+    :return:
+    """
+    otherxujia=EL.get_el_name(inquiry, GJBpath)
+    TitleHand(self,el,u'询价')
+
+    el.getFunctionName(otherxujia[0])
+    self.logger.info(u'点击'+str(otherxujia[0]))
+    el.get_element(otherxujia[1])
+    #print el.path
+    #time.sleep(1)
+    el.get().click()
+
+    #if 'frame' in otherxujia:
+    if len(otherxujia)>2:
+        el.getDriver().implicitly_wait(2)
+        iframepath = el.get_elementframe('frame')
+        self.logger.info(u'切换框架Frame')
+        el.getDriver().implicitly_wait(1)
+        el.getDriver().switch_to.frame(iframepath)
+
+    if substate != None:
+        el.getFunctionName(State[0])
+        el.get_element(substate)
+        el.get().click()
+
+def GaiZhang(self,func,el):
+    """
+    盖章
+    :param self:
+    :param func:
+    :param el:
+    :return:
+    """
+    TitleHand(self,func)
+    func.getFunctionName(elGaizhang[0])
+    func.get_element(elGaizhang[1])
+    func.get().click()
+    iframepath=func.get_elementframe(elGaizhang[2])
+    self.driver.switch_to.frame(iframepath)
+    func.getFunctionName(el[0])
+    func.get_element(el[1])
+    func.get().click()
+
+def NoDataOperate(self,el,em,xujia=None,isauto=None,otherxujia=None):
+    """
+    没有数据操作元素
+    :param self:
+    :param el:
+    :param em:
+    :return:
+    """
+    if isauto==None:
+        Duantao(self,el,xujia)
+    else:
+        OtherXujia(self,el,otherxujia)
+
+    if xujia!=None:
+        #EL.get_el_name('')
+        pass
+    el.getFunctionName(em[0])
+
+    logging.info(u'点击'+str(em[1]))
+    #logging.info(el.get().text)
+    el.get_element(em[1])
+
+    el.get().click()
+
+def DeleteDataOperate(self,el,em,num=1,key=2):
+    """
+    删除数据操作
+    :param self:
+    :param el:
+    :param em:
+    :param num:0：不选择数据，1：选择一条数据，n：选择N条数据
+    :param key: 0：删除，1：不删除
+    :return:
+    """
+    Duantao(self,el)
+    el.getFunctionName(em[0])
+    self.logger.info(u'点击'+str(em[0]))
+    DeList=[]
+    el.get_element(em[2])
+    try:
+        len(el.gets())
+    except:
+        logging.error(u'没有数据请确认')
+        tishitext=self.driver.find_element_by_xpath('/html/body/div/div[2]/div/div[5]/table/tbody/tr/td').text
+        logging.info(tishitext)
+        exit()
+    if num==1:
+        #el.get_element(em[2])
+        el.gets()[0].find_element_by_xpath('td/div/input').click()
+        strId=el.get().find_element_by_xpath('td[3]/div').text
+        DeList.append(strId)
+    elif num>1:
+        for i in range(num):
+            #el.get_element(em[2])
+            strId=dataId=el.gets()[i].find_element_by_xpath('td[3]/div').text
+            el.gets()[i].find_element_by_xpath('td/div/input').click()
+            DeList.append(strId)
+    el.get_element(em[1])
+    el.get().click()
+    self.driver.switch_to.default_content()
+
+    #删除点击确定或取消
+    if key==0:#确定删除
+        el.get_element(em[3])
+    else:
+        el.get_element(em[4])
+    el.get().click()
+    return DeList
+
+def ZhuanYeWu(self,el,em):
+    """
+    转业务
+    :param self:
+    :param el:
+    :param em:
+    :return:
+    """
+    Duantao(self, el)
+    el.getFunctionName(elData[0])
+    el.get_element(elData[1])
+    for i in range(len(el.gets())):
+        istxt=el.gets()[i].find_element_by_xpath('td[14]/div').text
+        if istxt==u'否':
+            el.gets()[i].find_element_by_xpath('td/div/input').click()
+            break
+    el.getFunctionName(em[0])
+    el.get_element(em[1])
+    el.get().click()
+
+def ZuanXieYuPing(self,el,state=0,huanjie='',em=''):
+    """
+    撰写预评
+    :param self:
+    :param el:
+    :param state: 0,选择业务编号不为空或审批中的一条的数据
+                   1,选择一指定环节的数据
+                   2-n，选择多条指定环节的数据
+    :param huanjie:
+    :param em:
+    :return:
+    """
+    Duantao(self, el)
+    el.getFunctionName(elData[0])
+    el.get_element(elData[1])
+    num=1
+    hjList=[]
+    try:
+        len(el.gets())
+    except:
+        logging.error(u'没有数据请确认')
+        tishitext = self.driver.find_element_by_xpath('/html/body/div/div[2]/div/div[5]/table/tbody/tr/td').text
+        logging.info(tishitext)
+        exit()
+
+    for i in range(len(el.gets())):
+        #获取环节
+        istxt = el.gets()[i].find_element_by_xpath('td[7]/div').text
+        # 获取业务编号
+        businessId = el.gets()[i].find_element_by_xpath('td[4]/div').text
+        hjList.append(istxt)
+
+        if state==0:
+
+            if businessId!='' or u'审'in istxt:
+            #if istxt==u'待回价' or istxt==u'已回价':
+                # 获取编号
+                dataid = el.gets()[i].find_element_by_xpath('td[3]/div').text
+                el.gets()[i].find_element_by_xpath('td/div/input').click()
+                break
+        elif state==1:
+            if huanjie=='':
+                if businessId == '' and u'审' not in istxt:
+                    dataid = el.gets()[i].find_element_by_xpath('td[3]/div').text
+                    el.gets()[i].find_element_by_xpath('td/div/input').click()
+                    break
+            elif huanjie==istxt:
+                # 获取编号
+                dataid = el.gets()[i].find_element_by_xpath('td[3]/div').text
+                el.gets()[i].find_element_by_xpath('td/div/input').click()
+                break
+            else:
+                if i<len(el.gets()):
+                    continue
+        else:
+            if num>state:
+                break
+            if huanjie==istxt:
+                # 获取编号
+                dataid = el.gets()[i].find_element_by_xpath('td[3]/div').text
+                el.gets()[i].find_element_by_xpath('td/div/input').click()
+                num+=1
+
+    if huanjie not in hjList:
+        logging.info(u'没有环节为:'+huanjie+u' 的数据！')
+        exit('No this link data!')
+    el.getFunctionName(elZXYP[0])
+    el.get_element(elZXYP[1])
+
+    el.get().click()
+    return dataid
+
+def data_Dict(el):
+    """
+    数据列表
+    :param el:
+    :return:
+    """
+
+    el.getDriver().switch_to.default_content()
+    #el.getFunctionName(elZXYP)
+    #el.get_element('queding')
+    #el.get().click()
+
+    el.getFunctionName(elquanbu[0])
+    ldata = elquanbu
+    iframepath = el.get_elementframe(ldata[2])
+    el.getDriver().switch_to.frame(iframepath)
+    time.sleep(1)
+    el.getFunctionName(elData[0])
+    el.get_element(elData[1])
+    elDict={}
+    for i in range(len(el.gets())):
+        istxt = el.gets()[i].find_element_by_xpath('td[7]/div').text
+        dataId=el.gets()[i].find_element_by_xpath('td[3]/div').text
+        elDict[dataId]=istxt
+    return elDict
+
+def data_List(el):
+    """
+    获取显示列表中数据的询价编号
+    :param el:
+    :return:
+    """
+    el.getFunctionName(elquanbu[0])
+    el.getDriver().current_url
+    ldata = elquanbu
+    iframepath = el.get_elementframe(ldata[2])
+    el.getDriver().switch_to.frame(iframepath)
+    time.sleep(1)
+    el.getFunctionName(elData[0])
+    el.get_element(elData[1])
+    elList = []
+    for i in range(len(el.gets())):
+        dataId = el.gets()[i].find_element_by_xpath('td[3]/div').text
+        elList.append(dataId)
+    return elList
+
+def DataDetail(El,fem=None,strKey=None,*strel):
+    """
+    数据编辑查看界面
+    :param El:
+    :param fem:
+    :param strel:
+    :return:
+    """
+    driver=El.getDriver()
+    driver.switch_to.default_content()
+    xf=driver.find_element_by_xpath('/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe')
+    driver.switch_to.frame(xf)
+    if fem!='':
+        fel =EL.get_el_name(fem, GJBpath)
+        #El.get_element('save')
+        #time.sleep(5)
+        #driver.find_element_by_id('btnSave').click()
+        #El.get().click()
+
+
+        #for i in fel:
+            #El.getFunctionName(fel[0])
+            #if strel!='':
+                #if i==strel:
+                    #El.get_element(i)
+                    #rd=random.randint(2,len(Select(El.get()).options)-1)
+                    #Select(El.get()).select_by_index(rd)
+                    #time.sleep(1)
+                #else:
+                    #continue
+
+        #El.getFunctionName(fel[0])
+        #if strel!=None and strel in fel:
+
+        if strel!=None:
+            '''
+            if strel=='baogaoleixing'or strel=='fenzhijigou' or strel=='weituoleixing':
+                logging.info(strel)
+                El.getFunctionName(elDateDetail[0])
+                El.get_element(strel)
+                rd=random.randint(2,len(Select(El.get()).options)-1)
+                Select(El.get()).select_by_index(rd)
+                time.sleep(1)
+            elif strel=='':
+                pass
+           '''
+            for e in strel:
+                logging.info(e)
+                El.getFunctionName(elDateDetail[0])
+                El.get_element(e)
+                rd = random.randint(2, len(Select(El.get()).options) - 1)
+                Select(El.get()).select_by_index(rd)
+                time.sleep(1)
+
+            El.getFunctionName(elDateDetail[0])
+            El.get_element('yewubumen')
+            if len(Select(El.get()).all_selected_options)==0:
+                rd = random.randint(2, len(Select(El.get()).options) - 1)
+                Select(El.get()).select_by_index(rd)
+
+
+            El.getDriver().implicitly_wait(5)
+            if len(strel)==0:
+                time.sleep(3)
+            El.getFunctionName(fel[0])
+
+            if strKey==None or strKey=='save':
+                El.get_element('save')
+            else:
+                El.get_element(strKey)
+            time.sleep(2)
+            El.get().click()
+            time.sleep(1)
+
+            '''
+            driver.switch_to.default_content()
+            if strKey=='save' or strKey==None:
+                driver.implicitly_wait(1)
+                driver.find_element_by_xpath( '/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[3]/td/div/input').click()
+            elif strKey==u'生成预评报告':
+                pass
+            '''
+
+
+
+    #driver.implicitly_wait(5)
+
+    #e_fem=eL.get_el_name(fem)
+    #el.getFunctionName(e_fem[0])
+    #istxt=el.get_element(e_fem[1]).text
+
+def DaoChu(self,el,xujia,isauto=None,otherxujia=None):
+    """
+    导出
+    :param self:
+    :param el:
+    :param xujia:
+    :param isauto:
+    :param otherxujia:
+    :return:
+    """
+    NoDataOperate(self,el,eDaochu,xujia,isauto,otherxujia)
+
+def DaoChuDetail(self,el,state=None,xujia=None,isauto=None,otherxujia=None):
+    """
+    导出数据项
+    :param self:
+    :param el:
+    :param state:
+    :param xujia:
+    :return:
+    """
+    DaoChu(self,el,xujia,isauto,otherxujia)
+    self.driver.switch_to.default_content()
+
+    #xf = self.driver.find_element_by_xpath('/html/body/div[1]/table/tbody/tr[2]/td[2]/div/table/tbody/tr[2]/td[2]/div/iframe')
+    #self.driver.switch_to.frame(xf)
+
+    el.getFunctionName(eDaochu[0])
+    el.get_element('iframe')
+    el.getDriver().switch_to.frame(el.get())
+
+    el.get_element('kanziji')
+    el.get().click()
+    el.get_element('xinmobanshuru')
+    isXinmoban = el.get().get_attribute('style')
+    #print isXinmoban
+    if state == '' or state == None:
+        pass
+    elif state == 'select':
+        if 'display'  not in isXinmoban.upper():  #isXinmoban!='CURSOR: text': #or 'DISPLAY: inline-block;' not in isXinmoban:
+            pass
+        else:
+            #el.get_element('cunweixinmoban')
+            #print el.get()
+            #time.sleep(1)
+            #el.get().click()
+            self.driver.find_element_by_id('ckNewTemplate').click()
+        #self.driver.find_element_by_id('ckNewTemplate').click()
+            #ActionChains(self.driver).move_to_element(el.get()).click().perform()
+        el.get_element('mobanxuanze')
+        time.sleep(2)
+        if len(Select(el.get()).options)>1:
+            rd = random.randint(1, len(Select(el.get()).options) - 1)
+            Select(el.get()).select_by_index(rd)
+            logging.info(u'选择模板'+ Select(el.get()).all_selected_options[0].text)
+        else:
+            logging.info(u'没有模块请确认')
+            exit()
+    elif 'del'in state:
+        el.get_element('mobanxuanze')
+        time.sleep(1)
+        rd = random.randint(1, len(Select(el.get()).options) - 1)
+        Select(el.get()).select_by_index(rd)
+        logging.info(u'删除模板' + Select(el.get()).all_selected_options[0].text)
+        el.get_element('shanchumoban')
+        el.get().click()
+        el.getDriver().switch_to.default_content()
+        if 'sure' in state:
+            el.get_element('querenshanchu')
+            el.get().click()
+            logging.info(u'确认删除')
+        else:
+            el.get_element('quxiaoshanchu')
+            el.get().click()
+            logging.info(u'取消删除')
+        return
+    elif 'custom' in state:
+        el.get_element('kexuanyewu')
+        txt=el.get().get_attribute('class')
+        if txt=='active':
+            time.sleep(3)
+            el.get_element('kexuanyewuliebiao')
+            listElement=[]
+            #listElement=el.gets()
+            for i in range(len(el.gets())):
+                if el.gets()[i].get_attribute('columndatatype')=='0':
+                    #ActionChains(el.getDriver()).double_click(el.gets()[i]).perform()
+                    listElement.append(el.gets()[i])
+            lElement=len(listElement)
+            for i in range(lElement):
+                #rd=random.randint(1,len(listElement)-1)
+                #logging.info(str(rd)+','+listElement[rd].text)
+                #ActionChains(el.getDriver()).double_click(listElement[rd]).perform()
+                #listElement.pop(rd)
+                ActionChains(el.getDriver()).double_click(listElement[0]).perform()
+                listElement.pop(0)
+                lElement-=1
+
+            el.get_element('kexuanweiguduixiang')
+            el.get().click()
+
+            el.get_element('kexuanweiguduixiangliebiao')
+            listWeigu=[]
+            for i in range(len(el.gets())):
+                if el.gets()[i].get_attribute('columndatatype')=='2018002':
+                    listWeigu.append(el.gets()[i])
+            lenWeigu=len(listWeigu)
+            for i in range(lenWeigu):
+                ActionChains(el.getDriver()).double_click(listWeigu[0]).perform()
+                listWeigu.pop(0)
+                lenWeigu-=1
+
+            if isXinmoban == 'CURSOR: text'or isXinmoban=='cursor: text;':  # or 'DISPLAY: inline-block;' not in isXinmoban:
+                el.get_element('cunweixinmoban')
+                el.get().click()
+            else:
+                pass
+
+            el.get_element('xinmobanshuru')
+            xinmobanName=time.strftime('%Y%m%d%H%M%S', time.localtime())
+            logging.info(u'存为模板为:'+xinmobanName)
+            el.get().send_keys(xinmobanName)
+
+            #classShuru=el.get().get_attribute('class')
+    elif 'auto' in state:
+        return
+
+    el.get_element('quedingdaochu')
+    el.get().click()
+    time.sleep(3)
+
+chkElementlist=EL.get_el_name('Checkbox', GJBpath)
+def ChkData(el,num):
+    """
+    选择列表中数据
+    :param el:element类对象
+    :param num: 选择的数目
+    :return:
+    """
+    el.getFunctionName(chkElementlist[0])
+    #el.get_element('frame')
+    #xf=el.get()
+    #el.getDriver().switch_to.frame(xf)
+    DeList = []
+    el.get_element(chkElementlist[1])
+    try:
+        len(el.gets())
+    except:
+        logging.error(u'没有数据请确认')
+        tishitext=el.getDriver().find_element_by_xpath('/html/body/div/div[2]/div/div[5]/table/tbody/tr/td').text
+        logging.info(tishitext)
+        exit()
+    if num == 1:
+        #el.get_element(chkElementlist[1])
+        el.gets()[0].find_element_by_xpath('td/div/input').click()
+        strId = el.gets()[0].find_element_by_xpath('td[3]/div').text
+        DeList.append(strId)
+    elif num > 1:
+        for i in range(num):
+            #el.get_element(chkElementlist[1])
+            strId = el.gets()[i].find_element_by_xpath('td[3]/div').text
+            el.gets()[i].find_element_by_xpath('td/div/input').click()
+            DeList.append(strId)
+    else:
+        logging.ERROR(U"num不能为负数或0")
+    return DeList
+def LinkDate(el,num=None,link=None):
+    """
+    选择指定环节的数据
+    :param el: Element类对象
+    :param num:1、1与None,为选择一条数据
+                2、为n时，为n条数据
+    :param link: 选择的环节
+    :return: 返回环节
+    """
+    time.sleep(1)
+    el.getFunctionName(chkElementlist[0])
+    el.get_element(chkElementlist[1])
+    idList=[]
+    try:
+        len(el.gets())
+    except:
+        logging.error(u'没有数据请确认')
+        tishitext = el.getDriver().find_element_by_xpath('/html/body/div/div[2]/div/div[5]/table/tbody/tr/td').text
+        logging.info(tishitext)
+        exit()
+    if link!=None:
+        for i in range(15):
+            #询价编号
+            idtext = el.gets()[i].find_element_by_xpath('td[3]/div').text
+            linktext=el.gets()[i].find_element_by_xpath('td[7]/div').text
+            if linktext==link:
+                logging.info(u'选择编号：'+idtext+u',环节：' +linktext+u'的数据')
+                if num==1 or num==None:
+                    el.gets()[i].find_element_by_xpath('td/div/input').click()
+                    idList.append(idtext)
+                    break
+                elif i>num:
+                    el.gets()[i].find_element_by_xpath('td/div/input').click()
+                    idList.append(idtext)
+                    break
+        else:
+            logging.info(u'没有找到环节为:'+link+u'的数据')
+            exit()
+    else:
+        rd=random.randint(0,14)
+        #rd=0
+        logging.info(u'第 '+str(rd+1)+u' 条数据')
+        idtext = el.gets()[rd].find_element_by_xpath('td[3]/div').text
+        linktext = el.gets()[rd].find_element_by_xpath('td[7]/div').text
+        logging.info(u'编号：'+idtext+u',环节：'+ linktext)
+        el.gets()[rd].find_element_by_xpath('td/div/input').click()
+
+    #logging.info(idList)
+    #return fristId
+    return idList
+Valuer=''
+def ClickLinkData(el,msgmod=None,link=None,functionName=None):
+    """
+    点击数据并获取指定项的数据
+    :param el:
+    :param msgmod:
+    :param link:
+    :param functionName:
+    :return:
+    """
+    global Valuer
+    el.getFunctionName(chkElementlist[0])
+    try:
+        msgnum = EL.get_el_value(functionName, msgmod, GJBpath)
+        el.get_element('checkboxtitle')
+        el.getDriver().implicitly_wait(3)
+        msgnumll=int(msgnum)-1
+        if msgnum>9:
+        #js = "var q=document.documentElement.scrollTop=10000"
+        #js="scroll(document.body.scrollWidth,0);"
+        #el.getDriver().execute_script(js)
+        #time.sleep(10)
+
+            ll = el.get().find_elements_by_xpath('th')
+            aa = ll[msgnumll]
+            el.getDriver().execute_script("arguments[0].scrollIntoView();", aa)
+            time.sleep(3)
+
+        title = el.get().find_element_by_xpath('th['+msgnum+']/div').text
+    except:
+        msgnum=0
+        title='not find'
+
+    ''''
+    for i in range(len(ll)):
+
+        #js = "var q=document.documentElement.scrollLeft=10000"
+        #js="scroll(10000,0);"
+        #el.getDriver().execute_script(js)
+        #time.sleep(10)
+
+        #以下解决不在显示区的元素读取
+        aa=ll[i]
+        el.getDriver().execute_script("arguments[0].scrollIntoView();",aa)
+        time.sleep(3)
+        ActionChains(el.getDriver()).move_to_element(ll[i].find_element_by_xpath('div')).perform()
+
+        print ll[i].find_element_by_xpath('div').text,ll[i].find_element_by_xpath('div').get_attribute('style')
+    '''
+    el.get_element(chkElementlist[1])
+    idList = []
+    if link != None:
+        for i in range(15):
+            # 询价编号
+            idtext = el.gets()[i].find_element_by_xpath('td[3]/div').text
+            linktext = el.gets()[i].find_element_by_xpath('td[7]/div').text
+            Valuer=el.gets()[i].find_element_by_xpath('td[23]/div').text
+            if linktext == link:
+                if sessionName!=Valuer and Valuer!="":
+                    #logging.info(idtext+u'：账号与估价师不一致！')
+                    continue
+                el.gets()[i].find_element_by_xpath('td/div/input').click()
+                idList.append(idtext)
+                logging.info(u'选择编号：' + idtext + u',环节：' + linktext + u'的数据')
+                break
+        else:
+            logging.error(u'没有找到此环节数据，或账号与估价师不一致！')
+            exit(u'没有找到此环节数据')
+        ActionChains(el.getDriver()).double_click(el.gets()[i].find_element_by_xpath('td[3]/div')).perform()
+        return idtext
+    else:
+        rd = random.randint(0, 14)
+        #rd=0
+        logging.info(u'第 ' + str(rd + 1) + u' 条数据')
+        idtext = el.gets()[rd].find_element_by_xpath('td[3]/div').text
+        linktext = el.gets()[rd].find_element_by_xpath('td[7]/div').text
+        if title == u'询价时间':
+            resutltext = el.gets()[rd].find_element_by_xpath('td[' + str(msgnum) + ']/div').text.split()[0]
+        else:
+            resutltext = el.gets()[rd].find_element_by_xpath('td[' + str(msgnum) + ']/div').text
+        logging.info(u'编号：' + idtext + u',环节：' + linktext)
+        el.gets()[rd].find_element_by_xpath('td/div/input').click()
+        ActionChains(el.getDriver()).double_click(el.gets()[rd].find_element_by_xpath('td[3]/div')).perform()
+
+        logging.info(title+u'：'+resutltext)
+        return resutltext
+def FirstListData(self):
+    """
+    获取第一条数据的询价编号
+    :param self:
+    :return: 询价编号
+    """
+    el=self.el
+    el.getFunctionName(chkElementlist[0])
+    el.get_element(chkElementlist[1])
+    fristId = el.gets()[0].find_element_by_xpath('td[3]/div').text
+    return fristId
+def SelectFirstData(self,el):
+    """
+    选择table列表中第一条数据，并双击
+    :param self:
+    :param el:
+    :return:
+    """
+    el.getFunctionName(chkElementlist[0])
+    el.get_element(chkElementlist[1])
+    fristId = el.gets()[0].find_element_by_xpath('td[3]/div').text
+
+    #打印所有信息
+    #fristId=el.get().text
+
+    logging.info(u'询价编号：'+fristId)
+    time.sleep(3)
+    ActionChains(self.driver).double_click(el.gets()[0].find_element_by_xpath('td[3]/div')).perform()
+    time.sleep(1)
+    '''
+    self.driver.switch_to.default_content()
+    el.getFunctionName(MsgFrm[0])
+    el.get_element(MsgFrm[1])
+    xf = el.get()
+    self.driver.switch_to.frame(xf)
+    '''
+    switchToDetailUI(self,el)
+    #logging.info('1111111')
+    #time.sleep(5)
+    attdata = self.driver.find_elements_by_xpath('//*[@id="tbFiles"]/tbody/tr')
+    if len(attdata) >= 3:
+        logging.info(u'添加附件成功！')
+        return True
+    else:
+        logging.info(u'添加附件失败！')
+        return False
+def switchToDetailUI(self,el):
+    """
+    详细数据界面切换frame
+    :param self:
+    :param el:
+    :return:
+    """
+    self.driver.switch_to.default_content()
+    el.getFunctionName(MsgFrm[0])
+    el.get_element(MsgFrm[1])
+    xf = el.get()
+    self.driver.switch_to.frame(xf)
+    time.sleep(3)
+def GetDetail(self, el, function, elementName):
+    """
+    获取详细信息里的数据
+    :param self:
+    :param el:
+    :param function:xml
+    :param elementName:
+    :return:
+    """
+
+    '''
+    if link==None:
+        el.getFunctionName(elquanbu)
+    else:
+        el.getFunctionName(link)
+    el.get_element('frame')
+    '''
+    '''
+    self.driver.switch_to.default_content()
+    el.getFunctionName(MsgFrm[0])
+    el.get_element(MsgFrm[1])
+    xf = el.get()
+    self.driver.switch_to.frame(xf)
+    time.sleep(5)
+    '''
+    switchToDetailUI(self,el)
+    el.getFunctionName(function[0])
+    el.get_element(elementName)
+    dictFunction = EL.get_el_dict(function[0], elementName, GJBpath)
+    tagname=' '
+    try:
+        tagname = el.get().get_attribute('tagname')
+    except:
+        #tagname=''
+        pass
+    if tagname==None:
+        tagname=''
+    currenttext=u'没有类型'
+    if 'elementType' in dictFunction:
+        if dictFunction['elementType'] == 'select':
+            currenttext = Select(el.get()).all_selected_options[0].text
+        elif dictFunction['elementType'] == 'input' or dictFunction['elementType'] == 'textarea' or dictFunction['elementType']=='readonly':
+            currenttext = el.get().get_attribute('value').strip()
+        else:
+            currenttext = el.get().text.strip()
+
+    logging.info(tagname+u'：'+currenttext)
+    return currenttext
+def Switchto_Frame(self,inquiry=None):
+    """
+    通过询价类型来切换frame
+    :param self:
+    :param inquiry:
+    :return:
+    """
+    logging.info(u'切换框架Frame')
+    self.driver.switch_to.default_content()
+    el=self.el
+    ellist=inquiry
+    if inquiry==None:
+        elFunction=elquanbu
+    else:
+        elFunction=EL.get_el_name(ellist, GJBpath)
+    el.getFunctionName(elFunction[0])
+    dictFuntion=EL.get_el_dict(elFunction[0],'frame', GJBpath)
+    if dictFuntion['type']=='ID' or dictFuntion['type']=='id':
+        path=dictFuntion['path']
+    elif dictFuntion['type'].upper()=='ID':
+        el.get_element('frame')
+        path=el.get()
+    else:
+        raise logging.error(u'没有找到iframe')
+    time.sleep(3)
+    self.driver.switch_to.frame(path)
+def NewDataDetial(el,*args):
+    """
+    新建数据详细数据
+    :param el: Element类对象
+    :param args: 参数
+    :return:
+    """
+    el.getFunctionName(dataDetail[0])
+    currenttext=''
+    redict={}
+    tagname=None
+    for arg in args:
+        el.getDriver().implicitly_wait(2)
+        #print el.getDriver().find_element_by_id('field_landusearea').get_attribute('tagname')
+        el.get_element(arg)
+        tagname=el.get().get_attribute('tagname')
+        if tagname==None:
+            tagname=u' no tagname attribute'
+
+        dictFunction = EL.get_el_dict(dataDetail[0], arg, GJBpath)
+        if 'elementType' in dictFunction:
+            if dictFunction['elementType']=='select':
+                currenttext = Select(el.get()).all_selected_options[0].text
+            elif dictFunction['elementType']=='input'or dictFunction['elementType']=='textarea':
+                currenttext=el.get().get_attribute('value')
+            else:
+                currenttext=el.get().text
+    #print tagname,currenttext
+    logging.info(tagname+u'：'+currenttext)
+    return currenttext,tagname
+def diff_file(oldfile,newfile):
+    pass
+
+
+

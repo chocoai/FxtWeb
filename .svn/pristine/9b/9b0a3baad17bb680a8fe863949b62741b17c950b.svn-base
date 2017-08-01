@@ -1,0 +1,1419 @@
+# -*- coding: utf-8 -*-
+import os
+import unittest
+import paramunittest
+import COMMON.DRIVER as DR
+import COMMON.ELEMNET as EL
+import COMMON.LOG as LG
+import COMMON.COMMON as CN
+from BaseCase.GJB import query as QY
+from COMMON import CONFIG as CFG
+from BaseCase.GJB import unittestBase
+from BaseCase.GJB import examineModification as QM
+xmlpath=os.path.join(CFG.prjDir,'BaseCase\GJB')
+url=CFG.ReadConfig().getConfigValue('Url')
+logger=LG.MyLog().get_log().get_myLogger()
+
+class LandQuery(unittestBase.unittestBase):
+    """单套询价-土地-查询"""
+
+    @LG.caseLog(u'XJ_DT01_TD_196_单套询价-土地-待回价-省份，市')
+    def testXJ_DT01_TD_196(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_033_单套询价-土地-模糊查询-询价编号')
+    def testXJ_DT01_TD_033(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'X2016080400008', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_040_单套询价-土地-已提交-省份，市')
+    def testXJ_DT01_TD_040(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_DT01_TD_246_单套询价-土地-已回价-来源-CAS')
+    def testXJ_DT01_TD_246(self):
+        result = QY.Query(self, self.el, u'来源', u'CAS', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_308_单套询价-土地-我纠错的回价-查询日期-结束日期')
+    def testXJ_DT01_TD_308(self):
+        result = QY.Query(self, self.el, u'询价时间', u':2016-04-05', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_001_单套询价-土地-查询')
+    def testXJ_DT01_TD_001(self):
+        QY.Query(self, self.el, u'关键字查询', u'狮子座4层4B', submode='Tudi')
+
+    @LG.caseLog(u'XJ_DT01_TD_002_单套询价-土地-查询地区-省份')
+    def testXJ_DT01_TD_002(self):
+        QY.Query(self, self.el, u'省份', u'湖南省', submode='Tudi')
+
+    @LG.caseLog(u'XJ_DT01_TD_003_单套询价-土地-查询地区-省份，市')
+    def testXJ_DT01_TD_003(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市', submode='Tudi')
+        self.assertTrue(True, result)
+
+    @LG.caseLog(u'XJ_DT01_TD_004_单套询价-土地-查询地区-省份，市，县')
+    def testXJ_DT01_TD_004(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_005_单套询价-土地-查询分支机构-分支机构')
+    def testXJ_DT01_TD_005(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_006_单套询价-土地-查询分支机构-房讯通')
+    def testXJ_DT01_TD_006(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_008_单套询价-土地-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_008(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_009_单套询价-土地-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_009(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_010_单套询价-土地-查询分支机构-广州分公司')
+    def testXJ_DT01_TD_010(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_011_单套询价-土地-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_011(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_012_单套询价-土地-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_012(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_013_单套询价-土地-查询-来源-估价宝')
+    def testXJ_DT01_TD_013(self):
+        result = QY.Query(self, self.el, u'来源', u'估价宝', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_014_单套询价-土地-查询-来源-CAS')
+    def testXJ_DT01_TD_014(self):
+        result = QY.Query(self, self.el, u'来源', u'CAS', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_015_单套询价-土地-查询-来源-微信')
+    def testXJ_DT01_TD_015(self):
+        result = QY.Query(self, self.el, u'来源', u'微信', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_022_单套询价-土地-查询委托客户-委托客户')
+    def testXJ_DT01_TD_022(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_023_单套询价-土地-查询委托客户-委托客户')
+    def testXJ_DT01_TD_023(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_023_单套询价-土地-查询委托客户-委托客户')
+    def testXJ_DT01_TD_023(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部 134455', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_024_单套询价-土地-查询状态-待回价')
+    def testXJ_DT01_TD_024(self):
+        result = QY.Query(self, self.el, u'状态', u'待回价', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_025_单套询价-土地-查询状态-待分配')
+    def testXJ_DT01_TD_025(self):
+        result = QY.Query(self, self.el, u'状态', u'待分配', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_026_单套询价-土地-查询状态-已回价')
+    def testXJ_DT01_TD_026(self):
+        result = QY.Query(self, self.el, u'状态', u'已回价', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_029_单套询价-土地-查询面积-最大面积')
+    def testXJ_DT01_TD_029(self):
+        result = QY.Query(self, self.el, u'面积', u'-1000', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_031_单套询价-土地-查询面积-面积范围')
+    def XJ_DT01_TD_031(self):
+        result = QY.Query(self, self.el, u'面积', u'100-1000', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_032_单套询价-土地-模糊查询-查询名称')
+    def testXJ_DT01_TD_032(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'骏皇名居2栋3层3B', submode='Tudi')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_DT01_TD_035_单套询价-土地-模糊查询-委托方')
+    def testXJ_DT01_TD_035(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'张三丰', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_036_单套询价-土地-模糊查询-业务员')
+    def testXJ_DT01_TD_036(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'蒙龙飞', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_037_单套询价-土地-模糊查询-委托方联系电话')
+    def testXJ_DT01_TD_037(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_027_单套询价-土地-查询日期-结束日期')
+    def testXJ_DT01_TD_027(self):
+        result = QY.Query(self, self.el, u'询价时间', u':2016-04-05', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_028_单套询价-土地-查询日期-开始日期')
+    def testXJ_DT01_TD_028(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_030_单套询价-土地-查询面积-最小面积')
+    def testXJ_DT01_TD_030(self):
+        result = QY.Query(self, self.el, u'面积', u'100', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_029_单套询价-土地-查询日期-日时间范围')
+    def testXJ_DT01_TD_029(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01:2016-08-08', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_007_单套询价-土地-查询分支机构-上海分公司')
+    def testXJ_DT01_TD_007(self):
+        result = QY.Query(self, self.el, u'分支机构', u'上海分公司', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_038_单套询价-土地-已提交-查询')
+    def testXJ_DT01_TD_038(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'20160804011', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_039_单套询价-土地-已提交-省份')
+    def testXJ_DT01_TD_039(self):
+        result = QY.Query(self, self.el, u'省份', u'湖南省', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_DT01_TD_041_单套询价-土地-已提交-省份，市，县')
+    def testXJ_DT01_TD_041(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市罗湖区', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_042_单套询价-土地-已提交-查询分支机构-分支机构')
+    def testXJ_DT01_TD_042(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_043_单套询价-土地-已提交-查询分支机构-房讯通')
+    def testXJ_DT01_TD_043(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_044_单套询价-土地-已提交-查询分支机构-上海分公司')
+    def testXJ_DT01_TD_044(self):
+        result = QY.Query(self, self.el, u'分支机构', u'上海分公司', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_045_单套询价-土地-已提交-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_045(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_047_单套询价-土地-已提交-查询分支机构-广州分公司')
+    def testXJ_DT01_TD_047(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_046_单套询价-土地-已提交-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_046(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_048_单套询价-土地-已提交-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_048(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_049_单套询价-土地-已提交-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_049(self):
+        result = QY.Query(self, self.el, u'分支机构', u'北京办事处', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_050_单套询价-土地-已提交-来源-估价宝')
+    def testXJ_DT01_TD_050(self):
+        result = QY.Query(self, self.el, u'来源', u'估价宝', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_051_单套询价-土地-已提交-来源-CAS')
+    def testXJ_DT01_TD_051(self):
+        result = QY.Query(self, self.el, u'来源', u'CAS', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_052_单套询价-土地-已提交-来源-微信')
+    def testXJ_DT01_TD_052(self):
+        result = QY.Query(self, self.el, u'来源', u'微信', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_062_单套询价-土地-已提交-查询委托客户-委托客户')
+    def testXJ_DT01_TD_062(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部 134455', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_063_单套询价-土地-已提交-查询状态-待回价')
+    def testXJ_DT01_TD_063(self):
+        result = QY.Query(self, self.el, u'状态', u'待回价', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_064_单套询价-土地-已提交-查询状态-待分配')
+    def testXJ_DT01_TD_064(self):
+        result = QY.Query(self, self.el, u'状态', u'待分配', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_065_单套询价-土地-已提交-查询状态-已回价')
+    def testXJ_DT01_TD_065(self):
+        result = QY.Query(self, self.el, u'状态', u'已回价', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_067_单套询价-土地-已提交-查询日期-开始日期')
+    def testXJ_DT01_TD_067(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_068_单套询价-土地-已提交-查询日期-日时间范围')
+    def testXJ_DT01_TD_068(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01:2016-08-08', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_069_单套询价-土地-已提交-查询面积-最小面积')
+    def testXJ_DT01_TD_069(self):
+        result = QY.Query(self, self.el, u'面积', u'100', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_070_单套询价-土地-已提交-查询面积-最大面积')
+    def testXJ_DT01_TD_070(self):
+        result = QY.Query(self, self.el, u'面积', u'-1000', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_071_单套询价-土地-已提交-查询面积-面积范围')
+    def XJ_DT01_TD_071(self):
+        result = QY.Query(self, self.el, u'面积', u'100-1000', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_072_单套询价-土地-已提交-模糊查询-查询名称')
+    def testXJ_DT01_TD_072(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'骏皇名居2栋3层3B', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_073_单套询价-土地-已提交-模糊查询-询价编号')
+    def testXJ_DT01_TD_073(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'X2016080400008', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_074_单套询价-土地-已提交-模糊查询-委托方')
+    def testXJ_DT01_TD_074(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'张三丰', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_075_单套询价-土地-已提交-模糊查询-业务员')
+    def testXJ_DT01_TD_075(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'蒙龙飞', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_076_单套询价-土地-已提交-模糊查询-委托方联系电话')
+    def testXJ_DT01_TD_076(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_060_单套询价-土地-已提交-查询委托客户-委托客户')
+    def testXJ_DT01_TD_060(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_061_单套询价-土地-已提交-查询委托客户-委托客户')
+    def testXJ_DT01_TD_061(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_066_单套询价-土地-已提交-查询日期-结束日期')
+    def testXJ_DT01_TD_066(self):
+        result = QY.Query(self, self.el, u'询价时间', u':2016-04-05', substate='yitijiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_077_单套询价-土地-已转交-查询')
+    def testXJ_DT01_TD_077(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'20160804011', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_078_单套询价-土地-已转交-省份')
+    def testXJ_DT01_TD_078(self):
+        result = QY.Query(self, self.el, u'省份', u'湖南省', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_079_单套询价-土地-已转交-省份，市')
+    def testXJ_DT01_TD_079(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_080_单套询价-土地-已转交-省份，市，县')
+    def testXJ_DT01_TD_080(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市罗湖区', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_081_单套询价-土地-已转交-查询分支机构-分支机构')
+    def testXJ_DT01_TD_081(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_082_单套询价-土地-已转交-查询分支机构-房讯通')
+    def testXJ_DT01_TD_082(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_083_单套询价-土地-已转交-查询分支机构-上海分公司')
+    def testXJ_DT01_TD_083(self):
+        result = QY.Query(self, self.el, u'分支机构', u'上海分公司', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_084_单套询价-土地-已转交-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_084(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_085_单套询价-土地-已转交-查询分支机构-广州分公司')
+    def testXJ_DT01_TD_085(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_086_单套询价-土地-已转交-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_086(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_087_单套询价-土地-已转交-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_087(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_088_单套询价-土地-已转交-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_088(self):
+        result = QY.Query(self, self.el, u'分支机构', u'北京办事处', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_089_单套询价-土地-已转交-来源-估价宝')
+    def testXJ_DT01_TD_089(self):
+        result = QY.Query(self, self.el, u'来源', u'估价宝', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_090_单套询价-土地-已转交-来源-CAS')
+    def testXJ_DT01_TD_090(self):
+        result = QY.Query(self, self.el, u'来源', u'CAS', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_091_单套询价-土地-已转交-来源-微信')
+    def testXJ_DT01_TD_091(self):
+        result = QY.Query(self, self.el, u'来源', u'微信', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_096_单套询价-土地-已转交-查询委托客户-委托客户')
+    def testXJ_DT01_TD_096(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部 134455', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_097_单套询价-土地-已转交-查询状态-待回价')
+    def testXJ_DT01_TD_097(self):
+        result = QY.Query(self, self.el, u'状态', u'待回价', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_098_单套询价-土地-已转交-查询状态-待分配')
+    def testXJ_DT01_TD_098(self):
+        result = QY.Query(self, self.el, u'状态', u'待分配', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_099_单套询价-土地-已转交-查询状态-已回价')
+    def testXJ_DT01_TD_099(self):
+        result = QY.Query(self, self.el, u'状态', u'已回价', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_100_单套询价-土地-已转交-查询日期-开始日期')
+    def testXJ_DT01_TD_100(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_101_单套询价-土地-已转交-查询日期-日时间范围')
+    def testXJ_DT01_TD_101(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01:2016-08-08', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_102_单套询价-土地-已转交-查询面积-最小面积')
+    def testXJ_DT01_TD_102(self):
+        result = QY.Query(self, self.el, u'面积', u'100', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_103_单套询价-土地-已转交-查询面积-最大面积')
+    def testXJ_DT01_TD_103(self):
+        result = QY.Query(self, self.el, u'面积', u'-1000', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_104_单套询价-土地-已转交-查询面积-面积范围')
+    def XJ_DT01_TD_104(self):
+        result = QY.Query(self, self.el, u'面积', u'100-1000', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_105_单套询价-土地-已转交-模糊查询-查询名称')
+    def testXJ_DT01_TD_105(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'骏皇名居2栋3层3B', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_106_单套询价-土地-已转交-模糊查询-询价编号')
+    def testXJ_DT01_TD_106(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'X2016080400008', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_107_单套询价-土地-已转交-模糊查询-委托方')
+    def testXJ_DT01_TD_107(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'张三丰', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_108_单套询价-土地-已转交-模糊查询-业务员')
+    def testXJ_DT01_TD_108(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'蒙龙飞', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_109_单套询价-土地-已转交-模糊查询-委托方联系电话')
+    def testXJ_DT01_TD_109(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_113_单套询价-土地-已转交-查询委托客户-委托客户')
+    def testXJ_DT01_TD_113(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_114_单套询价-土地-已转交-查询委托客户-委托客户')
+    def testXJ_DT01_TD_114(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_115_单套询价-土地-已转交-查询日期-结束日期')
+    def testXJ_DT01_TD_115(self):
+        result = QY.Query(self, self.el, u'询价时间', u':2016-04-05', substate='yizhuanjiao', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_116_单套询价-土地-待分配-查询')
+    def testXJ_DT01_TD_116(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'20160804011', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_117_单套询价-土地-待分配-省份')
+    def testXJ_DT01_TD_117(self):
+        result = QY.Query(self, self.el, u'省份', u'湖南省', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_118_单套询价-土地-待分配-省份，市')
+    def testXJ_DT01_TD_118(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_119_单套询价-土地-待分配-省份，市，县')
+    def testXJ_DT01_TD_119(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市罗湖区', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_120_单套询价-土地-待分配-查询分支机构-分支机构')
+    def testXJ_DT01_TD_120(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_121_单套询价-土地-待分配-查询分支机构-房讯通')
+    def testXJ_DT01_TD_121(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_125_单套询价-土地-待分配-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_125(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_122_单套询价-土地-待分配-查询分支机构-上海分公司')
+    def testXJ_DT01_TD_122(self):
+        result = QY.Query(self, self.el, u'分支机构', u'上海分公司', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_123_单套询价-土地-待分配-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_123(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_124_单套询价-土地-待分配-查询分支机构-广州分公司')
+    def testXJ_DT01_TD_124(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_126_单套询价-土地-待分配-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_126(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_127_单套询价-土地-待分配-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_127(self):
+        result = QY.Query(self, self.el, u'分支机构', u'北京办事处', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_128_单套询价-土地-待分配-来源-估价宝')
+    def testXJ_DT01_TD_128(self):
+        result = QY.Query(self, self.el, u'来源', u'估价宝', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_129_单套询价-土地-待分配-来源-CAS')
+    def testXJ_DT01_TD_129(self):
+        result = QY.Query(self, self.el, u'来源', u'CAS', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_130_单套询价-土地-待分配-来源-微信')
+    def testXJ_DT01_TD_130(self):
+        result = QY.Query(self, self.el, u'来源', u'微信', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_135_单套询价-土地-待分配-查询委托客户-委托客户')
+    def testXJ_DT01_TD_135(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部 134455', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_137_单套询价-土地-待分配-查询状态-待分配')
+    def testXJ_DT01_TD_137(self):
+        result = QY.Query(self, self.el, u'状态', u'待分配', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_138_单套询价-土地-待分配-查询状态-已回价')
+    def testXJ_DT01_TD_138(self):
+        result = QY.Query(self, self.el, u'状态', u'已回价', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_139_单套询价-土地-待分配-查询日期-开始日期')
+    def testXJ_DT01_TD_139(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_140_单套询价-土地-待分配-查询日期-日时间范围')
+    def testXJ_DT01_TD_140(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01:2016-08-08', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_141_单套询价-土地-待分配-查询面积-最小面积')
+    def testXJ_DT01_TD_141(self):
+        result = QY.Query(self, self.el, u'面积', u'100', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_143_单套询价-土地-待分配-查询面积-面积范围')
+    def XJ_DT01_TD_143(self):
+        result = QY.Query(self, self.el, u'面积', u'100-1000', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_144_单套询价-土地-待分配-模糊查询-查询名称')
+    def testXJ_DT01_TD_144(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'骏皇名居2栋3层3B', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_145_单套询价-土地-待分配-模糊查询-询价编号')
+    def testXJ_DT01_TD_145(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'X2016080400008', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_146_单套询价-土地-待分配-模糊查询-委托方')
+    def testXJ_DT01_TD_146(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'张三丰', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_147_单套询价-土地-待分配-模糊查询-业务员')
+    def testXJ_DT01_TD_147(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'蒙龙飞', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_148_单套询价-土地-待分配-模糊查询-委托方联系电话')
+    def testXJ_DT01_TD_148(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_152_单套询价-土地-待分配-查询委托客户-委托客户')
+    def testXJ_DT01_TD_152(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_153_单套询价-土地-待分配-查询委托客户-委托客户')
+    def testXJ_DT01_TD_153(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_154_单套询价-土地-待分配-查询日期-结束日期')
+    def testXJ_DT01_TD_154(self):
+        result = QY.Query(self, self.el, u'询价时间', u':2016-04-05', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_136_单套询价-土地-待分配-查询状态-待回价')
+    def testXJ_DT01_TD_136(self):
+        result = QY.Query(self, self.el, u'状态', u'待回价', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_142_单套询价-土地-待分配-查询面积-最大面积')
+    def testXJ_DT01_TD_142(self):
+        result = QY.Query(self, self.el, u'面积', u'-1000', substate='daifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_155_单套询价-土地-已分配-查询')
+    def testXJ_DT01_TD_155(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'20160804011', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_156_单套询价-土地-已分配-省份')
+    def testXJ_DT01_TD_156(self):
+        result = QY.Query(self, self.el, u'省份', u'湖南省', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_157_单套询价-土地-已分配-省份，市')
+    def testXJ_DT01_TD_157(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_158_单套询价-土地-已分配-省份，市，县')
+    def testXJ_DT01_TD_158(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市罗湖区', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_159_单套询价-土地-已分配-查询分支机构-分支机构')
+    def testXJ_DT01_TD_159(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_160_单套询价-土地-已分配-查询分支机构-房讯通')
+    def testXJ_DT01_TD_160(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_161_单套询价-土地-已分配-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_161(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_162_单套询价-土地-已分配-查询分支机构-上海分公司')
+    def testXJ_DT01_TD_162(self):
+        result = QY.Query(self, self.el, u'分支机构', u'上海分公司', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_163_单套询价-土地-已分配-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_163(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_164_单套询价-土地-已分配-查询分支机构-广州分公司')
+    def testXJ_DT01_TD_164(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_165_单套询价-土地-已分配-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_165(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_166_单套询价-土地-已分配-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_166(self):
+        result = QY.Query(self, self.el, u'分支机构', u'北京办事处', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_167_单套询价-土地-已分配-来源-估价宝')
+    def testXJ_DT01_TD_167(self):
+        result = QY.Query(self, self.el, u'来源', u'估价宝', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_168_单套询价-土地-已分配-来源-CAS')
+    def testXJ_DT01_TD_168(self):
+        result = QY.Query(self, self.el, u'来源', u'CAS', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_169_单套询价-土地-已分配-来源-微信')
+    def testXJ_DT01_TD_169(self):
+        result = QY.Query(self, self.el, u'来源', u'微信', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_174_单套询价-土地-已分配-查询委托客户-委托客户')
+    def testXJ_DT01_TD_174(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部 134455', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_175_单套询价-土地-已分配-查询状态-待分配')
+    def testXJ_DT01_TD_175(self):
+        result = QY.Query(self, self.el, u'状态', u'待分配', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_176_单套询价-土地-已分配-查询状态-已回价')
+    def testXJ_DT01_TD_176(self):
+        result = QY.Query(self, self.el, u'状态', u'已回价', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_177_单套询价-土地-已分配-查询日期-开始日期')
+    def testXJ_DT01_TD_177(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_178_单套询价-土地-已分配-查询日期-日时间范围')
+    def testXJ_DT01_TD_178(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01:2016-08-08', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_179_单套询价-土地-已分配-查询面积-最小面积')
+    def testXJ_DT01_TD_179(self):
+        result = QY.Query(self, self.el, u'面积', u'100', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_180_单套询价-土地-已分配-查询面积-面积范围')
+    def XJ_DT01_TD_180(self):
+        result = QY.Query(self, self.el, u'面积', u'100-1000', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_181_单套询价-土地-已分配-模糊查询-查询名称')
+    def testXJ_DT01_TD_181(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'骏皇名居2栋3层3B', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_182_单套询价-土地-已分配-模糊查询-询价编号')
+    def testXJ_DT01_TD_182(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'X2016080400008', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_183_单套询价-土地-已分配-模糊查询-委托方')
+    def testXJ_DT01_TD_183(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'张三丰', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_184_单套询价-土地-已分配-模糊查询-业务员')
+    def testXJ_DT01_TD_184(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'蒙龙飞', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_185_单套询价-土地-已分配-模糊查询-委托方联系电话')
+    def testXJ_DT01_TD_185(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_DT01_TD_189_单套询价-土地-已分配-查询委托客户-委托客户')
+    def testXJ_DT01_TD_189(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_190_单套询价-土地-已分配-查询委托客户-委托客户')
+    def testXJ_DT01_TD_190(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_191_单套询价-土地-已分配-查询日期-结束日期')
+    def testXJ_DT01_TD_191(self):
+        result = QY.Query(self, self.el, u'询价时间', u':2016-04-05', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_192_单套询价-土地-已分配-查询状态-待回价')
+    def testXJ_DT01_TD_192(self):
+        result = QY.Query(self, self.el, u'状态', u'待回价', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_193_单套询价-土地-已分配-查询面积-最大面积')
+    def testXJ_DT01_TD_193(self):
+        result = QY.Query(self, self.el, u'面积', u'-1000', substate='yifenpei', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_194_单套询价-土地-待回价-查询')
+    def testXJ_DT01_TD_194(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'20160804011', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_195_单套询价-土地-待回价-省份')
+    def testXJ_DT01_TD_195(self):
+        result = QY.Query(self, self.el, u'省份', u'湖南省', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_DT01_TD_197_单套询价-土地-待回价-省份，市，县')
+    def testXJ_DT01_TD_197(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市罗湖区', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_198_单套询价-土地-待回价-查询分支机构-分支机构')
+    def testXJ_DT01_TD_198(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_199_单套询价-土地-待回价-查询分支机构-房讯通')
+    def testXJ_DT01_TD_199(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_200_单套询价-土地-待回价-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_200(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_201_单套询价-土地-待回价-查询分支机构-上海分公司')
+    def testXJ_DT01_TD_201(self):
+        result = QY.Query(self, self.el, u'分支机构', u'上海分公司', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_202_单套询价-土地-待回价-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_202(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_203_单套询价-土地-待回价-查询分支机构-广州分公司')
+    def testXJ_DT01_TD_203(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_204_单套询价-土地-待回价-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_204(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_205_单套询价-土地-待回价-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_205(self):
+        result = QY.Query(self, self.el, u'分支机构', u'北京办事处', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_206_单套询价-土地-待回价-来源-估价宝')
+    def testXJ_DT01_TD_206(self):
+        result = QY.Query(self, self.el, u'来源', u'估价宝', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_208_单套询价-土地-待回价-来源-微信')
+    def testXJ_DT01_TD_208(self):
+        result = QY.Query(self, self.el, u'来源', u'微信', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_DT01_TD_213_单套询价-土地-待回价-查询委托客户-委托客户')
+    def testXJ_DT01_TD_213(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部 134455', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_214_单套询价-土地-待回价-查询状态-待分配')
+    def testXJ_DT01_TD_214(self):
+        result = QY.Query(self, self.el, u'状态', u'待分配', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_215_单套询价-土地-待回价-查询状态-已回价')
+    def testXJ_DT01_TD_215(self):
+        result = QY.Query(self, self.el, u'状态', u'已回价', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_216_单套询价-土地-待回价-查询日期-开始日期')
+    def testXJ_DT01_TD_216(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_217_单套询价-土地-待回价-查询日期-日时间范围')
+    def testXJ_DT01_TD_217(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01:2016-08-08', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_218_单套询价-土地-待回价-查询面积-最小面积')
+    def testXJ_DT01_TD_218(self):
+        result = QY.Query(self, self.el, u'面积', u'100', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_219_单套询价-土地-待回价-查询面积-面积范围')
+    def XJ_DT01_TD_219(self):
+        result = QY.Query(self, self.el, u'面积', u'100-1000', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_220_单套询价-土地-待回价-模糊查询-查询名称')
+    def testXJ_DT01_TD_220(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'骏皇名居2栋3层3B', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_221_单套询价-土地-待回价-模糊查询-询价编号')
+    def testXJ_DT01_TD_221(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'X2016080400008', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_222_单套询价-土地-待回价-模糊查询-委托方')
+    def testXJ_DT01_TD_222(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'张三丰', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_223_单套询价-土地-待回价-模糊查询-业务员')
+    def testXJ_DT01_TD_223(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'蒙龙飞', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_224_单套询价-土地-待回价-模糊查询-委托方联系电话')
+    def testXJ_DT01_TD_224(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_DT01_TD_228_单套询价-土地-待回价-查询委托客户-委托客户')
+    def testXJ_DT01_TD_228(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_229_单套询价-土地-待回价-查询委托客户-委托客户')
+    def testXJ_DT01_TD_229(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_230_单套询价-土地-待回价-查询日期-结束日期')
+    def testXJ_DT01_TD_230(self):
+        result = QY.Query(self, self.el, u'询价时间', u':2016-04-05', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_231_单套询价-土地-待回价-查询状态-待回价')
+    def testXJ_DT01_TD_231(self):
+        result = QY.Query(self, self.el, u'状态', u'待回价', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_232_单套询价-土地-待回价-查询面积-最大面积')
+    def testXJ_DT01_TD_232(self):
+        result = QY.Query(self, self.el, u'面积', u'-1000', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_207_单套询价-土地-待回价-来源-CAS')
+    def testXJ_DT01_TD_207(self):
+        result = QY.Query(self, self.el, u'来源', u'CAS', substate='daihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_233_单套询价-土地-已回价-查询')
+    def testXJ_DT01_TD_233(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'20160804011', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_234_单套询价-土地-已回价-省份')
+    def testXJ_DT01_TD_234(self):
+        result = QY.Query(self, self.el, u'省份', u'湖南省', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_235_单套询价-土地-已回价-省份，市')
+    def testXJ_DT01_TD_235(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_236_单套询价-土地-已回价-省份，市，县')
+    def testXJ_DT01_TD_236(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市罗湖区', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_237_单套询价-土地-已回价-查询分支机构-分支机构')
+    def testXJ_DT01_TD_237(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_238_单套询价-土地-已回价-查询分支机构-房讯通')
+    def testXJ_DT01_TD_238(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_239_单套询价-土地-已回价-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_239(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_240_单套询价-土地-已回价-查询分支机构-上海分公司')
+    def testXJ_DT01_TD_240(self):
+        result = QY.Query(self, self.el, u'分支机构', u'上海分公司', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_241_单套询价-土地-已回价-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_241(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_242_单套询价-土地-已回价-查询分支机构-广州分公司')
+    def testXJ_DT01_TD_242(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_243_单套询价-土地-已回价-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_243(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_244_单套询价-土地-已回价-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_244(self):
+        result = QY.Query(self, self.el, u'分支机构', u'北京办事处', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_245_单套询价-土地-已回价-来源-估价宝')
+    def testXJ_DT01_TD_245(self):
+        result = QY.Query(self, self.el, u'来源', u'估价宝', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_DT01_TD_247_单套询价-土地-已回价-来源-微信')
+    def testXJ_DT01_TD_247(self):
+        result = QY.Query(self, self.el, u'来源', u'微信', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+
+    @LG.caseLog(u'XJ_DT01_TD_252_单套询价-土地-已回价-查询委托客户-委托客户')
+    def testXJ_DT01_TD_252(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部 134455', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_253_单套询价-土地-已回价-查询状态-待分配')
+    def testXJ_DT01_TD_253(self):
+        result = QY.Query(self, self.el, u'状态', u'待分配', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_254_单套询价-土地-已回价-查询状态-已回价')
+    def testXJ_DT01_TD_254(self):
+        result = QY.Query(self, self.el, u'状态', u'已回价', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_255_单套询价-土地-已回价-查询日期-开始日期')
+    def testXJ_DT01_TD_255(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_256_单套询价-土地-已回价-查询日期-日时间范围')
+    def testXJ_DT01_TD_256(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01:2016-08-08', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_257_单套询价-土地-已回价-查询面积-最小面积')
+    def testXJ_DT01_TD_257(self):
+        result = QY.Query(self, self.el, u'面积', u'100', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_258_单套询价-土地-已回价-查询面积-面积范围')
+    def XJ_DT01_TD_258(self):
+        result = QY.Query(self, self.el, u'面积', u'100-1000', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_259_单套询价-土地-已回价-模糊查询-查询名称')
+    def testXJ_DT01_TD_259(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'骏皇名居2栋3层3B', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_260_单套询价-土地-已回价-模糊查询-询价编号')
+    def testXJ_DT01_TD_260(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'X2016080400008', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_261_单套询价-土地-已回价-模糊查询-委托方')
+    def testXJ_DT01_TD_261(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'张三丰', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_262_单套询价-土地-已回价-模糊查询-业务员')
+    def testXJ_DT01_TD_262(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'蒙龙飞', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_263_单套询价-土地-已回价-模糊查询-委托方联系电话')
+    def testXJ_DT01_TD_263(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_267_单套询价-土地-已回价-查询委托客户-委托客户')
+    def testXJ_DT01_TD_267(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_268_单套询价-土地-已回价-查询委托客户-委托客户')
+    def testXJ_DT01_TD_268(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_269_单套询价-土地-已回价-查询日期-结束日期')
+    def testXJ_DT01_TD_270(self):
+        result = QY.Query(self, self.el, u'询价时间', u':2016-04-05', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_269_单套询价-土地-已回价-查询状态-待回价')
+    def testXJ_DT01_TD_271(self):
+        result = QY.Query(self, self.el, u'状态', u'待回价', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_270_单套询价-土地-已回价-查询面积-最大面积')
+    def testXJ_DT01_TD_270(self):
+        result = QY.Query(self, self.el, u'面积', u'-1000', substate='yihuijia', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_271_单套询价-土地-我纠错的回价-查询')
+    def testXJ_DT01_TD_271(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'20160804011', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_272_单套询价-土地-我纠错的回价-省份')
+    def testXJ_DT01_TD_272(self):
+        result = QY.Query(self, self.el, u'省份', u'湖南省', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_273_单套询价-土地-我纠错的回价-省份，市')
+    def testXJ_DT01_TD_273(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_274_单套询价-土地-我纠错的回价-省份，市，县')
+    def testXJ_DT01_TD_274(self):
+        result = QY.Query(self, self.el, u'省份', u'广东省深圳市罗湖区', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_275_单套询价-土地-我纠错的回价-查询分支机构-分支机构')
+    def testXJ_DT01_TD_275(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_275_单套询价-土地-我纠错的回价-查询分支机构-房讯通')
+    def testXJ_DT01_TD_275(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_276_单套询价-土地-我纠错的回价-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_276(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_277_单套询价-土地-我纠错的回价-查询分支机构-上海分公司')
+    def testXJ_DT01_TD_277(self):
+        result = QY.Query(self, self.el, u'分支机构', u'上海分公司', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_278_单套询价-土地-我纠错的回价-查询分支机构-深圳总部')
+    def testXJ_DT01_TD_278(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_279_单套询价-土地-我纠错的回价-查询分支机构-广州分公司')
+    def testXJ_DT01_TD_279(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_280_单套询价-土地-我纠错的回价-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_280(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_281_单套询价-土地-我纠错的回价-查询分支机构-武汉分公司')
+    def testXJ_DT01_TD_281(self):
+        result = QY.Query(self, self.el, u'分支机构', u'北京办事处', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_282_单套询价-土地-我纠错的回价-来源-估价宝')
+    def testXJ_DT01_TD_282(self):
+        result = QY.Query(self, self.el, u'来源', u'估价宝', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_283_单套询价-土地-我纠错的回价-来源-CAS')
+    def testXJ_DT01_TD_283(self):
+        result = QY.Query(self, self.el, u'来源', u'CAS', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_284_单套询价-土地-我纠错的回价-来源-微信')
+    def testXJ_DT01_TD_284(self):
+        result = QY.Query(self, self.el, u'来源', u'微信', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_289_单套询价-土地-我纠错的回价-查询委托客户-委托客户')
+    def testXJ_DT01_TD_289(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部 134455', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_290_单套询价-土地-我纠错的回价-查询状态-待分配')
+    def testXJ_DT01_TD_290(self):
+        result = QY.Query(self, self.el, u'状态', u'待分配', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_291_单套询价-土地-我纠错的回价-查询状态-已回价')
+    def testXJ_DT01_TD_291(self):
+        result = QY.Query(self, self.el, u'状态', u'已回价', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_292_单套询价-土地-我纠错的回价-查询日期-开始日期')
+    def testXJ_DT01_TD_292(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_293_单套询价-土地-我纠错的回价-查询日期-日时间范围')
+    def testXJ_DT01_TD_293(self):
+        result = QY.Query(self, self.el, u'询价时间', u'2016-04-01:2016-08-08', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_294_单套询价-土地-我纠错的回价-查询面积-最小面积')
+    def testXJ_DT01_TD_294(self):
+        result = QY.Query(self, self.el, u'面积', u'100', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_295_单套询价-土地-我纠错的回价-查询面积-面积范围')
+    def XJ_DT01_TD_295(self):
+        result = QY.Query(self, self.el, u'面积', u'100-1000', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_296_单套询价-土地-我纠错的回价-模糊查询-查询名称')
+    def testXJ_DT01_TD_296(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'骏皇名居2栋3层3B', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_297_单套询价-土地-我纠错的回价-模糊查询-询价编号')
+    def testXJ_DT01_TD_297(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'X2016080400008', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_298_单套询价-土地-我纠错的回价-模糊查询-委托方')
+    def testXJ_DT01_TD_298(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'张三丰', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_299_单套询价-土地-我纠错的回价-模糊查询-业务员')
+    def testXJ_DT01_TD_299(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'蒙龙飞', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_300_单套询价-土地-我纠错的回价-模糊查询-委托方联系电话')
+    def testXJ_DT01_TD_300(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_304_单套询价-土地-我纠错的回价-查询委托客户-委托客户')
+    def testXJ_DT01_TD_304(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_305_单套询价-土地-我纠错的回价-查询委托客户-委托客户')
+    def testXJ_DT01_TD_305(self):
+        result = QY.Query(self, self.el, u'委托客户', u'包商银行 包商银行深圳分部', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_306_单套询价-土地-我纠错的回价-查询状态-待回价')
+    def testXJ_DT01_TD_306(self):
+        result = QY.Query(self, self.el, u'状态', u'待回价', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_307_单套询价-土地-我纠错的回价-查询面积-最大面积')
+    def testXJ_DT01_TD_307(self):
+        result = QY.Query(self, self.el, u'面积', u'-1000', substate='yijiucuo', submode='Tudi')
+        self.assertTrue(result)
+
+
+
+    @LG.caseLog(u'XJ_DT01_TD_309_单套询价-土地-待我审批的-提交日期-结束日期')
+    def testXJ_DT01_TD_309(self):
+        result = QY.Query(self, self.el, u'提交时间', u':2016-06-06', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_310_单套询价-土地-待我审批的-提交日期-开始日期')
+    def testXJ_DT01_TD_310(self):
+        result = QY.Query(self, self.el, u'提交时间', u'2016-06-06', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_311_单套询价-土地-待我审批的-提交日期-日期范围')
+    def testXJ_DT01_TD_311(self):
+        result = QY.Query(self, self.el, u'提交时间', u':2016-01-06:2016-08-01', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_312_单套询价-土地-待我审批的-分支机构-房讯通')
+    def testXJ_DT01_TD_312(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_313_单套询价-土地-待我审批的-分支机构-深圳总部')
+    def testXJ_DT01_TD_313(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_314_单套询价-土地-待我审批的-分支机构-广州分公司')
+    def testXJ_DT01_TD_314(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_314_单套询价-土地-待我审批的-分支机构-长沙分公司')
+    def testXJ_DT01_TD_314(self):
+        result = QY.Query(self, self.el, u'分支机构', u'长沙分公司', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_315_单套询价-土地-待我审批的-分支机构-武汉分公司')
+    def testXJ_DT01_TD_315(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_316_单套询价-土地-待我审批的-模糊查询-发起者')
+    def testXJ_DT01_TD_316(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'管理者', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_317_单套询价-土地-待我审批的-模糊查询-发起者')
+    def testXJ_DT01_TD_317(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'业务编号', substate='daishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_318_单套询价-土地-我已审批的-提交日期-结束日期')
+    def testXJ_DT01_TD_318(self):
+        result = QY.Query(self, self.el, u'提交时间', u':2016-06-06', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_319_单套询价-土地-我已审批的-提交日期-开始日期')
+    def testXJ_DT01_TD_319(self):
+        result = QY.Query(self, self.el, u'提交时间', u'2016-06-06', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_320_单套询价-土地-我已审批的-提交日期-日期范围')
+    def testXJ_DT01_TD_320(self):
+        result = QY.Query(self, self.el, u'提交时间', u':2016-01-06:2016-08-01', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_321_单套询价-土地-我已审批的-分支机构-房讯通')
+    def testXJ_DT01_TD_321(self):
+        result = QY.Query(self, self.el, u'分支机构', u'房讯通', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_322_单套询价-土地-我已审批的-分支机构-深圳总部')
+    def testXJ_DT01_TD_322(self):
+        result = QY.Query(self, self.el, u'分支机构', u'深圳总部', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_323_单套询价-土地-我已审批的-分支机构-广州分公司')
+    def testXJ_DT01_TD_323(self):
+        result = QY.Query(self, self.el, u'分支机构', u'广州分公司', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_324_单套询价-土地-我已审批的-分支机构-长沙分公司')
+    def testXJ_DT01_TD_324(self):
+        result = QY.Query(self, self.el, u'分支机构', u'长沙分公司', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_325_单套询价-土地-我已审批的-分支机构-武汉分公司')
+    def testXJ_DT01_TD_325(self):
+        result = QY.Query(self, self.el, u'分支机构', u'武汉分公司', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_326_单套询价-土地-我已审批的-模糊查询-发起者')
+    def testXJ_DT01_TD_326(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'管理者', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+    @LG.caseLog(u'XJ_DT01_TD_327_单套询价-土地-我已审批的-模糊查询-发起者')
+    def testXJ_DT01_TD_327(self):
+        result = QY.Query(self, self.el, u'关键字查询', u'业务编号', substate='yishenpi', submode='Tudi')
+        self.assertTrue(result)
+
+
+if __name__ == '__main__':
+    unittest.main()
