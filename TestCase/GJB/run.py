@@ -15,4 +15,5 @@ mailValue = readConfig.ReadConfig(currentPath).getConfigValue('Email')
 if mailValue == 'ON' or mailValue == 'on':
     attfile = t.attFile()
     t.mailSend(attfile)
+    
 
